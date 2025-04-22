@@ -150,6 +150,10 @@ function renderGrammarUI(data) {
     }
 }
 
-
+function expandInput(){
+  let inputContainer=document.getElementById("input-container");
+  inputContainer.style.height='200px';
+  inputContainer
+}
 
 

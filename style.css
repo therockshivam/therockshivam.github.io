@@ -120,57 +120,44 @@ h2 {
     right: 42px;
 }
 
-.input-container{
+.input-container {
     display: flex;
     justify-content: center;
-    height:60px;
+    height:65px;
     margin: 20px 0;
     border-radius: 0px 0px 20px 20px;
+    text-indent: 5px;
 }
 
-/* .input-container button {
-    width: 100px;
-} */
+.input-container textarea{
+    border-radius: 50px;
+    text-align: left;
+    align-content: center;
+    width: 50vw;
+    height: auto;
+    padding:20px;
+    -webkit-text-stroke: thin;
 
+}
 
-
-button {
-    background: transparent;
+.input-container button {
     position: relative;
-    padding: 5px 15px;
+    right: 60px;
+    width: 40px;
+    top: 10px;
+    font-size: 30px;
+    text-align: center;
+    height: 40px;
     display: flex;
+    justify-content: center;
     align-items: center;
-    font-size: 17px;
-    font-weight: 600;
-    text-decoration: none;
-    cursor: pointer;
-    border: 1px solid rgb(255,0,0);
-    border-radius: 25px;
-    outline: none;
-    overflow: hidden;
-    color: rgb(255,0,0);
-    transition: color 0.3s 0.1s ease-out;
-    text-align: center;
+    border:none;
+}
+
+.input-container button:hover {
+    background-color: #ccc;
   }
-  
-  button span {
-    margin: 10px;
-  }
-  
-  button::before {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    margin: auto;
-    content: '';
-    border-radius: 50%;
-    display: block;
-    width: 20em;
-    height: 20em;
-    left: -5em;
-    text-align: center;
-    transition: box-shadow 0.5s ease-out;
-    z-index: -1;
-  }
+
+
+
+
