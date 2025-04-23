@@ -10,11 +10,11 @@
     <meta charset="utf-8">
     <link rel="stylesheet" href="style.css">
 </head>
-
+<div class="loader"></div>
 <body>
     <div id="input-container" class="input-container">
         <textarea oninput="validateText()" id="inputText" rows="4" cols="60" placeholder="Enter a sentence..."></textarea><br /><br />
-        <button id="submitButton" class="" onclick="checkGrammar()" >🛠️
+        <button id="submitButton" class="btn btn-lg" onclick="checkGrammar()" >🛠️
             <!-- <div class="spinner-grow" role="status">
         <span class="visually-hidden">Loading...</span>
       </div> -->
@@ -25,9 +25,12 @@
     </div>
     <!-- <button onclick="expandInput()">Expand</button> -->
 
-    <div id="response" class="text-center"></div>
+    <div id="response" class="text-center"> </div>
 
-    <div class="container" id="grammar-container"></div>
+    <div class="container" id="grammar-container">
+
+      
+    </div>
 
 
 

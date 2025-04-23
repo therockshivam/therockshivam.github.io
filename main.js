@@ -3,8 +3,8 @@ let response;
 async function checkGrammar() {
     const apiKey = 'AIzaSyDbxx_D6EVmsb6X4q09UWw08DkFALS3W5I';
     const text = document.getElementById("inputText").value;
-    document.getElementById("response").textContent = "⏳ Checking...";
-
+    // document.getElementById("response").textContent = "⏳ Checking...";
+    document.getElementById("response").classList.add('loader2');
     const body = {
         contents: [
             { role: "user", parts: [{ text }] }
@@ -76,6 +76,8 @@ e.g. 1 {
             document.getElementById("response").textContent = "❌ Invalid JSON returned.";
             console.error("Parsing error:", e, part);
         }
+
+        document.getElementById("response").classList.remove('loader2');
         document.getElementById("response").textContent = "✅ Response received.";
     } catch (error) {
         document.getElementById("response").textContent = "❌ Error: " + error.message;
@@ -156,14 +158,20 @@ function expandInput(){
   inputContainer
 }
 
-function validateText(){
-    const text = document.getElementById("inputText").value;
-    if (text.trim() === "") {
-        return false;
-    }
-    document.getElementById("submitButton").disabled=false;
-    return true;
+function validateText() {
+  const text = document.getElementById("inputText").value.trim();
+  const button = document.getElementById("submitButton");
+
+  if (text === "") {
+      button.disabled = true;
+      return false;
+  } else {
+      button.disabled = false;
+      return true;
+  }
 }
+
+validateText();
 
 function resetUI() {
     document.getElementById("inputText").value = "";
