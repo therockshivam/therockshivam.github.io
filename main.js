@@ -156,4 +156,19 @@ function expandInput(){
   inputContainer
 }
 
+function validateText(){
+    const text = document.getElementById("inputText").value;
+    if (text.trim() === "") {
+        return false;
+    }
+    document.getElementById("submitButton").disabled=false;
+    return true;
+}
+
+function resetUI() {
+    document.getElementById("inputText").value = "";
+    document.getElementById("response").textContent = "Response will be shown here.";
+    document.getElementById("grammar-container").innerHTML = "";
+    document.getElementById("input-container").style.height = '50px';
+}
 
