@@ -1,7 +1,9 @@
+
+
 let response;
 
 async function checkGrammar() {
-    const apiKey = 'AIzaSyDbxx_D6EVmsb6X4q09UWw08DkFALS3W5I';
+    const A9f2XkL7qPz3RmW6 = 'AIzaSyDbxx_D6EVmsb6X4q09UWw08DkFALS3W5I';
     const text = document.getElementById("inputText").value;
     // document.getElementById("response").textContent = "⏳ Checking...";
     document.getElementById("response").classList.add('loader2');
@@ -59,7 +61,7 @@ e.g. 1 {
     };
 
     try {
-        const res = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${apiKey}`, {
+        const res = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${A9f2XkL7qPz3RmW6}`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
@@ -150,6 +152,8 @@ function renderGrammarUI(data) {
     <p><span class="label">Grammar Rule:</span> ${data.formula}</p>
   </div>`
     }
+
+    document.getElementById("response").classList.add('loader2');
 }
 
 function expandInput(){
