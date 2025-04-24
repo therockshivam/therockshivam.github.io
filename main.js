@@ -153,7 +153,6 @@ function renderGrammarUI(data) {
   </div>`
     }
 
-    document.getElementById("response").classList.add('loader2');
 }
 
 function expandInput(){
