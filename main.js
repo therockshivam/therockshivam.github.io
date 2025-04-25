@@ -3,6 +3,10 @@
 let response;
 
 async function checkGrammar() {
+
+  const geminiKey = process.env.GEMINI;
+  console.log("My Gemini Key:", geminiKey);
+
     const A9f2XkL7qPz3RmW6 = 'AIzaSyDbxx_D6EVmsb6X4q09UWw08DkFALS3W5I';
     const text = document.getElementById("inputText").value;
     // document.getElementById("response").textContent = "⏳ Checking...";
