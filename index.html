@@ -1,47 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <title>Grammar Feedback Interactive</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta charset="utf-8">
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shivam's Vault</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
-<div class="loader"></div>
 <body>
-    <div id="input-container" class="input-container">
-        <textarea oninput="validateText()" id="inputText" rows="4" cols="60" placeholder="Enter a sentence..."></textarea><br /><br />
-        <button id="submitButton" class="btn btn-lg" onclick="checkGrammar()" onkx>🛠️
-            <!-- <div class="spinner-grow" role="status">
-        <span class="visually-hidden">Loading...</span>
-      </div> -->
-        </button>
+
+  <!-- Hero Section -->
+  <header class="hero">
+    <h1>🚀 Shivam's Vault</h1>
+    <p>Code | Creativity | Curiosity</p>
+    <a href="#projects" class="cta">Explore My Work</a>
+  </header>
+
+  <!-- About Section -->
+  <section id="about">
+    <h2>👋 About Me</h2>
+    <p>
+      I'm Shivam – a creative software engineer, developer of ideas, and a lifelong learner.
+      Whether it’s building apps like <strong>SmartBill</strong> or crafting beautiful UI experiences, 
+      I mix logic with art. I love helping others learn through my notes, apps, and unique YouTube content.
+    </p>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects">
+    <h2>🛠️ Projects</h2>
+    <div class="project-card">
+      <h3>SmartBill</h3>
+      <p>A Java desktop billing app built using Swing & Spring Boot.</p>
     </div>
-    <button onclick="expandInput()">Expand</button>
-
-    <div id="response" class="text-center"> </div>
-
-    <div class="container" id="grammar-container">
-
-      
+    <div class="project-card">
+      <h3>ChatterBox</h3>
+      <p>An Angular-based chat app made for smooth real-time conversations.</p>
     </div>
+    <div class="project-card">
+      <h3>MindFlow</h3>
+      <p>An AI-powered thought organizer – part memory, part mentor.</p>
+    </div>
+  </section>
 
+  <!-- Vault / Notes -->
+  <section id="vault">
+    <h2>📚 Shivam's Vault</h2>
+    <p>
+      I share knowledge through structured notes on <strong>MySQL, DSA, error resolutions</strong>, and more.
+      This vault is where I store and grow my expertise. All public. All free.
+    </p>
+    <a href="#" class="cta">Visit My Notes</a>
+  </section>
 
+  <!-- Contact -->
+  <section id="contact">
+    <h2>📬 Contact</h2>
+    <p>Have an idea? Let’s build it together.</p>
+    <p>Email: <a href="mailto:shivam@example.com">shivam@example.com</a></p>
+  </section>
 
-    <script src="main.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-        crossorigin="anonymous"></script>
+  <!-- Footer -->
+  <footer>
+    <p>✨ Ideas by Shivam ✨</p>
+  </footer>
 
-        <footer>
-            <ul><li><a href="pages/about-me.html">About me</a></li></ul>
-            <ul><li><a href="tools/grammar-correction-system.html">Grammar Correction Tool</a></li></ul>
-        </footer>
-
-
+  <script src="script.js"></script>
 </body>
-
 </html>
