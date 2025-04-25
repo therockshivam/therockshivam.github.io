@@ -6,11 +6,13 @@
   
   <title>Shivam's Vault</title>
   <link rel="stylesheet" href="style.css" />
+  <!-- AOS CSS -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 <body>
 
-    <!-- 🔥 NAVBAR -->
-  <nav class="navbar">
+  <!-- 🔥 NAVBAR -->
+  <nav class="navbar" data-aos="fade-down">
     <div class="logo">⚡ Shivam</div>
     <ul class="nav-links" id="navLinks">
       <li><a href="#hero">Home</a></li>
@@ -28,20 +30,15 @@
     <span id="theme-icon">🌙</span>
   </div>
 
-  
-
   <!-- Hero Section -->
-  <header class="hero">
+  <header class="hero" id="hero" data-aos="fade-up">
     <h1>🚀 Shivam's Vault</h1>
     <p id="typewriter"></p>
     <a href="#projects" class="cta">Explore My Work</a>
   </header>
 
-  
-  
-
   <!-- About Section -->
-  <section id="about">
+  <section id="about" data-aos="fade-right">
     <h2>👋 About Me</h2>
     <p>
       I'm Shivam – a creative software engineer, developer of ideas, and a lifelong learner.
@@ -51,73 +48,72 @@
   </section>
 
   <!-- 🧰 Tools Section -->
-<section id="tools">
+  <section id="tools" data-aos="zoom-in">
     <h2>🧰 Tools</h2>
     <p>Here are some smart tools I’ve built to boost productivity and creativity using AI and web tech.</p>
     
     <div class="tool-grid">
-      <div class="tool-card">
+      <div class="tool-card" data-aos="fade-up">
         <h3>🧠 Grammar AI</h3>
         <p>An AI-powered grammar correction system to make your writing shine.</p>
         <a href="/tools/grammar-correction-system.html">Try It →</a>
       </div>
   
-      <div class="tool-card">
+      <div class="tool-card" data-aos="fade-up" data-aos-delay="100">
         <h3>🛠️ Web Dev Toolkit</h3>
         <p>A set of utilities for frontend and backend development.</p>
         <a href="#">Explore →</a>
       </div>
   
-      <div class="tool-card">
+      <div class="tool-card" data-aos="fade-up" data-aos-delay="200">
         <h3>📋 Resume Generator</h3>
         <p>Build modern resumes effortlessly with AI-guided content.</p>
         <a href="#">Build Now →</a>
       </div>
   
-      <div class="tool-card">
+      <div class="tool-card" data-aos="fade-up" data-aos-delay="300">
         <h3>🧠 MindFlow</h3>
         <p>Organize your thoughts, goals, and ideas with a smart structure.</p>
         <a href="#">Use Tool →</a>
       </div>
   
-      <div class="tool-card">
+      <div class="tool-card" data-aos="fade-up" data-aos-delay="400">
         <h3>📸 Face Attendance</h3>
         <p>Face Recognition Attendance System built with real-time detection.</p>
         <a href="#">View Demo →</a>
       </div>
     </div>
   </section>
-  
 
   <!-- Projects Section -->
-  <section id="projects">
+  <section id="projects" data-aos="fade-up">
     <h2>🛠️ Projects</h2>
-    <div class="project-card">
-      <img src="https://via.placeholder.com/300x150" alt="SmartBill App" />
+    <div class="project-card" data-aos="zoom-in">
+      <img src="#" alt="SmartBill App" />
       <h3>SmartBill</h3>
       <p>A Java desktop billing app built using Swing & Spring Boot.</p>
     </div>
-    <div class="project-card">
-      <img src="https://via.placeholder.com/300x150" alt="ChatterBox App" />
+    <div class="project-card" data-aos="zoom-in" data-aos-delay="100">
+      <img src="#" alt="ChatterBox App" />
       <h3>ChatterBox</h3>
       <p>An Angular-based chat app made for smooth real-time conversations.</p>
     </div>
-    <div class="project-card">
-      <img src="https://via.placeholder.com/300x150" alt="MindFlow App" />
+    <div class="project-card" data-aos="zoom-in" data-aos-delay="200">
+      <img src="#" alt="MindFlow App" />
       <h3>MindFlow</h3>
       <p>An AI-powered thought organizer – part memory, part mentor.</p>
     </div>
   </section>
 
   <!-- Vault / Notes -->
-  <section id="vault">
+  <section id="vault" data-aos="fade-right">
     <h2>📚 Shivam's Vault</h2>
-    <div class="note-snippet">
+    <div class="note-snippet" data-aos="fade-left">
       <h3>Understanding the WHERE Clause in SQL</h3>
       <p>Learn how to filter your database queries using SQL WHERE. Easy syntax with real examples...</p>
       <a href="#">Read More →</a>
     </div>
-    <div class="note-snippet">
+    <div class="note-snippet" data-aos="fade-left" data-aos-delay="100">
       <h3>Fixing Java Heap Space Errors</h3>
       <p>A quick guide on diagnosing and fixing memory overflow issues in Java apps.</p>
       <a href="#">Read More →</a>
@@ -125,17 +121,25 @@
   </section>
 
   <!-- Contact -->
-  <section id="contact">
+  <section id="contact" data-aos="zoom-in-up">
     <h2>📬 Contact</h2>
     <p>Have an idea? Let’s build it together.</p>
     <p>Email: <a href="mailto:shivam@example.com">shivam@example.com</a></p>
   </section>
 
   <!-- Footer -->
-  <footer class="footer">
+  <footer class="footer" >
     <p>✨ Ideas by Shivam ✨</p>
   </footer>
 
   <script src="script.js"></script>
+  <!-- AOS JS -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 1000,
+      once: true
+    });
+  </script>
 </body>
 </html>
