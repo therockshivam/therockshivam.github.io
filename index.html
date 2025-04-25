@@ -3,17 +3,42 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
   <title>Shivam's Vault</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
+    <!-- 🔥 NAVBAR -->
+  <nav class="navbar">
+    <div class="logo">⚡ Shivam</div>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#hero">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#tools">Tools</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#vault">Notes</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+  </nav>
+
+  <!-- Light/Dark Toggle -->
+  <div class="theme-toggle" onclick="toggleTheme()">
+    <span id="theme-icon">🌙</span>
+  </div>
+
+  
+
   <!-- Hero Section -->
   <header class="hero">
     <h1>🚀 Shivam's Vault</h1>
-    <p>Code | Creativity | Curiosity</p>
+    <p id="typewriter"></p>
     <a href="#projects" class="cta">Explore My Work</a>
   </header>
+
+  
+  
 
   <!-- About Section -->
   <section id="about">
@@ -25,18 +50,60 @@
     </p>
   </section>
 
+  <!-- 🧰 Tools Section -->
+<section id="tools">
+    <h2>🧰 Tools</h2>
+    <p>Here are some smart tools I’ve built to boost productivity and creativity using AI and web tech.</p>
+    
+    <div class="tool-grid">
+      <div class="tool-card">
+        <h3>🧠 Grammar AI</h3>
+        <p>An AI-powered grammar correction system to make your writing shine.</p>
+        <a href="/tools/grammar-correction-system.html">Try It →</a>
+      </div>
+  
+      <div class="tool-card">
+        <h3>🛠️ Web Dev Toolkit</h3>
+        <p>A set of utilities for frontend and backend development.</p>
+        <a href="#">Explore →</a>
+      </div>
+  
+      <div class="tool-card">
+        <h3>📋 Resume Generator</h3>
+        <p>Build modern resumes effortlessly with AI-guided content.</p>
+        <a href="#">Build Now →</a>
+      </div>
+  
+      <div class="tool-card">
+        <h3>🧠 MindFlow</h3>
+        <p>Organize your thoughts, goals, and ideas with a smart structure.</p>
+        <a href="#">Use Tool →</a>
+      </div>
+  
+      <div class="tool-card">
+        <h3>📸 Face Attendance</h3>
+        <p>Face Recognition Attendance System built with real-time detection.</p>
+        <a href="#">View Demo →</a>
+      </div>
+    </div>
+  </section>
+  
+
   <!-- Projects Section -->
   <section id="projects">
     <h2>🛠️ Projects</h2>
     <div class="project-card">
+      <img src="https://via.placeholder.com/300x150" alt="SmartBill App" />
       <h3>SmartBill</h3>
       <p>A Java desktop billing app built using Swing & Spring Boot.</p>
     </div>
     <div class="project-card">
+      <img src="https://via.placeholder.com/300x150" alt="ChatterBox App" />
       <h3>ChatterBox</h3>
       <p>An Angular-based chat app made for smooth real-time conversations.</p>
     </div>
     <div class="project-card">
+      <img src="https://via.placeholder.com/300x150" alt="MindFlow App" />
       <h3>MindFlow</h3>
       <p>An AI-powered thought organizer – part memory, part mentor.</p>
     </div>
@@ -45,11 +112,16 @@
   <!-- Vault / Notes -->
   <section id="vault">
     <h2>📚 Shivam's Vault</h2>
-    <p>
-      I share knowledge through structured notes on <strong>MySQL, DSA, error resolutions</strong>, and more.
-      This vault is where I store and grow my expertise. All public. All free.
-    </p>
-    <a href="#" class="cta">Visit My Notes</a>
+    <div class="note-snippet">
+      <h3>Understanding the WHERE Clause in SQL</h3>
+      <p>Learn how to filter your database queries using SQL WHERE. Easy syntax with real examples...</p>
+      <a href="#">Read More →</a>
+    </div>
+    <div class="note-snippet">
+      <h3>Fixing Java Heap Space Errors</h3>
+      <p>A quick guide on diagnosing and fixing memory overflow issues in Java apps.</p>
+      <a href="#">Read More →</a>
+    </div>
   </section>
 
   <!-- Contact -->
@@ -60,7 +132,7 @@
   </section>
 
   <!-- Footer -->
-  <footer>
+  <footer class="footer">
     <p>✨ Ideas by Shivam ✨</p>
   </footer>
 
