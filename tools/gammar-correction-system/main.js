@@ -202,6 +202,14 @@ function resetUI() {
           document.getElementById('navbar').innerHTML = data;
         });
     }
+
+
+    document.addEventListener("keydown", function(event) {
+      if (event.key === "Enter") {
+        event.preventDefault();
+        document.getElementById("submitButton").click();
+      }
+    });
   
     // Load the footer dynamically
     function getFooter(location) {
