@@ -173,8 +173,6 @@ function validateText() {
   const text = document.getElementById("inputText").value.trim();
   const button = document.getElementById("submitButton");
   
-  button.style.cursor='not-allowed';
-
   if (text === "") {
       button.disabled = true;
       return false;
