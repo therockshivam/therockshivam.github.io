@@ -2,10 +2,14 @@
 
 let response;
 
+
+document.getElementById('grammar-container').innerHTML=`  <div style="display: flex;
+justify-content: space-evenly; width: 100%; align-items:center;"><img src="../../images/no result.png" alt="No Result" > <h3>No result yet</h3></div>`;
+
 async function checkGrammar() {
 
-  const geminiKey = process.env.GEMINI;
-  console.log("My Gemini Key:", geminiKey);
+  // const geminiKey = process.env.GEMINI;
+  // console.log("My Gemini Key:", geminiKey);
 
     const A9f2XkL7qPz3RmW6 = 'AIzaSyDbxx_D6EVmsb6X4q09UWw08DkFALS3W5I';
     const text = document.getElementById("inputText").value;
@@ -162,12 +166,14 @@ function renderGrammarUI(data) {
 function expandInput(){
   let inputContainer=document.getElementById("input-container");
   inputContainer.style.height='200px';
-  inputContainer
+  // inputContainer
 }
 
 function validateText() {
   const text = document.getElementById("inputText").value.trim();
   const button = document.getElementById("submitButton");
+  
+  button.style.cursor='not-allowed';
 
   if (text === "") {
       button.disabled = true;
@@ -187,3 +193,27 @@ function resetUI() {
     document.getElementById("input-container").style.height = '50px';
 }
 
+
+
+
+    // Load the header dynamically
+    function getNavbar(location) {
+      fetch(location)
+        .then(response => response.text())
+        .then(data => {
+          document.getElementById('navbar').innerHTML = data;
+        });
+    }
+  
+    // Load the footer dynamically
+    function getFooter(location) {
+      fetch(location)
+        .then(response => response.text())
+        .then(data => {
+          document.getElementById('footer').innerHTML = data;
+        });
+    }
+
+
+    getNavbar('../../components/common/navbar.html');
+    getFooter('../../components/common/footer.html');

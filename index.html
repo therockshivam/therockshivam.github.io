@@ -5,30 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
   <title>Shivam's Vault</title>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="/css/style.css" />
+  <link rel="stylesheet" href="/components/common/common.css">
   <!-- AOS CSS -->
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 <body>
 
-  <!-- 🔥 NAVBAR -->
-  <nav class="navbar" data-aos="fade-down">
-    <div class="logo">⚡ Shivam</div>
-    <ul class="nav-links" id="navLinks">
-      <li><a href="#hero">Home</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="#tools">Tools</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#vault">Notes</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
-  </nav>
+  <div id="navbar"></div>
 
-  <!-- Light/Dark Toggle -->
+  <!-- Light/Dark Toggle
   <div class="theme-toggle" onclick="toggleTheme()">
     <span id="theme-icon">🌙</span>
-  </div>
+  </div> -->
 
   <!-- Hero Section -->
   <header class="hero" id="hero" data-aos="fade-up">
@@ -56,7 +45,7 @@
       <div class="tool-card" data-aos="fade-up">
         <h3>🧠 Grammar AI</h3>
         <p>An AI-powered grammar correction system to make your writing shine.</p>
-        <a href="/portfolio/tools/grammar-correction-system.html">Try It →</a>
+        <a href="/portfolio/tools/gammar-correction-system/index.html">Try It →</a>
       </div>
   
       <div class="tool-card" data-aos="fade-up" data-aos-delay="100">
@@ -128,17 +117,18 @@
   </section>
 
   <!-- Footer -->
-  <footer class="footer" >
-    <p>✨ Ideas by Shivam ✨</p>
-  </footer>
+  <div id="footer"></div>
 
-  <script src="script.js"></script>
+  <!-- <script src="/js/script.js"></script> -->
+  <script type="module" src="/js/script.js"></script>
+  <!-- <script src="/components/common/navbar.html"></script> -->
   <!-- AOS JS -->
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="js/common-components.js"></script>
   <script>
     AOS.init({
       duration: 1000,
-      once: true
+      once: false
     });
   </script>
 </body>
