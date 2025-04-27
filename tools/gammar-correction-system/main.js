@@ -3,8 +3,8 @@
 let response;
 
 
-document.getElementById('grammar-container').innerHTML=`  <div style="display: flex;
-justify-content: space-evenly; width: 100%; align-items:center;"><img src="../../images/no result.png" alt="No Result" > <h3>No result yet</h3></div>`;
+// document.getElementById('grammar-container').innerHTML=`  <div style="display: flex;
+// justify-content: space-evenly; width: 100%; align-items:center;"><img src="../../images/no result.png" alt="No Result" > <h3>No result yet</h3></div>`;
 
 async function checkGrammar() {
 

@@ -1,12 +1,17 @@
 // On page load, apply saved theme
 window.onload = function() {
   const savedTheme = localStorage.getItem("theme");
+  const icon =document.getElementById("theme-icon");
   if (savedTheme === "dark") {
     document.body.classList.add("dark-mode");
-    document.getElementById("theme-icon").textContent = "🌙";
+    if(icon){
+      icon.textContent = "🌙";
+    }
   } else {
     document.body.classList.remove("dark-mode");
-    document.getElementById("theme-icon").textContent = "🌞";
+    if(icon){
+      icon.textContent = "🌞";
+    }
   }
 }
 
