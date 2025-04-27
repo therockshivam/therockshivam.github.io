@@ -1,0 +1,47 @@
+/* css for index html */
+
+:root {
+    --bg-color: #f4f4f9;
+    --text-color: #333;
+    --h2-color: #4A4E69;
+    --textarea-bg: #ffffff;
+    --textarea-text: #000000;
+    --btn-bg: #f0f0f0;
+    --btn-text: #000000;
+    --container-bg: #f8f9fa;
+    --border-color:#ddd;
+    --label-color:#222;
+    --card: #f2f2f2;
+    --hover-color:violet;
+}  
+
+
+body.dark-mode {
+    --card: #1a1a1a;
+    --bg-color: #121212;
+    --text-color: #e0e0e0;
+    --textarea-bg: #1e1e1e;
+    --textarea-text: #e0e0e0;
+    --btn-bg: #333333;
+    --btn-text: #e0e0e0;
+    --container-bg: #1a1a1a;
+    --label-color:#fff;
+    --h2-color: #e2e4f6;
+    --hover-color:green;
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: var(--bg-color);
+    color: var(--text-color);
+    transition: background 0.4s, color 0.4s;
+  }

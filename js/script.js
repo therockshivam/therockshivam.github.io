@@ -1,6 +1,3 @@
-
-
-
 // Typewriter Effect
 const typeText = ["Creative Coder", "Problem Solver", "YouTube Educator", "Tech Explorer"];
 let index = 0, charIndex = 0;

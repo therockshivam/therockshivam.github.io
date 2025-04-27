@@ -1,3 +1,4 @@
+@import url('/css/parent.css');
 
 .footer{
     position: fixed;
@@ -5,40 +6,13 @@
     bottom:0;
 }
 
-:root {
-    --bg-color: #f4f4f9;
-    --text-color: #333;
-    --h2-color: #4A4E69;
-    --textarea-bg: #ffffff;
-    --textarea-text: #000000;
-    --btn-bg: #f0f0f0;
-    --btn-text: #000000;
-    --footer-bg: #f8f9fa;
-    /* --container-bg-color:#fff; */
-    --border-color:#ddd;
-    --label-color:#222;
-}                   
 
-
-.dark-mode {
-    --bg-color: #121212;
-    --text-color: #e0e0e0;
-    --textarea-bg: #1e1e1e;
-    --textarea-text: #e0e0e0;
-    --btn-bg: #333333;
-    --btn-text: #e0e0e0;
-    --footer-bg: #1a1a1a;
-    --label-color:#fff;
-    /* --container-bg-color:red ; */
-}
-
-
-body {
+/* body {
     font-family: Arial, sans-serif;
     background: var(--bg-color);
     line-height: 1.6;
     color: var(--text-color);
-}
+} */
 
 
 .container {
@@ -48,6 +22,7 @@ body {
     margin-top:3% !important;
     max-width: 800px;
     margin: auto;
+    padding-bottom: 200px;
 }
 
 
@@ -65,7 +40,7 @@ h2 {
 
 .label {
     font-weight: bold;
-    color: var(--label-color);
+    color: var(--text-color);
 }
 
 .mcq {
@@ -85,7 +60,8 @@ h2 {
 /* //#ccc */
 
 .option:hover {
-    background: #eee;
+    background: var(--hover-color);
+    color:var(--text-color);
 }
 
 .option.correct {
@@ -179,7 +155,8 @@ h2 {
     border-radius: 50px;
     text-align: left;
     align-content: center;
-    width: 50vw;
+    /* width: 50vw; */
+    max-width: 800px;
     height: auto;
     padding:20px;
     /* -webkit-text-stroke: thin; */

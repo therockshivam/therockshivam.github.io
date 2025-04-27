@@ -1,20 +1,4 @@
-/* css for index html  */
-:root {
-    --bg: #0f0f0f;
-    --text: #f1f1f1;
-    --card: #1a1a1a;
-    --hf:rgba(0, 0, 0, 0.85);
-  }
-  
-  body.light {
-    --bg: #ffffff;
-    --text: #111;
-    --card: #f2f2f2;
-    --hf: #f2f2f2;
-  }
-
-
-  /* navbar  */
+@import url('../../css/parent.css');
 
   /* 🔝 Navbar */
   .navbar {
@@ -22,14 +6,19 @@
     width: 100%;
     left:0;
     top: 0;
-    background: var(--hf);
-    color: var(--text);
+    background: var(--container-bg);
+    color: var(--text-color);
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 14px 30px;
     z-index: 1000;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+
+  }
+
+  .navbar ul{
+    margin-bottom: 0;
   }
   .logo {
     font-size: 22px;
@@ -98,35 +87,13 @@
     }
     .menu-toggle {
       display: block;
+      margin-right: 40px;
     }
   }
 
   .logo {
     font-size: 22px;
     white-space: nowrap;
-  }
-  
-  /* css for index html  */
-:root {
-    --bg: #0f0f0f;
-    --text: #f1f1f1;
-    --card: #1a1a1a;
-    --hf:rgba(0, 0, 0, 0.85);
-  }
-  
-  body.light {
-    --bg: #ffffff;
-    --text: #111;
-    --card: #f2f2f2;
-    --hf: #f2f2f2;
-  }
-  
-  body {
-    margin: 0;
-    font-family: 'Segoe UI', sans-serif;
-    background: var(--bg);
-    color: var(--text);
-    transition: background 0.4s, color 0.4s;
   }
   
   .theme-toggle {
@@ -204,8 +171,9 @@
   footer {
     text-align: center;
     padding: 30px 0;
-    background: var(--hf);
+    background: var(--container-bg);
     font-style: italic;
-    color: #aaa;
+    color: var(--text-color);
+    box-shadow: 0 -3px 6px rgba(0, 0, 0, 0.3);
   }
   
