@@ -1,0 +1,24 @@
+body{
+    text-align:center;
+}
+.attr{
+    display:flex;
+    flex-direction:row;
+    width:fit-content;
+    border:none;
+    font-weight: bolder;
+    text-transform: capitalize;
+}
+
+p{
+    display:flex;
+    width:fit-content;
+    width:60%;
+     border:2px solid grey; 
+     padding:1px;
+} 
+div{
+    display:flex;
+    justify-content:space-between;
+    width:60%;
+}
