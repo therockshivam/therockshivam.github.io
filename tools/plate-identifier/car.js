@@ -65,9 +65,29 @@ document.getElementById('value33').innerText=dt.result.extraction_output.vehicle
     xhr.setRequestHeader("X-RapidAPI-Host", "rc-verification.p.rapidapi.com");
 
     xhr.send(data);
-}
-
-;
+};
 
 
+    // Load the footer dynamically
+    function getFooter(location) {
+        fetch(location)
+          .then(response => response.text())
+          .then(data => {
+            document.getElementById('footer').innerHTML = data;
+          });
+      }
+
+       // Load the header dynamically
+    function getNavbar(location) {
+        fetch(location)
+          .then(response => response.text())
+          .then(data => {
+            document.getElementById('navbar').innerHTML = data;
+          });
+      }
+  
+  
+  
+      getNavbar('../../components/common/navbar.html');
+      getFooter('../../components/common/footer.html');
 
