@@ -1,0 +1,95 @@
+@import url('/css/parent.css');
+
+body {
+    font-family: Arial, sans-serif;
+    background: var(--bg-color);
+    color: var(text-color);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .chat-container {
+    width: 100%;
+    max-width: 500px;
+    /* background: #2b2b3c; */
+   
+    background: var( --container-bg);
+    border-radius: 8px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    height: 90vh;
+  }
+  
+  #chatbox {
+    flex: 1;
+    padding: 15px;
+    overflow-y: auto;
+  }
+  
+  .message {
+    margin: 10px 0;
+  }
+  
+  .user {
+    text-align: right;
+    color: #9be7ff;
+  }
+  
+  .bot {
+    text-align: left;
+    color: var(--text-color);
+  }
+  
+  #chat-form {
+    display: flex;
+    padding: 10px;
+    background: var(--card);
+  }
+  
+  #user-input {
+    flex: 1;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+  }
+  
+  button {
+    padding: 10px;
+    margin-left: 10px;
+    background: #4dabf7;
+    border: none;
+    color: white;
+    border-radius: 5px;
+  }
+  
+
+  /* HTML: <div class="loader"></div> */
+.loader {
+    width: 40px;
+    aspect-ratio: 2;
+    --_g: no-repeat radial-gradient(circle closest-side,var(--h2-color) 90%,#0000);
+    background: 
+      var(--_g) 0%   50%,
+      var(--_g) 50%  50%,
+      var(--_g) 100% 50%;
+    background-size: calc(100%/3) 50%;
+    animation: l3 1s infinite linear;
+  }
+  @keyframes l3 {
+      20%{background-position:0%   0%, 50%  50%,100%  50%}
+      40%{background-position:0% 100%, 50%   0%,100%  50%}
+      60%{background-position:0%  50%, 50% 100%,100%   0%}
+      80%{background-position:0%  50%, 50%  50%,100% 100%}
+  }
+
+
+  button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+  
