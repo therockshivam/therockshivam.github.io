@@ -2,9 +2,17 @@ const API_URL = "https://api-inference.huggingface.co/models/facebook/blenderbot
 const HUGGINGFACE_TOKEN = "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";
 
 const chatbox = document.getElementById("chatbox");
-const form = document.getElementById("chat-form");
+ const form = document.getElementById("chat-form");
 const userInput = document.getElementById("user-input");
 const sendBtn = document.getElementById("send-btn");
+
+// form.addEventListener("submit", (e) => {
+//   const message = userInput.value.trim();
+//   if (message) {
+//     getBotResponse(message);
+//     userInput.value = "";
+//   }
+// });
 
 // Utility: Generate safe unique IDs
 function generateId() {
@@ -35,6 +43,7 @@ function appendMessage(sender, message, isLoader = false) {
 
 let notFirstTime=false;
 async function getBotResponse(userMessage) {
+ 
   sendBtn.disabled = true;
 
   if(notFirstTime){

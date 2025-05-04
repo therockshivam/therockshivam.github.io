@@ -1,6 +1,6 @@
 @import url('/css/parent.css');
 
-body {
+.chatbot-body {
     font-family: Arial, sans-serif;
     background: var(--bg-color);
     color: var(text-color);

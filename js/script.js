@@ -25,7 +25,6 @@ typeWriter();
       fetch(location)
         .then(response => response.text())
         .then(data => {
-          console.log(data);
           document.getElementById('navbar').innerHTML = data;
         });
     }
@@ -39,6 +38,42 @@ typeWriter();
         });
     }
 
+     // Load the footer dynamically
+     function getChatbot(location) {
+      fetch(location)
+        .then(response => response.text())
+        .then(data => {
+          document.getElementById('chatbot-container').innerHTML=data;
+        });
+    }
+
 
     getNavbar('../components/common/navbar.html');
     getFooter('../components/common/footer.html');
+
+    document.getElementById("chatbot-toggle").addEventListener("click", function () {
+
+      getChatbot('../tools/chatbot/script.js')
+
+      // Load the chatbot iframe (if needed)
+      const container = document.getElementById("chatbot-container");
+      
+      // Toggle visibility
+      if (container.style.display === "none" || container.style.display === "") {
+        container.style.display = "block";
+    
+        // // Optional: Load the chatbot iframe only once
+        // if (!container.innerHTML.trim()) {
+        //   container.innerHTML = `<iframe src="/tools/chatbot/index.html" width="400" height="500" style="border:none;"></iframe>`;
+        // }
+      } else {
+        container.style.display = "none";
+      }
+    });
+    
+
+   
+
+
+ 
+    
