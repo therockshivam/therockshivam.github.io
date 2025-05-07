@@ -71,8 +71,77 @@ typeWriter();
         container.style.display = "none";
       }
     });
-    
 
+
+    const toolsData = [
+      {
+        title: "🧠 Grammar AI",
+        description: "An AI-powered grammar correction system to make your writing shine.",
+        link: "/tools/gammar-correction-system",
+        status: "live"
+      },
+      {
+        title: "🚗🔎 Plate Identifier",
+        description: "Instantly fetch vehicle details by simply entering a number plate.",
+        link: "/tools/plate-identifier",
+        status: "live"
+      },
+      {
+        title: "Chatbot",
+        description: "Chat with our bot to find out more.",
+        link: "/tools/chatbot/",
+        status: "live"
+      },
+      {
+        title: "🛠️ Web Dev Toolkit",
+        description: "A simple drag-and-drop tool to create a proper structure and styling for websites using HTML, CSS, and JS.",
+        link: "/tools/web-dev-toolkit",
+        status: "live"
+      },
+      {
+        title: "📋 Resume Generator",
+        description: "Build modern resumes effortlessly with AI-guided content.",
+        link: "#",
+        status: "coming-soon"
+      },
+      {
+        title: "🧠 MindFlow",
+        description: "Organize your thoughts, goals, and ideas with a smart structure.",
+        link: "#",
+        status: "coming-soon"
+      },
+      {
+        title: "📸 Face Attendance",
+        description: "Face Recognition Attendance System built with real-time detection.",
+        link: "#",
+        status: "coming-soon"
+      }
+    ];
+
+    function setToolsData(toolsData){
+
+    const toolsContainer = document.getElementById("tools-container");
+
+    toolsData.forEach((tool, index) => {
+      const toolCard = document.createElement("div");
+      toolCard.className = "tool-card";
+      toolCard.setAttribute("data-aos", "fade-up");
+      toolCard.setAttribute("data-aos-delay", index * 100);
+
+      toolCard.innerHTML = `
+        <h3>${tool.title}</h3>
+        <p>${tool.description}</p>
+        <a href="${tool.link}">Try It →</a>
+        <span class="status-badge ${tool.status}" data-aos="fade-in">
+          <span class="blinking-dot"></span> ${tool.status === "live" ? "LIVE" : "Coming Soon"}
+        </span>
+      `;
+
+      toolsContainer.appendChild(toolCard);
+    });
+  }
+
+  setToolsData(toolsData);
    
 
 

@@ -6,7 +6,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <title>Shivam's Vault</title>
-  <!-- <link rel="stylesheet" href="/css/parent.css"> -->
   <link rel="stylesheet" href="/css/style.css" />
   <link rel="stylesheet" href="/components/common/common.css">
   <!-- AOS CSS -->
@@ -16,11 +15,6 @@
 <body>
 
   <div id="navbar"></div>
-
-  <!-- Light/Dark Toggle
-  <div class="theme-toggle" onclick="toggleTheme()">
-    <span id="theme-icon">🌙</span>
-  </div> -->
 
   <!-- Hero Section -->
   <header class="hero" id="hero" data-aos="fade-up">
@@ -44,76 +38,7 @@
     <h2>🧰 Tools</h2>
     <p>Here are some smart tools I’ve built to boost productivity and creativity using AI and web tech.</p>
 
-    <div class="tool-grid">
-      <div class="tool-card" data-aos="fade-up">
-        <h3>
-          🧠 Grammar AI
-
-        </h3>
-
-        <p>An AI-powered grammar correction system to make your writing shine.</p>
-        <a href="/tools/gammar-correction-system">Try It →</a>
-        <span class="status-badge live" data-aos="fade-in">
-          <span class="blinking-dot"></span> LIVE
-        </span>
-      </div>
-
-      <div class="tool-card" data-aos="fade-up" data-aos-delay="100">
-        <h3>🚗🔎 Plate Identifier</h3>
-        <p>Instantly fetch vehicle details by simply entering a number plate.</p>
-        <a href="/tools/plate-identifier">Try It →</a>
-        <span class="status-badge live" data-aos="fade-in">
-          <span class="blinking-dot"></span> LIVE
-        </span>
-      </div>
-
-      <div class="tool-card" data-aos="fade-up" data-aos-delay="100">
-        <h3>Chatbot
-        </h3>
-        <p>Chat with out bot to find out more</p>
-        <a href="/tools/chatbot/">Try It →</a>
-        <span class="status-badge live" data-aos="fade-in">
-          <span class="blinking-dot"></span> LIVE
-        </span>
-      </div>
-
-      <div class="tool-card" data-aos="fade-up" data-aos-delay="100">
-        <h3>🛠️ Web Dev Toolkit </h3>
-        <p>A simple drag-and-drop tool to create a proper structure and styling for websites using HTML, CSS, and JS.
-        </p>
-        <a href="#">Explore →</a>
-        <span class="status-badge coming-soon" data-aos="fade-in">
-          <span class="blinking-dot"></span> Coming Soon
-        </span>
-      </div>
-
-      <div class="tool-card" data-aos="fade-up" data-aos-delay="200">
-        <h3>📋 Resume Generator</h3>
-        <p>Build modern resumes effortlessly with AI-guided content.</p>
-        <a href="#">Build Now →</a>
-        <span class="status-badge coming-soon" data-aos="fade-in">
-          <span class="blinking-dot"></span> Coming Soon
-        </span>
-      </div>
-
-      <div class="tool-card" data-aos="fade-up" data-aos-delay="300">
-        <h3>🧠 MindFlow</h3>
-        <p>Organize your thoughts, goals, and ideas with a smart structure.</p>
-        <a href="#">Use Tool →</a>
-        <span class="status-badge coming-soon" data-aos="fade-in">
-          <span class="blinking-dot"></span> Coming Soon
-        </span>
-      </div>
-
-      <div class="tool-card" data-aos="fade-up" data-aos-delay="400">
-        <h3>📸 Face Attendance</h3>
-        <p>Face Recognition Attendance System built with real-time detection.</p>
-        <a href="#">View Demo →</a>
-        <span class="status-badge coming-soon" data-aos="fade-in">
-          <span class="blinking-dot"></span> Coming Soon
-        </span>
-      </div>
-    </div>
+    <div class="tool-grid" id="tools-container"></div>
   </section>
 
   <!-- Projects Section -->
@@ -135,7 +60,6 @@
       <p>An AI-powered thought organizer – part memory, part mentor.</p>
     </div>
   </section>
-
 
   <!-- Vault / Notes -->
   <section id="vault" data-aos="fade-right">
@@ -167,11 +91,10 @@
 
   <!-- Chatbot Window -->
   <div id="chatbot-container" style="display:none; position: fixed; top:50%">
-
+</div>
 
     <script type="module" src="/js/script.js"></script>
     <script src="/tools/chatbot/script.js"></script>
-    <!-- <script src="/components/common/navbar.html"></script> -->
     <!-- AOS JS -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="js/common-components.js"></script>
@@ -180,12 +103,7 @@
         duration: 1000,
         once: false
       });
-
-
     </script>
-
-
   </div>
 </body>
-
 </html>

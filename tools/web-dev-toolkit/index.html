@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Web Development Tool</title>
+  <link rel="stylesheet" href="webpage-tool.css">
+  <script src="webpage-tool.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+  <!-- For font -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body>
+  <header>
+    Web Development Tool
+
+    <button onClick="themeChanged()">Night Mode</button>
+  </header>
+  <menu class="menu">
+    <ul>
+      <li class="menu-list">Home</li>
+      <li class="menu-list">About Us</li>
+      <li class="menu-list">How To Use</li>
+      <li class="menu-list">Developer</li>
+      <li class="menu-list">More</li>
+      <button id="border-show-hide-button" onclick="showBorder()">Show border</button>
+      <button onclick="convertAndPreview()">Sync</button>
+      <button onclick="downloadDivContent()">Download</button>
+    </ul>
+  </menu>
+  <div id="wrapper">
+    <div id="container">
+      <div id="sidebar-left" >
+<span class="sidebar-close" onclick="closeSidebar('left')">X</span>
+        <h3 style="text-align: center;">TAGS</h3>
+        <input  type="search" placeholder="Search Tag" name="" id="">
+        <ol id="tag-list">
+
+        </ol>
+
+      </div>
+      <div id="resizer-left"><span id="expand-left-sidebar" onclick="expandSidebar('left')">=></span></div>
+
+      <div id="main" class="drop-zone dropzone"  ondragover="onDragOver(event);" ondrop="onDrop(event);"
+        style="padding:20px; border:1px solid black;">
+      </div>
+      <div id="resizer-right"><span id="expand-right-sidebar" onclick="expandSidebar('right')">open </span></div>
+      <div id="sidebar-right">
+        <span class="sidebar-close" onclick="closeSidebar('right')">X</span>
+        <h3 style="text-align: center;">Styles</h3>
+        <ol id="style-list">
+        <li class="style-item-container">
+          <h5>Text</h5>
+          <input class="style-input" class="style-input" type="text" id="text-set" onkeyup="setText()">
+          <div class="align-3">
+          <i class='fas fa-align-left style-input' onclick="textAlign('left')"></i> 
+          <i class='fas fa-align-center style-input' onclick="textAlign('center')"></i> 
+          <i class='fas fa-align-right style-input' onclick="textAlign('right')"></i>
+        </div>
+        <div class="align-3">
+          <i class="fas fa-bold style-input" onclick="sentFontStyle('bold')"></i>
+          <i class="fas fa-italic style-input"  onclick="sentFontStyle('italic')"></i>
+          <i class="fas fa-underline style-input"  onclick="sentFontStyle('underline')"></i>
+        </div>
+      </li>
+        <li class="style-item-container">
+          <h5>Color</h5>
+          <select name="" class="style-input" id="color-for" onchange="setColorFor()" onkeyup="setColorFor()">
+            <option value="color" selected>Text Color</option>
+            <option value="background-color">Background Color</option>
+          </select>
+          <input class="style-input" type="color" id="color-picker" title="Choose your color"
+            oninput="setColorByColorPicker()">
+          <input class="style-input" type="text" id="color-input" onkeyup="setColorByNameOrHex()"
+            placeholder="Enter color (hex, name, etc.)">
+          <div class="style-input" id="color-preview" style="width: 50px; height: 50px; border: 1px solid #000;"></div>
+        </li>
+        <li class="style-item-container">
+          <h5>Width</h5>
+          <select class="style-input" name="select" id="unit-for-width" onclick="setWidth()"
+            onchange="setWidth()">
+          </select>
+          <input class="style-input" type="number" name="" id="resizeWidth" onkeyup="setWidth()">
+        </li>
+        <div class="style-item-container">
+          <h5>Height</h5>
+          <select class="style-input" name="select" id="unit-for-height" onclick="setHeight()"
+            onchange="setHeight()">
+          </select>
+          <input class="style-input" type="number" name="" id="ResizeHeight" onkeyup="setHeight()">
+        </div>
+        <li class="style-item-container">
+          <h5>Padding</h5>
+          <select class="style-input" name="select" id="unit-for-padding" onclick="setPadding()"
+            onchange="setPadding()">
+          </select>
+          <!-- <input class="style-input" type="number" name="" id="padding-box" onkeyup="setPadding()"> -->
+          <input class="style-input" type="number" name="" id="top-padding-box" onkeyup="setPadding()">
+          <input class="style-input" type="number" name="" id="right-padding-box" onkeyup="setPadding()">
+          <input class="style-input" type="number" name="" id="bottom-padding-box" onkeyup="setPadding()">
+          <input class="style-input" type="number" name="" id="left-padding-box" onkeyup="setPadding()">
+        </li>
+        <li class="style-item-container">
+          <h5>Margin</h5>
+          <select class="style-input" name="select" id="unit-for-margin" onclick="setMargin()" onchange="setMargin()">
+          </select>
+          <!-- <input class="style-input" type="number" name="" id="margin-box" onkeyup="setMargin()"> -->
+          <input class="style-input" type="number" name="" id="top-margin-box" onkeyup="setMargin()">
+          <input class="style-input" type="number" name="" id="right-margin-box" onkeyup="setMargin()">
+          <input class="style-input" type="number" name="" id="bottom-margin-box" onkeyup="setMargin()">
+          <input class="style-input" type="number" name="" id="left-margin-box" onkeyup="setMargin()">
+
+        
+   
+
+        </li>
+      </div>
+    </ol>
+    </div>
+ 
+  </div>
+
+  <div>
+   <h3 style="border:2px solid black; text-align: center; padding:4px"> Code Editor</h3>
+    <pre  contenteditable="true" id="code-preview" style="padding:10px; font-size: medium; background-color: black; color:whitesmoke; overflow-x: auto;" onkeyup="changeTheTemplate()">
+       
+    </pre>
+  </div>
+
+
+  <script>
+
+    //resize left right panel
+    const resizerLeft = document.querySelector("#resizer-left");
+    const sidebarLeft = document.querySelector("#sidebar-left");
+    const resizerRight = document.querySelector("#resizer-right");
+    const sidebarRight = document.querySelector("#sidebar-right");
+
+    resizerLeft.addEventListener("mousedown", (event) => {
+      document.addEventListener("mousemove", resizeLeft, false);
+      document.addEventListener("mouseup", () => {
+        document.removeEventListener("mousemove", resizeLeft, false);
+      }, false);
+    });
+
+    function resizeLeft(e) {
+      const maxLeftWidth = 300; // Max width for the left sidebar
+      const newWidth = Math.min(maxLeftWidth, e.x);
+      const size = `${newWidth}px`;
+      sidebarLeft.style.flexBasis = size;
+    }
+
+    resizerRight.addEventListener("mousedown", (event) => {
+      document.addEventListener("mousemove", resizeRight, false);
+      document.addEventListener("mouseup", () => {
+        document.removeEventListener("mousemove", resizeRight, false);
+      }, false);
+    });
+
+    function resizeRight(e) {
+      const containerWidth = document.querySelector("#container").offsetWidth;
+      const maxRightWidth = 300; // Max width for the right sidebar
+      const newWidth = Math.min(maxRightWidth, containerWidth - e.x);
+      const size = `${newWidth}px`;
+      sidebarRight.style.flexBasis = size;
+    }
+
+
+
+
+    // Retrieve the ul element by its id
+    const tagList = document.getElementById("tag-list");
+    const styleList = document.getElementById("style-list");
+    if (tagList) {
+      htmlTags.forEach((tag, index) => {
+
+        const li = document.createElement("li");
+        li.draggable = true;
+        li.id = `tag-${index}`;
+        li.className = 'html-tag-list'
+        li.classList.add(`tag-${index}`);
+        li.dataset.tagIndex = index;
+        
+switch(tag) {
+  case 'h1':
+    li.innerHTML = `<h1>Heading 1</h1>`;
+    break;
+  case 'h2':
+    li.innerHTML = `<h2>Heading 2</h2>`;
+    break;
+  case 'h3':
+    li.innerHTML = `<h3>Heading 3</h3>`;
+    break;
+  case 'h4':
+    li.innerHTML = `<h4>Heading 4</h4>`;
+    break;
+  case 'h5':
+    li.innerHTML = `<h5>Heading 5</h5>`;
+    break;
+  case 'h6':
+    li.innerHTML = `<h6>Heading 6</h6>`;
+    break;
+  case 'p':
+    li.innerHTML = `<p>Paragraph</p>`;
+    break;
+  case 'a':
+    li.innerHTML = `<a href="#">Link</a>`;
+    break;
+  case 'div':
+    li.innerHTML = `<div>Division</div>`;
+    break;
+  case 'span':
+    li.innerHTML = `<span>Inline container</span>`;
+    break;
+  case 'ul':
+    li.innerHTML = `<ul><li>Unordered list item</li></ul>`;
+    break;
+  case 'ol':
+    li.innerHTML = `<ol><li>Ordered list item</li></ol>`;
+    break;
+  case 'li':
+    li.innerHTML = `<li>List item</li>`;
+    break;
+  case 'img':
+    li.innerHTML = `<img src="./assets/web-development-tool-dashboard.png" alt="Image">`;
+    break;
+  case 'form':
+    li.innerHTML = `<form><input type="text" placeholder="Input field"><button>Submit</button></form>`;
+    break;
+  case 'input':
+    li.innerHTML = `<input type="text" placeholder="Input field">`;
+    break;
+  case 'button':
+    li.innerHTML = `<button>Button</button>`;
+    break;
+  case 'label':
+    li.innerHTML = `<label for="input">Label</label><input id="input" type="text">`;
+    break;
+  case 'br':
+    li.innerHTML = `<p>Line break<br>More text</p>`;
+    break;
+  case 'hr':
+    li.innerHTML = `<hr>`;
+    break;
+  case 'table':
+    li.innerHTML = `<table><thead><tr><th>Header</th></tr></thead><tbody><tr><td>Cell</td></tr></tbody></table>`;
+    break;
+  case 'tr':
+    li.innerHTML = `<tr><td>Table row</td></tr>`;
+    break;
+  case 'td':
+    li.innerHTML = `<td>Table cell</td>`;
+    break;
+  case 'th':
+    li.innerHTML = `<th>Table header</th>`;
+    break;
+  case 'thead':
+    li.innerHTML = `<thead><tr><th>Table head</th></tr></thead>`;
+    break;
+  case 'tbody':
+    li.innerHTML = `<tbody><tr><td>Table body</td></tr></tbody>`;
+    break;
+  case 'tfoot':
+    li.innerHTML = `<tfoot><tr><td>Table footer</td></tr></tfoot>`;
+    break;
+  case 'style':
+    li.innerHTML = `<style>body { font-family: Arial; }</style>`;
+    break;
+  case 'link':
+    li.innerHTML = `<link rel="stylesheet" href="styles.css">`;
+    break;
+  case 'header':
+    li.innerHTML = `<header>Header section</header>`;
+    break;
+  case 'footer':
+    li.innerHTML = `<footer>Footer section</footer>`;
+    break;
+  case 'section':
+    li.innerHTML = `<section>Section</section>`;
+    break;
+  case 'article':
+    li.innerHTML = `<article>Article</article>`;
+    break;
+  case 'aside':
+    li.innerHTML = `<aside>Aside content</aside>`;
+    break;
+  case 'nav':
+    li.innerHTML = `<nav>Navigation</nav>`;
+    break;
+  case 'iframe':
+    li.innerHTML = `<iframe src="https://example.com"></iframe>`;
+    break;
+  case 'video':
+    li.innerHTML = `
+  <video controls><source src="./assets/web-development-tool-how-to-use.mp4" type="video/mp4"  autoplay=true>Your browser does not support the video tag.</video>`;
+    break;
+  case 'audio':
+    li.innerHTML = `<audio controls><source src="audio.mp3" type="audio/mp3">Your browser does not support the audio tag.</audio>`;
+    break;
+  case 'source':
+    li.innerHTML = `<video><source src="./assets/web-development-tool-how-to-use.mp4" type="video/mp4"></video>`;
+    break;
+  case 'canvas':
+    li.innerHTML = `<canvas id="myCanvas" width="200" height="100"></canvas>`;
+    break;
+  case 'svg':
+    li.innerHTML = `<svg width="100" height="100"><circle cx="50" cy="50" r="40" stroke="black" stroke-width="3" fill="red" /></svg>`;
+    break;
+  case 'textarea':
+    li.innerHTML = `<textarea>Textarea</textarea>`;
+    break;
+  case 'select':
+    li.innerHTML = `<select><option>Option 1</option><option>Option 2</option></select>`;
+    break;
+  case 'option':
+    li.innerHTML = `<select><option>Option 1</option><option>Option 2</option></select>`;
+    break;
+  case 'embed':
+    li.innerHTML = `<embed src="embed-content.pdf" width="500" height="375">`;
+    break;
+  case 'object':
+    li.innerHTML = `<object data="object-content.pdf" width="500" height="375"></object>`;
+    break;
+  case 'param':
+    li.innerHTML = `<object data="movie.swf"><param name="autoplay" value="true"></object>`;
+    break;
+  case 'track':
+    li.innerHTML = `<video controls><track kind="captions" src="captions_en.vtt" srclang="en" label="English"></video>`;
+    break;
+  case 'map':
+    li.innerHTML = `<map name="image-map"><area target="" alt="Area" title="Area" href="#" coords="34,44,270,350" shape="rect"></map>`;
+    break;
+  case 'area':
+    li.innerHTML = `<map name="image-map"><area target="" alt="Area" title="Area" href="#" coords="34,44,270,350" shape="rect"></map>`;
+    break;
+  case 'blockquote':
+    li.innerHTML = `<blockquote cite="https://example.com">This is a blockquote.</blockquote>`;
+    break;
+  case 'cite':
+    li.innerHTML = `<cite>This is a citation.</cite>`;
+    break;
+  case 'q':
+    li.innerHTML = `<q>This is a short quotation.</q>`;
+    break;
+  case 'abbr':
+    li.innerHTML = `<abbr title="Abbreviation">Abbr</abbr>`;
+    break;
+  case 'address':
+    li.innerHTML = `<address>123 Main St, Anytown, USA</address>`;
+    break;
+  case 'code':
+    li.innerHTML = `<code>console.log('Hello, world!');</code>`;
+    break;
+  case 'pre':
+    li.innerHTML = `<pre>Preformatted text</pre>`;
+    break;
+  case 'b':
+    li.innerHTML = `<b>Bold text</b>`;
+    break;
+  case 'strong':
+    li.innerHTML = `<strong>Strong importance</strong>`;
+    break;
+  case 'i':
+    li.innerHTML = `<i>Italic text</i>`;
+    break;
+  case 'em':
+    li.innerHTML = `<em>Emphasized text</em>`;
+    break;
+  case 'u':
+    li.innerHTML = `<u>Underlined text</u>`;
+    break;
+  case 's':
+    li.innerHTML = `<s>Strikethrough text</s>`;
+    break;
+  case 'mark':
+    li.innerHTML = `<mark>Highlighted text</mark>`;
+    break;
+  case 'small':
+    li.innerHTML = `<small>Smaller text</small>`;
+    break;
+  case 'sub':
+    li.innerHTML = `<sub>Subscript text</sub>`;
+    break;
+  case 'sup':
+    li.innerHTML = `<sup>Superscript text</sup>`;
+    break;
+  case 'del':
+    li.innerHTML = `<del>Deleted text</del>`;
+    break;
+  case 'ins':
+    li.innerHTML = `<ins>Inserted text</ins>`;
+    break;
+  case 'details':
+    li.innerHTML = `<details><summary>Details</summary>More details here.</details>`;
+    break;
+  case 'summary':
+    li.innerHTML = `<details><summary>Details summary</summary>More details here.</details>`;
+    break;
+  case 'time':
+    li.innerHTML = `<time datetime="2023-01-01">January 1, 2023</time>`;
+    break;
+  case 'var':
+    li.innerHTML = `<var>x</var> = <var>y</var>`;
+    break;
+  case 'samp':
+    li.innerHTML = `<samp>Sample output</samp>`;
+    break;
+  case 'kbd':
+    li.innerHTML = `<kbd>Ctrl+C</kbd>`;
+    break;
+  case 'bdi':
+    li.innerHTML = `<bdi>Text with isolation boundary</bdi>`;
+    break;
+  case 'bdo':
+    li.innerHTML = `<bdo dir="rtl">This text is right-to-left</bdo>`;
+    break;
+  case 'ruby':
+    li.innerHTML = `<ruby>漢 <rt>Kan</rt> 字 <rt>ji</rt></ruby>`;
+    break;
+  case 'rt':
+    li.innerHTML = `<ruby>漢 <rt>Kan</rt> 字 <rt>ji</rt></ruby>`;
+    break;
+  case 'rp':
+    li.innerHTML = `<ruby>漢 <rp>(</rp><rt>Kan</rt><rp>)</rp> 字 <rp>(</rp><rt>ji</rt><rp>)</rp></ruby>`;
+    break;
+  case 'wbr':
+    li.innerHTML = `Word<wbr>break opportunity`;
+    break;
+  default:
+    break;
+}
+
+
+        li.addEventListener("dragstart", (event) => onDragStart(event));
+        li.addEventListener("dragend", (event) => dragEnd(event));
+        const currentTag = document.createElement(tag);
+        currentTag.className = "html-tag-list-item";
+        // currentTag.textContent=tag;
+        li.appendChild(currentTag);
+
+        //popup on hover
+        li.addEventListener('mouseenter', () => showPopover(li.id, tag));
+
+        //popout on leave hover
+        li.addEventListener('mouseleave', () => onLeaverItem(li.id));
+ 
+
+        tagList.appendChild(li);
+      });
+
+      
+    } else {
+      console.error("Element with id 'tag-list' not found.");
+    }
+
+    convertAndPreview();
+
+
+
+
+    /*  Tooltip functionality (to display element tag on hover) */
+    const tooltip = document.createElement('div');
+    tooltip.className = 'tooltip';
+    document.body.appendChild(tooltip);
+
+    document.addEventListener('mouseover', e => {
+      if (e.target.classList.contains('dropped-element') || e.target.classList.contains('html-tag-list-item')) {
+        tooltip.textContent = e.target.tagName.toLowerCase();
+        tooltip.style.display = 'block';
+        tooltip.style.left = `${e.pageX + 10}px`;
+        tooltip.style.top = `${e.pageY + 10}px`;
+      }
+    });
+
+    document.addEventListener('mousemove', e => {
+      tooltip.style.left = `${e.pageX + 10}px`;
+      tooltip.style.top = `${e.pageY + 10}px`;
+    });
+
+    document.addEventListener('mouseout', () => {
+      tooltip.style.display = 'none';
+    });
+
+    // Event listener for click on remove button
+    document.addEventListener('click', (e) => {
+      if (e.target.classList.contains('remove-button')) {
+        e.target.parentElement.remove();
+      }
+    });
+
+    let paddingUnits = document.getElementById('unit-for-padding');
+    let marginUnits = document.getElementById('unit-for-margin');
+    let widthUnits=document.getElementById('unit-for-width');
+    let heightUnits=document.getElementById('unit-for-height');
+
+    listOfUnits.forEach(unit => {
+      // let newOption = `<option value='${unit}'>${unit}</option>`
+      let newOptionPadding = document.createElement('option');
+      newOptionPadding.value = unit;
+      newOptionPadding.textContent = unit;
+      paddingUnits.appendChild(newOptionPadding);
+
+      let newOptionMargin = document.createElement('option');
+      newOptionMargin.value = unit;
+      newOptionMargin.textContent = unit;
+      marginUnits.appendChild(newOptionMargin);
+
+      let newOptionHeight=document.createElement('option');
+      newOptionHeight.value=unit;
+      newOptionHeight.textContent=unit;
+      heightUnits.appendChild(newOptionHeight);
+
+      let newOptionWidth=document.createElement('option');
+      newOptionWidth.value=unit;
+      newOptionWidth.textContent=unit;
+      widthUnits.appendChild(newOptionWidth);
+    });
+
+    // Select the default option by value in both dropdowns
+    // marginUnits.value = "px";
+    // paddingUnits.value = "px";
+    // widthUnits.value='px';
+    // heightUnits.value='px';
+
+    marginUnits.value, paddingUnits.value,widthUnits.value,heightUnits.value='px';
+
+
+  </script>
+
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+
+
+
+
+</body>
+
+</html>
