@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="webpage-tool.css">
+    <script src="webpage-tool.js"></script>
+
+</head>
+<body>
+    <header class="header">
+        <ul>
+            <li class="header-list">Home</li>
+            <li class="header-list" >About Us</li>
+            <li class="header-list">How To Use</li>
+            <li class="header-list">Developer</li>
+            <li class="header-list">More</li>
+        </ul>
+    </header>
+    <div id="wrapper">
+        <div id="container">
+          <div id="sidebar-left">
+            
+                <h3>TAGS</h3>
+                <input type="search" placeholder="Search Tag" name="" id="">
+                <ol id="tag-list">
+                    
+                </ol>
+
+          </div>
+          <div id="resizer-left"></div>
+
+          <div id="main" class="drop-zone" id="previewContainer"  ondragover="onDragOver(event); " ondrop="onDrop(event);"
+          style="padding:20px; border:1px solid black;">
+        
+          </div>
+          <!-- <pre id="code-viewer"></pre> -->
+      
+          <div id="resizer-right"></div>
+          <div id="sidebar-right">
+          <h3>Styles</h3>
+
+
+         <div class="style-item-container">
+             <h5>Padding</h5>
+            <select name="select" id="unit-for-padding" onclick="setPadding()" onchange="setPadding()">
+            </select>
+            <input type="number" name="" id="padding-box" onkeyup="setPadding()">
+            <input type="number" name="" id="left-padding-box" onkeyup="setPadding()">
+            <input type="number" name="" id="right-padding-box" onkeyup="setPadding()">
+            <input type="number" name="" id="top-padding-box" onkeyup="setPadding()">
+            <input type="number" name="" id="bottom-padding-box" onkeyup="setPadding()">
+        </div>
+        <div class="style-item-container">
+            <h5>Text</h5>
+        <input type="text" id="text-set" onkeyup="setText()">    
+        </div>
+          </div>
+        </div>
+      </div>
+
+      <script>
+        const resizerLeft = document.querySelector("#resizer-left");
+        const sidebarLeft = document.querySelector("#sidebar-left");
+        const resizerRight = document.querySelector("#resizer-right");
+        const sidebarRight = document.querySelector("#sidebar-right");
+
+        resizerLeft.addEventListener("mousedown", (event) => {
+          document.addEventListener("mousemove", resizeLeft, false);
+          document.addEventListener("mouseup", () => {
+            document.removeEventListener("mousemove", resizeLeft, false);
+          }, false);
+        });
+
+        function resizeLeft(e) {
+          const maxLeftWidth = 300; // Max width for the left sidebar
+          const newWidth = Math.min(maxLeftWidth, e.x);
+          const size = `${newWidth}px`;
+          sidebarLeft.style.flexBasis = size;
+        }
+
+        resizerRight.addEventListener("mousedown", (event) => {
+          document.addEventListener("mousemove", resizeRight, false);
+          document.addEventListener("mouseup", () => {
+            document.removeEventListener("mousemove", resizeRight, false);
+          }, false);
+        });
+
+        function resizeRight(e) {
+          const containerWidth = document.querySelector("#container").offsetWidth;
+          const maxRightWidth = 300; // Max width for the right sidebar
+          const newWidth = Math.min(maxRightWidth, containerWidth - e.x);
+          const size = `${newWidth}px`;
+          sidebarRight.style.flexBasis = size;
+        }
+      </script>
+
+
+<script>
+
+    // Retrieve the ul element by its id
+    const tagList = document.getElementById("tag-list");
+    const styleList = document.getElementById("style-list");
+    if (tagList || styleList) {
+        htmlTags.forEach((tag, index) => {
+            const li = document.createElement("li");
+            //   li.textContent = tag;
+            li.draggable = true;
+
+
+
+            li.id = `tag-${index}`;
+            li.className = 'html-tag-list'
+
+            li.classList.add(`tag-${index}`);
+            li.dataset.tagIndex = index;
+            li.addEventListener("dragstart", (event) => onDragStart(event));
+
+            const currentTag = document.createElement(tag);
+            currentTag.className = "html-tag-list-item";
+
+            li.appendChild(currentTag);
+
+            li.addEventListener('mouseenter', () => showPopover(li.id, tag));
+            li.addEventListener('mouseleave', () => onLeaverItem(li.id));
+
+            tagList.appendChild(li);
+        });
+    } else {
+        console.error("Element with id 'tag-list' not found.");
+    }
+
+    convertAndPreview();
+
+
+
+    // document.getElementById('code-viewer').addEventListener('mousedown', dragMouseDown);
+    //     function dragMouseDown(e) {
+    //         e.preventDefault();
+    //         const element = e.target;
+    //         let offsetX = e.clientX - element.getBoundingClientRect().left;
+    //         let offsetY = e.clientY - element.getBoundingClientRect().top;
+    //         function elementDrag(e) {
+    //             e.preventDefault();
+    //             element.style.left = `${e.clientX - offsetX}px`;
+    //             element.style.top = `${e.clientY - offsetY}px`;
+    //         }
+    //         function stopElementDrag() {
+    //             document.removeEventListener('mousemove', elementDrag);
+    //             document.removeEventListener('mouseup', stopElementDrag);
+    //         }
+    //         document.addEventListener('mousemove', elementDrag);
+    //         document.addEventListener('mouseup', stopElementDrag);
+    //     }
+
+
+/*  Tooltip functionality (to display element tag on hover) */
+
+  const tooltip = document.createElement('div');
+  tooltip.className = 'tooltip';
+  document.body.appendChild(tooltip);
+
+  document.addEventListener('mouseover', e => {
+      if (e.target.classList.contains('dropped-element') || e.target.classList.contains('html-tag-list-item')) {
+
+          tooltip.textContent = e.target.tagName.toLowerCase();
+          tooltip.style.display = 'block';
+          tooltip.style.left = `${e.pageX + 10}px`;
+          tooltip.style.top = `${e.pageY + 10}px`;
+
+  }   
+  });
+
+  document.addEventListener('mousemove', e => {
+      tooltip.style.left = `${e.pageX + 10}px`;
+      tooltip.style.top = `${e.pageY + 10}px`;
+  });
+
+  document.addEventListener('mouseout', () => {
+      tooltip.style.display = 'none';
+  });
+
+  // Event listener for click on remove button
+document.addEventListener('click', (e) => {
+  if (e.target.classList.contains('remove-button')) {
+    e.target.parentElement.remove();
+  }
+});
+
+let paddingUnits=document.getElementById('unit-for-padding');
+listOfUnits.forEach(unit=>{
+    let newOption=document.createElement('option');
+    newOption.value=unit;
+    newOption.textContent=unit;
+    console.log(listOfUnits[0]==unit)
+    if(unit.index==0){
+        newOption.selected=true;
+    }
+    paddingUnits.appendChild(newOption);
+})
+    
+</script>
+</body>
+</html>
