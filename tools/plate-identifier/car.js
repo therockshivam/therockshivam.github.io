@@ -83,6 +83,7 @@ document.getElementById('value33').innerText=dt.result.extraction_output.vehicle
           .then(response => response.text())
           .then(data => {
             document.getElementById('navbar').innerHTML = data;
+            document.getElementById('dynamic-name').textContent = "Plate Identifier"; 
           });
       }
   

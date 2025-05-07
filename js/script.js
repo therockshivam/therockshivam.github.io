@@ -26,6 +26,7 @@ typeWriter();
         .then(response => response.text())
         .then(data => {
           document.getElementById('navbar').innerHTML = data;
+          document.getElementById('dynamic-name').textContent = "Portfolio"; 
         });
     }
   
