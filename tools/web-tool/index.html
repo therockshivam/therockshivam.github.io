@@ -6,7 +6,12 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <div style="margin-bottom: 10px;">
+        <button onclick="undo()">⏪ Undo</button>
+        <button onclick="redo()">⏩ Redo</button>
+      </div>
 <div class="container">
+    
   <div class="toolbox">
     <h3>Toolbox</h3>
     <div class="draggable" draggable="true" data-type="button">Button</div>
@@ -28,8 +33,17 @@
     <label>Background Color:
       <input type="color" id="bgColor">
     </label>
+    <button id="floatingDelete" style="position:absolute; display:none;">🗑</button>
+
   </div>
+  
 </div>
+
+<div class="code-editor">
+    <h3>Raw HTML Editor</h3>
+    <textarea onkeyup="applyRawHtml()" id="htmlEditor"></textarea>
+    <button onclick="applyRawHtml()">Apply</button>
+  </div>
 
 <script src="script.js"></script>
 </body>
