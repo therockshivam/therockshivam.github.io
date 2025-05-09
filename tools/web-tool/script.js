@@ -1,9 +1,125 @@
 const undoStack = [];
 const redoStack = [];
 const canvas = document.getElementById('canvas');
+// const draggables = document.querySelectorAll('.draggable');
 const draggables = document.querySelectorAll('.draggable');
+draggables.forEach(el => {
+  el.addEventListener('dragstart', e => {
+    e.dataTransfer.setData('type', e.target.dataset.type);
+  });
+});
 let selectedElement = null;
 let elementIdCounter = 0;
+
+const toolboxItems = [
+    { type: 'button', label: 'Button' },
+    { type: 'paragraph', label: 'Paragraph' },
+    { type: 'heading', label: 'Heading' },
+    { type: 'image', label: 'Image' }
+  ];
+  
+  const styleFields = [
+    { label: 'Text', type: 'text', id: 'textContent' },
+    { label: 'Font Size', type: 'number', id: 'fontSize', value: 16 },
+    { label: 'Background Color', type: 'color', id: 'bgColor' },
+    { label: 'Text Color', type: 'color', id: 'textColor' }
+  ];
+
+//   function renderToolbox() {
+//     const toolbox = document.querySelector('.toolbox');
+//     toolbox.innerHTML = '<h3>Toolbox</h3>';
+//     toolboxItems.forEach(item => {
+//       const div = document.createElement('div');
+//       div.className = 'draggable';
+//       div.setAttribute('draggable', 'true');
+//       div.setAttribute('data-type', item.type);
+//       div.textContent = item.label;
+//       toolbox.appendChild(div);
+//     });
+//   }
+
+function renderToolbox() {
+    const toolbox = document.querySelector('.toolbox');
+    toolbox.innerHTML = '<h3>Toolbox</h3>';
+    toolboxItems.forEach(item => {
+      const div = document.createElement('div');
+      div.className = 'draggable';
+      div.setAttribute('draggable', 'true');
+      div.setAttribute('data-type', item.type);
+      div.textContent = item.label;
+      toolbox.appendChild(div);
+    });
+  
+    // 🔧 Add event listeners after rendering
+    const draggables = document.querySelectorAll('.draggable');
+    draggables.forEach(el => {
+      el.addEventListener('dragstart', e => {
+        e.dataTransfer.setData('type', e.target.dataset.type);
+      });
+    });
+  }
+  
+
+  const elementTemplates = {
+    button: () => {
+      const el = document.createElement('button');
+      el.innerText = 'Click Me';
+      return el;
+    },
+    paragraph: () => {
+      const el = document.createElement('p');
+      el.innerText = 'Editable paragraph';
+      return el;
+    },
+    heading: () => {
+      const el = document.createElement('h1');
+      el.innerText = 'Heading';
+      return el;
+    },
+    image: () => {
+      const el = document.createElement('img');
+      el.src = 'https://via.placeholder.com/100';
+      el.alt = 'Placeholder Image';
+      el.style.width = '100px';
+      return el;
+    }
+  };
+  
+
+  function renderStyleEditor() {
+    const editor = document.querySelector('#editor');
+    editor.innerHTML = '<h3>Style Editor</h3>';
+  
+    styleFields.forEach(field => {
+      const label = document.createElement('label');
+      label.innerText = `${field.label}: `;
+  
+      const input = document.createElement('input');
+      input.type = field.type;
+      input.id = field.id;
+      if (field.value !== undefined) {
+        input.value = field.value;
+      }
+  
+      label.appendChild(input);
+      editor.appendChild(label);
+    });
+  
+    const delBtn = document.createElement('button');
+    delBtn.id = 'floatingDelete';
+    delBtn.innerText = '🗑';
+    delBtn.style.position = 'absolute';
+    delBtn.style.display = 'none';
+  
+    editor.appendChild(delBtn);
+  }
+
+  document.addEventListener('DOMContentLoaded', () => {
+    renderToolbox();
+    renderStyleEditor();
+  });
+  
+  
 
 // DRAG AND DROP
 draggables.forEach(el => {
@@ -47,12 +163,18 @@ canvas.addEventListener('drop', e => {
   // 🎯 Fresh element drop
   if (!type) return;
 
-  if (type === 'button') {
-    newEl = document.createElement('button');
-    newEl.innerText = 'Click Me';
-  } else if (type === 'paragraph') {
-    newEl = document.createElement('p');
-    newEl.innerText = 'Editable paragraph';
+//   if (type === 'button') {
+//     newEl = document.createElement('button');
+//     newEl.innerText = 'Click Me';
+//   } else if (type === 'paragraph') {
+//     newEl = document.createElement('p');
+//     newEl.innerText = 'Editable paragraph';
+//   }
+
+if (elementTemplates[type]) {
+    newEl = elementTemplates[type]();
+  } else {
+    console.warn('Unsupported element type:', type);
   }
 
   newEl.dataset.id = `el-${elementIdCounter++}`;
