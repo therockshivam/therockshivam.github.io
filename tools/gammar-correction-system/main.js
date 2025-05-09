@@ -161,6 +161,7 @@ function renderGrammarUI(data) {
   </div>`
     }
 
+    resetUI();
 }
 
 function expandInput(){
