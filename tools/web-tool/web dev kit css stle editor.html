@@ -1,0 +1,216 @@
+<script>const styleOptions = [
+  // Box Model
+  {
+    label: "Margin",
+    property: "margin",
+    type: "input",
+    inputType: "text",
+    placeholder: "e.g. 10px 20px"
+  },
+  {
+    label: "Padding",
+    property: "padding",
+    type: "input",
+    inputType: "text",
+    placeholder: "e.g. 10px"
+  },
+  {
+    label: "Border",
+    property: "border",
+    type: "input",
+    inputType: "text",
+    placeholder: "e.g. 1px solid #000"
+  },
+  {
+    label: "Border Radius",
+    property: "border-radius",
+    type: "input",
+    inputType: "text",
+    placeholder: "e.g. 10px"
+  },
+
+  // Colors
+  {
+    label: "Font Color",
+    property: "color",
+    type: "input",
+    inputType: "color"
+  },
+  {
+    label: "Background Color",
+    property: "background-color",
+    type: "input",
+    inputType: "color"
+  },
+
+  // Typography
+  {
+    label: "Font Size",
+    property: "font-size",
+    type: "input",
+    inputType: "text",
+    placeholder: "e.g. 16px"
+  },
+  {
+    label: "Font Weight",
+    property: "font-weight",
+    type: "select",
+    options: ["normal", "bold", "bolder", "lighter", "100", "200", "300", "400", "500", "600", "700", "800", "900"]
+  },
+  {
+    label: "Text Align",
+    property: "text-align",
+    type: "select",
+    options: ["left", "center", "right", "justify"]
+  },
+
+  // Flexbox
+  {
+    label: "Display",
+    property: "display",
+    type: "select",
+    options: ["block", "inline", "flex", "inline-flex", "grid", "inline-block", "none"]
+  },
+  {
+    label: "Flex Direction",
+    property: "flex-direction",
+    type: "select",
+    options: ["row", "row-reverse", "column", "column-reverse"]
+  },
+  {
+    label: "Justify Content",
+    property: "justify-content",
+    type: "select",
+    options: ["flex-start", "flex-end", "center", "space-between", "space-around", "space-evenly"]
+  },
+  {
+    label: "Align Items",
+    property: "align-items",
+    type: "select",
+    options: ["stretch", "flex-start", "flex-end", "center", "baseline"]
+  },
+
+  // Positioning
+  {
+    label: "Position",
+    property: "position",
+    type: "select",
+    options: ["static", "relative", "absolute", "fixed", "sticky"]
+  },
+  {
+    label: "Top",
+    property: "top",
+    type: "input",
+    inputType: "text",
+    placeholder: "e.g. 10px"
+  },
+  {
+    label: "Left",
+    property: "left",
+    type: "input",
+    inputType: "text",
+    placeholder: "e.g. 20px"
+  },
+  {
+    label: "Z-Index",
+    property: "z-index",
+    type: "input",
+    inputType: "number"
+  }
+];
+
+
+
+</script>
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Web Dev Toolkit – Style Editor</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+
+    #style-options-container {
+      width: 300px;
+      padding: 20px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      background-color: #f7f7f7;
+    }
+
+    .style-control {
+      margin-bottom: 15px;
+    }
+
+    .style-control label {
+      display: block;
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+
+    .style-control input,
+    .style-control select {
+      width: 100%;
+      padding: 5px;
+      border: 1px solid #aaa;
+      border-radius: 4px;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>🛠️ Style Editor Panel</h2>
+  <div id="style-options-container"></div>
+
+  <script>
+    // selectedElement simulation
+    const selectedElement = { target: document.body }; // for now apply on <body>
+
+    // Your dynamic rendering function
+    function renderStylePanel(styles, containerId) {
+      const container = document.getElementById(containerId);
+      styles.forEach(style => {
+        const wrapper = document.createElement("div");
+        wrapper.className = "style-control";
+
+        const label = document.createElement("label");
+        label.innerText = style.label;
+        wrapper.appendChild(label);
+
+        let input;
+        if (style.type === "input") {
+          input = document.createElement("input");
+          input.type = style.inputType || "text";
+          input.placeholder = style.placeholder || "";
+        } else if (style.type === "select") {
+          input = document.createElement("select");
+          style.options.forEach(opt => {
+            const option = document.createElement("option");
+            option.value = opt;
+            option.textContent = opt;
+            input.appendChild(option);
+          });
+        }
+
+        input.addEventListener("input", () => {
+          if (selectedElement) {
+            selectedElement.target.style.setProperty(style.property, input.value);
+          }
+        });
+
+        wrapper.appendChild(input);
+        container.appendChild(wrapper);
+      });
+    }
+
+
+
+    // Call render
+    renderStylePanel(styleOptions, "style-options-container");
+  </script>
+</body>
+</html>

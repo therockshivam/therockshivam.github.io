@@ -1,0 +1,43 @@
+body {
+    font-family: Arial, sans-serif;
+    background: #f7f7f7;
+    padding: 20px;
+  }
+  
+  .container {
+    display: flex;
+    gap: 20px;
+  }
+  
+  .toolbox, .editor {
+    width: 200px;
+    background: white;
+    padding: 10px;
+    border: 1px solid #ccc;
+  }
+  
+  .draggable {
+    background: #cde;
+    margin-bottom: 10px;
+    padding: 10px;
+    cursor: grab;
+  }
+  
+  .canvas {
+    flex-grow: 1;
+    min-height: 400px;
+    background: white;
+    border: 2px dashed #aaa;
+    padding: 10px;
+  }
+  
+  .canvas > * {
+    margin: 10px 0;
+    cursor: pointer;
+  }
+  
+  .editor label {
+    display: block;
+    margin: 10px 0;
+  }
+  

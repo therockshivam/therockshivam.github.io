@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Drag & Drop Builder Demo</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="container">
+  <div class="toolbox">
+    <h3>Toolbox</h3>
+    <div class="draggable" draggable="true" data-type="button">Button</div>
+    <div class="draggable" draggable="true" data-type="paragraph">Paragraph</div>
+  </div>
+
+  <div id="canvas" class="canvas">
+    <p>Drop items here</p>
+  </div>
+
+  <div id="editor" class="editor">
+    <h3>Style Editor</h3>
+    <label>Text:
+      <input type="text" id="textContent">
+    </label>
+    <label>Font Size:
+      <input type="number" id="fontSize" value="16">
+    </label>
+    <label>Background Color:
+      <input type="color" id="bgColor">
+    </label>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

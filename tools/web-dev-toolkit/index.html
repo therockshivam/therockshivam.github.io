@@ -113,10 +113,88 @@
           <input class="style-input" type="number" name="" id="right-margin-box" onkeyup="setMargin()">
           <input class="style-input" type="number" name="" id="bottom-margin-box" onkeyup="setMargin()">
           <input class="style-input" type="number" name="" id="left-margin-box" onkeyup="setMargin()">
-
-        
-   
-
+        </li>
+        <li class="style-item-container">
+          <h5>FlexBox  <input type="checkbox" onclick="toggleFlexBox()" name="flex-box" id="flex-box-toggle"></h5>
+            <select class="style-input" name="select" id="flex-direction" onclick="setFlexDirection()"
+            onchange="setFlexDirection()">
+            <option value="row">Row</option>
+            <option value="column">Column</option>
+            <option value="row-reverse">Row Reverse</option>
+            <option value="column-reverse">Column Reverse</option>
+            </select>
+            <select class="style-input" name="select" id="flex-wrap" onclick="setFlexWrap()"
+            onchange="setFlexWrap()">
+            <option value="nowrap">No Wrap</option>
+            <option value="wrap">Wrap</option>
+            <option value="wrap-reverse">Wrap Reverse</option>
+            </select>
+            <select class="style-input" name="select" id="justify-content" onclick="setJustifyContent()"
+            onchange="setJustifyContent()">
+            <option value="flex-start">Flex Start</option>
+            <option value="flex-end">Flex End</option>
+            <option value="center">Center</option>
+            <option value="space-between">Space Between</option>
+            <option value="space-around">Space Around</option>
+            </select>
+            <select class="style-input" name="select" id="align-items" onclick="setAlignItems()"
+            onchange="setAlignItems()">
+            <option value="stretch">Stretch</option>
+            <option value="flex-start">Flex Start</option>
+            <option value="flex-end">Flex End</option>
+            <option value="center">Center</option>
+            <option value="baseline">Baseline</option>
+            </select>
+            <select class="style-input" name="select" id="align-content" onclick="setAlignContent()"
+            onchange="setAlignContent()">
+            <option value="stretch">Stretch</option>
+            <option value="flex-start">Flex Start</option>
+            <option value="flex-end">Flex End</option>
+            <option value="center">Center</option>
+            <option value="space-between">Space Between</option>
+            <option value="space-around">Space Around</option>
+            </select>
+            <select class="style-input" name="select" id="align-self" onclick="setAlignSelf()"
+            onchange="setAlignSelf()">
+            <option value="auto">Auto</option>
+            <option value="flex-start">Flex Start</option>
+            <option value="flex-end">Flex End</option>
+            <option value="center">Center</option>
+            <option value="baseline">Baseline</option>
+            <option value="stretch">Stretch</option>
+            </select>
+            <select class="style-input" name="select" id="flex-grow" onclick="setFlexGrow()"
+            onchange="setFlexGrow()">
+            <option value="0">0</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            </select>
+            <select class="style-input" name="select" id="flex-shrink" onclick="setFlexShrink()"
+            onchange="setFlexShrink()">
+            <option value="0">0</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            </select>
+            <select class="style-input" name="select" id="flex-basis" onclick="setFlexBasis()"
+            onchange="setFlexBasis()">
+            <option value="auto">Auto</option>
+            <option value="0">0</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            </select>
+            <select class="style-input" name="select" id="flex-align-content" onclick="setFlexAlignContent()"
+            onchange="setFlexAlignContent()">
+            <option value="stretch">Stretch</option>
+            <option value="flex-start">Flex Start</option>
+            <option value="flex-end">Flex End</option>
+            <option value="center">Center</option>
+            <option value="space-between">Space Between</option>
+            <option value="space-around">Space Around</option>
+            </select>
+          
         </li>
       </div>
     </ol>

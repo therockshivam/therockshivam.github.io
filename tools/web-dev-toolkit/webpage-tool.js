@@ -1,3 +1,5 @@
+let isFlexboxActive = false;
+
 const htmlTags = [
   //'html',      // Root element
   //'head',      // Metadata
@@ -765,6 +767,8 @@ function onDragOver(event) {
 
 // }
 
+
+
 function dragEnd(event) {
   let main = document.getElementById("main");
   let innerContainer=document.getElementsByClassName('clickable');
@@ -1307,3 +1311,70 @@ function themeChanged(){
 //       this.focus();
 //   });
 // });
+
+function toggleFlexBox() {
+  // const flexBox = document.getElementById("flex-box"); 
+  // const flexBoxContainer = document.getElementById("flex-box-container");
+  const flexBoxButton = document.getElementById("flex-box-toggle"); 
+
+  if (selectedElement.target.style.display === "none" || selectedElement.target.style.display === "") {
+    selectedElement.target.style.display = "block";
+    // flexBoxContainer.style.display = "block";
+    isFlexboxActive = true;
+    flexBoxButton.checked = true;
+  } else {
+    selectedElement.target.style.display = "none";
+    // flexBoxContainer.style.display = "none";
+    isFlexboxActive = false;
+    flexBoxButton.checked = false;
+  }
+}
+
+// Flexbox style setters
+function setFlexDirection() {
+  if (!isFlexboxActive || !selectedElement) return;
+  const value = document.getElementById("flex-direction").value;
+  selectedElement.target.style.setProperty("flex-direction", value);
+}
+
+function setFlexWrap() {
+  if (!isFlexboxActive || !selectedElement) return;
+  const value = document.getElementById("flex-wrap").value;
+  selectedElement.target.style.setProperty("flex-wrap", value);
+}
+
+function setJustifyContent() {
+  if (!isFlexboxActive || !selectedElement) return;
+  const value = document.getElementById("justify-content").value;
+  selectedElement.target.style.setProperty("justify-content", value);
+}
+
+function setAlignItems() {
+  if (!isFlexboxActive || !selectedElement) return;
+  const value = document.getElementById("align-items").value;
+  selectedElement.target.style.setProperty("align-items", value);
+}
+
+function setAlignContent() {
+  if (!isFlexboxActive || !selectedElement) return;
+  const value = document.getElementById("align-content").value;
+  selectedElement.target.style.setProperty("align-content", value);
+}
+
+function setAlignSelf() {
+  if (!isFlexboxActive || !selectedElement) return;
+  const value = document.getElementById("align-self").value;
+  selectedElement.target.style.setProperty("align-self", value);
+}
+
+function setFlexGrow() {
+  if (!isFlexboxActive || !selectedElement) return;
+  const value = document.getElementById("flex-grow").value;
+  selectedElement.target.style.setProperty("flex-grow", value);
+}
+
+function setFlexShrink() {
+  if (!isFlexboxActive || !selectedElement) return;
+  const value = document.getElementById("flex-shrink").value;
+  selectedElement.target.style.setProperty("flex-shrink", value);
+}
