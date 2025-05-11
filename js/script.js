@@ -44,6 +44,7 @@ typeWriter();
       fetch(location)
         .then(response => response.text())
         .then(data => {
+          console.log('this is the chatbot data',data)
           document.getElementById('chatbot-container').innerHTML=data;
         });
     }
@@ -54,7 +55,7 @@ typeWriter();
 
     document.getElementById("chatbot-toggle").addEventListener("click", function () {
 
-      getChatbot('../tools/chatbot/script.js')
+      getChatbot('../tools/chatbot/index.html')
 
       // Load the chatbot iframe (if needed)
       const container = document.getElementById("chatbot-container");
