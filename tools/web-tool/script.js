@@ -1,7 +1,7 @@
 const undoStack = [];
 const redoStack = [];
 const canvas = document.getElementById('canvas');
-// const draggables = document.querySelectorAll('.draggable');
+
 const draggables = document.querySelectorAll('.draggable');
 draggables.forEach(el => {
   el.addEventListener('dragstart', e => {
@@ -31,7 +31,7 @@ const toolboxItems = [
 //     toolboxItems.forEach(item => {
 //       const div = document.createElement('div');
 //       div.className = 'draggable';
-//       div.setAttribute('draggable', 'true');
+      // div.setAttribute('draggable', 'true');
 //       div.setAttribute('data-type', item.type);
 //       div.textContent = item.label;
 //       toolbox.appendChild(div);
@@ -376,3 +376,6 @@ function applyRawHtml() {
   canvas.innerHTML = html;
   updateHtmlEditor(); // Refresh the editor after applying
 }
+
+
+// style editor

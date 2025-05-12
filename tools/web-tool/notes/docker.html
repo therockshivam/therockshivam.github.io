@@ -1,0 +1,44 @@
+Docker
+
+📦 Image Command:
+List images - docker images
+Pull image - docker pull <image-name>
+Remove image - docker rmi <image-id or image-name>
+Build image -	docker build -t <tag-name> .
+
+🧱 Container Commands:
+List running containers - docker ps
+List all containers (including stopped) - docker ps -a
+Run a container - docker run <image-name>
+Run in background (detached) - docker run -d <image>
+Run with port mapping - docker run -p 8080:80 <image>
+Name a container - docker run --name mycontainer <image>
+Start a container - docker start <container-id or name>
+Stop a container - docker stop <container-id or name>
+Restart a container - docker restart <container-id or name>
+Remove container - docker rm <container-id or name>
+Run interactive shell - docker run -it <image> bash
+Exec command in running container - docker exec -it <container-name> bash
+
+🔍  Inspect & Logs :
+Inspect container details - docker inspect <container-id>
+View container logs -	docker logs <container-id>
+Follow real-time logs - docker logs -f <container-id>
+
+📂Volumes & Data :
+List volumes - docker volume ls
+Create a volume - docker volume create <volume-name>
+Mount volume to container - docker run -v <volume-name>:/path/in/container <image>
+
+
+🧹 Cleanup Commands :
+Remove all stopped containers - docker container prune
+Remove all unused images - docker image prune
+Remove all unused volumes - docker volume prune
+Remove everything unused - docker system prune
+
+🧰 Docker Compose
+Start containers - docker-compose up
+Start in background - docker-compose up -d
+Stop containers - docker-compose down
+Rebuild services - docker-compose up --build
