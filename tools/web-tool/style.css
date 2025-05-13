@@ -14,6 +14,8 @@ body {
     background: white;
     padding: 10px;
     border: 1px solid #ccc;
+    height: 80vh;
+    overflow-y: auto;
   }
   
   .draggable {
@@ -57,7 +59,7 @@ body {
   
 
   .selected-element {
-    outline: 2px dashed #00bcd4;
+    /* outline: 2px dashed #00bcd4; */
     position: relative;
   }
   
@@ -73,8 +75,6 @@ body {
       width: 200px;
       padding: 20px;
       border: 1px solid #ccc;
-      border-radius: 8px;
-      background-color: #f7f7f7;
       height:80vh;
       overflow-y: auto;
     }

@@ -10,14 +10,20 @@
         <button onclick="undo()">⏪ Undo</button>
         <button onclick="redo()">⏩ Redo</button>
         <button onclick="clearCode()">🗑️ Clear</button>
+        <button onclick="downloadDivContent()">Download</button>
       </div>
 <div class="container">
     
-  <div class="toolbox">
+  <!-- <div class="toolbox">
     <h3>Toolbox</h3>
     <div class="draggable" draggable="true" data-type="button">Button</div>
     <div class="draggable" draggable="true" data-type="paragraph">Paragraph</div>
-  </div>
+  </div> -->
+  <div class="toolbox">
+  <h3>Toolbox</h3>
+  <div id="toolboxItems"></div>
+</div>
+
 
   
   <div id="canvas" class="canvas">

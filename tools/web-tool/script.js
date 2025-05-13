@@ -1,134 +1,176 @@
 const undoStack = [];
 const redoStack = [];
 const canvas = document.getElementById('canvas');
-
-const draggables = document.querySelectorAll('.draggable');
-draggables.forEach(el => {
-  el.addEventListener('dragstart', e => {
-    e.dataTransfer.setData('type', e.target.dataset.type);
-  });
-});
 let selectedElement = null;
 let elementIdCounter = 0;
 
-const toolboxItems = [
-    { type: 'button', label: 'Button' },
-    { type: 'paragraph', label: 'Paragraph' },
-    { type: 'heading', label: 'Heading' },
-    { type: 'image', label: 'Image' }
-  ];
-  
-  const styleFields = [
-    { label: 'Text', type: 'text', id: 'textContent' },
-    { label: 'Font Size', type: 'number', id: 'fontSize', value: 16 },
-    { label: 'Background Color', type: 'color', id: 'bgColor' },
-    { label: 'Text Color', type: 'color', id: 'textColor' }
-  ];
+// TOOLBOX CONFIG
+const htmlTags = [
+  //'html',      // Root element
+  //'head',      // Metadata
+  //'title',     // Document title
+  //'body',      // Document body
+  "h1", // Main heading
+  "h2", // heading 2
+  "h3", // heading 3
+  "h4", // heading 4
+  "h5", // heading 5
+  "h6", // heading 6
+  "p", // Paragraph
+  "a", // Anchor link
+  "div", // Division/container
+  "span", // Inline container
+  "ul", // Unordered list
+  "ol", // Ordered list
+  "li", // List item
+  "img", // Image
+  "form", // Form container
+  "input", // Input field
+  "button", // Button
+  "label", // Label for form elements
+  "br", // Line break
+  "hr", // Horizontal rule
+  "table", // Table
+  "tr", // Table row
+  "td", // Table cell
+  "th", // Table header cell
+  "thead", // Table head
+  "tbody", // Table body
+  "tfoot", // Table footer
+  // "style", // Style block
+  "link", // Link to external resources
+  // "script", // Script
+  "header", // Header section
+  "footer", // Footer section
+  "section", // Section
+  "article", // Article
+  "aside", // Aside content
+  "nav", // Navigation links
+  "iframe", // Inline frame
+  "video", // Video
+  "audio", // Audio
+  "source", // Media source
+  "canvas", // Drawing area
+  "svg", // Scalable vector graphics
+  "input", // Input field
+  "textarea", // Multi-line text input
+  "select", // Dropdown menu
+  "option", // Option in dropdown
+  "iframe", // Inline frame
+  "embed", // External content
+  "object", // Embeds an object
+  "param", // Parameters for object
+  "track", // Text tracks for media
+  "map", // Image map
+  "area", // Area in an image map
+  "blockquote", // Block quotation
+  "cite", // Citation
+  "q", // Short quotation
+  "abbr", // Abbreviation
+  "address", // Contact information
+  "code", // Code snippet
+  "pre", // Preformatted text
+  "b", // Bold text
+  "strong", // Strong importance
+  "i", // Italic text
+  "em", // Emphasis
+  "u", // Underlined text
+  "s", // Strikethrough text
+  "mark", // Highlighted text
+  "small", // Smaller text
+  "sub", // Subscript text
+  "sup", // Superscript text
+  "del", // Deleted text
+  "ins", // Inserted text
+  "details", // Details element
+  "summary", // Summary for details
+  "time", // Date/time
+  "var", // Variable
+  "samp", // Sample output
+  "kbd", // Keyboard input
+  "pre", // Preformatted text
+  "code", // Code snippet
+  "bdi", // Isolation boundary
+  "bdo", // Bi-directional override
+  "ruby", // Ruby annotations
+  "rt", // Ruby text
+  "rp", // Ruby parentheses
+  "wbr", // Word break opportunity
+];
 
-//   function renderToolbox() {
-//     const toolbox = document.querySelector('.toolbox');
-//     toolbox.innerHTML = '<h3>Toolbox</h3>';
-//     toolboxItems.forEach(item => {
-//       const div = document.createElement('div');
-//       div.className = 'draggable';
-      // div.setAttribute('draggable', 'true');
-//       div.setAttribute('data-type', item.type);
-//       div.textContent = item.label;
-//       toolbox.appendChild(div);
-//     });
-//   }
 
-function renderToolbox() {
-    const toolbox = document.querySelector('.toolbox');
-    toolbox.innerHTML = '<h3>Toolbox</h3>';
-    toolboxItems.forEach(item => {
-      const div = document.createElement('div');
-      div.className = 'draggable';
-      div.setAttribute('draggable', 'true');
-      div.setAttribute('data-type', item.type);
-      div.textContent = item.label;
-      toolbox.appendChild(div);
-    });
-  
-    // 🔧 Add event listeners after rendering
-    const draggables = document.querySelectorAll('.draggable');
-    draggables.forEach(el => {
-      el.addEventListener('dragstart', e => {
-        e.dataTransfer.setData('type', e.target.dataset.type);
-      });
-    });
-  }
-  
 
-  const elementTemplates = {
-    button: () => {
-      const el = document.createElement('button');
-      el.innerText = 'Click Me';
-      return el;
-    },
-    paragraph: () => {
-      const el = document.createElement('p');
-      el.innerText = 'Editable paragraph';
-      return el;
-    },
-    heading: () => {
-      const el = document.createElement('h1');
-      el.innerText = 'Heading';
-      return el;
-    },
-    image: () => {
-      const el = document.createElement('img');
-      el.src = 'image editor.png';
-      el.alt = 'Placeholder Image';
-      el.style.width = '100px';
-      return el;
+const tagProperties = {
+  img: { src: 'image editor.png', alt: 'Image description' },
+  a: { href: '#', innerText: 'Link' },
+  input: { type: 'text', placeholder: 'Enter text' },
+  textarea: { placeholder: 'Type something...' },
+  button: { innerText: 'Click Me' }
+};
+
+const elementTemplates = {};
+htmlTags.forEach(tag => {
+  elementTemplates[tag] = () => {
+    const el = document.createElement(tag);
+    const props = tagProperties[tag];
+    if (props) {
+      for (const [key, value] of Object.entries(props)) {
+        if (key === 'innerText') {
+          el.innerText = value;
+        } else {
+          el.setAttribute(key, value);
+        }
+      }
+    } else {
+      el.innerText = `${tag.toUpperCase()} Element`;
     }
+    return el;
   };
-  
-
-  // function renderStyleEditor() {
-  //   const editor = document.querySelector('#editor');
-  //   editor.innerHTML = '<h3>Style Editor</h3>';
-  
-  //   styleFields.forEach(field => {
-  //     const label = document.createElement('label');
-  //     label.innerText = `${field.label}: `;
-  
-  //     const input = document.createElement('input');
-  //     input.type = field.type;
-  //     input.id = field.id;
-  //     if (field.value !== undefined) {
-  //       input.value = field.value;
-  //     }
-  
-  //     label.appendChild(input);
-  //     editor.appendChild(label);
-  //   });
-  
-  //   const delBtn = document.createElement('button');
-  //   delBtn.id = 'floatingDelete';
-  //   delBtn.innerText = '🗑';
-  //   delBtn.style.position = 'absolute';
-  //   delBtn.style.display = 'none';
-  
-  //   editor.appendChild(delBtn);
-  // }
-
-  document.addEventListener('DOMContentLoaded', () => {
-    renderToolbox();
-    // renderStyleEditor();
-    loadHtmlContent();
-  });
-  
-  
-
-// DRAG AND DROP
-draggables.forEach(el => {
-  el.addEventListener('dragstart', e => {
-    e.dataTransfer.setData('type', e.target.dataset.type);
-  });
 });
 
+// 🔧 TOOLBOX RENDERING
+function renderToolbox(filter = "") {
+  const toolbox = document.querySelector('.toolbox');
+  toolbox.innerHTML = '<h3>Toolbox</h3>';
+
+  // Reusing filter-input class
+  const searchBox = document.createElement('input');
+  searchBox.type = 'text';
+  searchBox.style.width = "100%";
+  searchBox.style.padding = "8px";
+  searchBox.style.marginBottom = "10px";
+  searchBox.style.fontSize = "14px";
+  searchBox.placeholder = 'Search HTML elements...';
+  searchBox.classList.add('filter-input');
+  searchBox.value = filter;
+  searchBox.setAttribute('data-filter-type', 'html');
+
+  searchBox.addEventListener('input', (e) => {
+    renderToolbox(e.target.value);
+  });
+
+  toolbox.appendChild(searchBox);
+
+  const filteredTags = htmlTags.filter(tag => tag.toLowerCase().includes(filter.toLowerCase()));
+
+  filteredTags.forEach(tag => {
+    const item = document.createElement('div');
+    item.className = 'draggable';
+    item.setAttribute('draggable', 'true');
+    item.setAttribute('data-type', tag);
+    item.innerText = tag;
+    toolbox.appendChild(item);
+  });
+
+  document.querySelectorAll('.draggable').forEach(el => {
+    el.addEventListener('dragstart', e => {
+      e.dataTransfer.setData('type', e.target.dataset.type);
+    });
+  });
+}
+
+
+// 👇 DRAG OVER CANVAS
 canvas.addEventListener('dragover', e => e.preventDefault());
 
 canvas.addEventListener('drop', e => {
@@ -137,7 +179,6 @@ canvas.addEventListener('drop', e => {
   const draggedId = e.dataTransfer.getData('dragged-element-id');
   const type = e.dataTransfer.getData('type');
   let newEl;
-
   const mouseY = e.clientY;
   let insertBefore = null;
 
@@ -150,7 +191,7 @@ canvas.addEventListener('drop', e => {
   }
 
   if (draggedId) {
-    // 🧲 Moving existing element
+    // Move existing element
     newEl = document.querySelector(`[data-id='${draggedId}']`);
     if (insertBefore) {
       canvas.insertBefore(newEl, insertBefore);
@@ -161,23 +202,9 @@ canvas.addEventListener('drop', e => {
     return;
   }
 
-  // 🎯 Fresh element drop
-  if (!type) return;
+  if (!type || !elementTemplates[type]) return;
 
-//   if (type === 'button') {
-//     newEl = document.createElement('button');
-//     newEl.innerText = 'Click Me';
-//   } else if (type === 'paragraph') {
-//     newEl = document.createElement('p');
-//     newEl.innerText = 'Editable paragraph';
-//   }
-
-if (elementTemplates[type]) {
-    newEl = elementTemplates[type]();
-  } else {
-    console.warn('Unsupported element type:', type);
-  }
-
+  newEl = elementTemplates[type]();
   newEl.dataset.id = `el-${elementIdCounter++}`;
   makeDraggable(newEl);
   newEl.addEventListener('click', () => selectElement(newEl));
@@ -189,14 +216,18 @@ if (elementTemplates[type]) {
   }
 
   recordAction('add', newEl, null, newEl.outerHTML);
-  updateHtmlEditor();
+  updateHtmlEditor?.(); // Optional preview update
 });
 
-// STYLE & CONTENT EDITOR
-// const textContentInput = document.getElementById('textContent');
-// const fontSizeInput = document.getElementById('fontSize');
-// const bgColorInput = document.getElementById('bgColor');
+// ✅ Make element draggable
+function makeDraggable(el) {
+  el.setAttribute('draggable', 'true');
+  el.addEventListener('dragstart', e => {
+    e.dataTransfer.setData('dragged-element-id', el.dataset.id);
+  });
+}
 
+// ✅ Select element
 function selectElement(el) {
   if (selectedElement) {
     selectedElement.classList.remove('selected-element');
@@ -204,13 +235,20 @@ function selectElement(el) {
 
   selectedElement = el;
   selectedElement.classList.add('selected-element');
-
-  // textContentInput.value = el.innerText;
-  // fontSizeInput.value = parseInt(window.getComputedStyle(el).fontSize);
-  // bgColorInput.value = rgbToHex(window.getComputedStyle(el).backgroundColor);
-
-  showDeleteButton(el);
+  showDeleteButton?.(el);
 }
+
+// ✅ Record undo/redo action
+function recordAction(action, element, oldValue, newValue) {
+  undoStack.push({ action, element, oldValue, newValue });
+}
+
+// ✅ INIT
+document.addEventListener('DOMContentLoaded', () => {
+  renderToolbox();
+  loadHtmlContent?.();
+});
+
 
   
 const cssProperties = [
@@ -541,8 +579,37 @@ function clearCode(){
 }
 
 
+function downloadDivContent() {
+  // Select the div element by id
+  const divElement = canvas;
 
+    // Remove contenteditable from all applicable elements
+    document.querySelectorAll('div[contenteditable], p[contenteditable], h1[contenteditable], span[contenteditable], h2[contenteditable], h3[contenteditable], h4[contenteditable], h5[contenteditable], h6[contenteditable]').forEach(el => {
+      el.removeAttribute('contenteditable');
+  });
 
-// style editor
+  // Check if the element exists
+  if (divElement) {
+    // Get the HTML content inside the div
+    const htmlContent = divElement.innerHTML;
 
+    // Create a blob with the HTML content
+    const blob = new Blob([htmlContent], { type: "text/html" });
 
+    // Create a download link
+    const a = document.createElement("a");
+    a.href = URL.createObjectURL(blob);
+    a.download = "main_content.html";
+
+    // Append the link to the body
+    document.body.appendChild(a);
+
+    // Simulate a click on the link to trigger the download
+    a.click();
+
+    // Clean up: remove the link from the DOM
+    document.body.removeChild(a);
+  } else {
+    console.error('Element with id "main" not found.');
+  }
+}
