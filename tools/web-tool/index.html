@@ -9,6 +9,7 @@
     <div style="margin-bottom: 10px;">
         <button onclick="undo()">⏪ Undo</button>
         <button onclick="redo()">⏩ Redo</button>
+        <button onclick="clearCode()">🗑️ Clear</button>
       </div>
 <div class="container">
     
@@ -18,11 +19,15 @@
     <div class="draggable" draggable="true" data-type="paragraph">Paragraph</div>
   </div>
 
+  
   <div id="canvas" class="canvas">
     <p>Drop items here</p>
+
   </div>
 
-  <div id="editor" class="editor">
+      <!-- <button id="floatingDelete" style="display: none; position: absolute; z-index: 9999;">🗑️ Delete</button> -->
+<button id="floatingDelete" style="position:absolute; display:none;">🗑</button>
+  <!-- <div id="editor" class="editor">
     <h3>Style Editor</h3>
     <label>Text:
       <input type="text" id="textContent">
@@ -33,147 +38,32 @@
     <label>Background Color:
       <input type="color" id="bgColor">
     </label>
-    <button id="floatingDelete" style="position:absolute; display:none;">🗑</button>
+    
 
-  </div>
+  </div> -->
 
 
-  <div id="style-options-container"></div>
+  <div id="style-panel-wrapper">
+  <div id="style-options-container" class="selected-element"></div>
+</div>
   
 </div>
 
-<div class="code-editor">
+<!-- <div class="code-editor">
     <h3>Raw HTML Editor</h3>
     <textarea onkeyup="applyRawHtml()" id="htmlEditor"></textarea>
     <button onclick="applyRawHtml()">Apply</button>
+  </div> -->
+   <div>
+   <h3 style="border:2px solid black; text-align: center; padding:4px"> Code Editor</h3>
+    <pre  contenteditable="true" id="code-preview" style="padding:10px; font-size: medium; background-color: black; color:whitesmoke; overflow-x: auto;" onkeyup="applyRawHtml()">
+       
+    </pre>
   </div>
 
 <script src="script.js"></script>
 <script>
-  
-const cssProperties = [
-  "align-items", "align-content", "align-self", "justify-content", "justify-items", "justify-self", "flex-direction", "flex-wrap", "flex-flow", "flex", "flex-grow", "flex-shrink", "flex-basis", "order", "grid-template-columns", "grid-template-rows", "grid-template-areas", "grid-template", "grid-auto-columns", "grid-auto-rows", "grid-auto-flow", "grid", "grid-row-start", "grid-column-start", "grid-row-end", "grid-column-end", "grid-row", "grid-column", "grid-area", "gap", "row-gap", "column-gap", "place-content", "place-items", "place-self", "width", "height", "min-width", "min-height", "max-width", "max-height", "padding", "padding-top", "padding-right", "padding-bottom", "padding-left", "margin", "margin-top", "margin-right", "margin-bottom", "margin-left", "border", "border-width", "border-style", "border-color", "border-top", "border-right", "border-bottom", "border-left", "border-radius", "box-shadow", "background", "background-color", "background-image", "background-size", "background-repeat", "background-position", "color", "font-size", "font-weight", "font-style", "font-family", "text-align", "text-decoration", "line-height", "letter-spacing", "word-spacing", "white-space", "overflow", "overflow-x", "overflow-y", "visibility", "z-index", "position", "top", "right", "bottom", "left", "display", "vertical-align", "opacity", "cursor", "transition", "transition-property", "transition-duration", "transition-timing-function", "animation", "animation-name", "animation-duration", "animation-timing-function", "animation-delay", "animation-iteration-count", "animation-direction", "animation-fill-mode", "animation-play-state", "transform", "transform-origin", "clip", "filter", "box-sizing", "object-fit", "object-position", "resize", "pointer-events", "user-select", "content", "quotes", "counter-reset", "counter-increment", "list-style", "list-style-type", "list-style-position", "list-style-image", "table-layout", "border-collapse", "border-spacing", "empty-cells", "caption-side", "direction", "unicode-bidi", "writing-mode", "text-orientation", "hyphens", "tab-size", "word-break", "word-wrap", "overflow-wrap"
-];
 
-const styleOptions = cssProperties.map(prop => {
-  const label = prop
-    .split("-")
-    .map(word => word.charAt(0).toUpperCase() + word.slice(1))
-    .join(" ");
-
-  let type = "input";
-  let inputType = "text";
-  let options;
-
-  // Define some custom selects
-  const selectProps = {
-    "display": ["block", "inline", "flex", "inline-flex", "grid", "inline-block", "none"],
-    "position": ["static", "relative", "absolute", "fixed", "sticky"],
-    "flex-direction": ["row", "row-reverse", "column", "column-reverse"],
-    "flex-wrap": ["nowrap", "wrap", "wrap-reverse"],
-    "justify-content": ["flex-start", "flex-end", "center", "space-between", "space-around", "space-evenly"],
-    "align-items": ["stretch", "flex-start", "flex-end", "center", "baseline"],
-    "text-align": ["left", "center", "right", "justify"],
-    "font-weight": ["normal", "bold", "bolder", "lighter", "100", "200", "300", "400", "500", "600", "700", "800", "900"],
-    "overflow": ["visible", "hidden", "scroll", "auto"],
-    "white-space": ["normal", "nowrap", "pre", "pre-line", "pre-wrap"]
-  };
-
-  // Detect color-type inputs
-  if (prop.includes("color")) {
-    inputType = "color";
-  }
-
-  // Apply select if defined
-  if (selectProps[prop]) {
-    type = "select";
-    options = selectProps[prop];
-  }
-
-  const entry = {
-    label,
-    property: prop,
-    type
-  };
-
-  if (type === "input") {
-  entry.inputType = inputType;
-
-  const pixelProperties = [
-    "width", "height", "padding", "margin", "top", "left", "right", "bottom",
-    "font-size", "border-width", "border-radius", "line-height", "letter-spacing",
-    "gap", "row-gap", "column-gap"
-  ];
-
-  const unitlessProperties = ["opacity", "z-index", "order", "flex-grow", "flex-shrink", "font-weight"];
-  const keywordProperties = ["cursor", "background", "overflow", "position", "display"];
-
-  if (pixelProperties.includes(prop)) {
-    entry.placeholder = "e.g. 10px, 1em, auto";
-  } else if (unitlessProperties.includes(prop)) {
-    entry.placeholder = "e.g. 0, 0.5, 1";
-  } else if (keywordProperties.includes(prop)) {
-    entry.placeholder = "e.g. pointer, cover, hidden";
-  } else {
-    entry.placeholder = "Enter value";
-  }
-}
-
-   else if (type === "select") {
-    entry.options = options;
-  }
-
-  return entry;
-});
-
-console.log(JSON.stringify(styleOptions, null, 2));
-
-
-
-    // selectedElement simulation
-    //  selectedElement = { target: document.body }; // for now apply on <body>
-
-    // Your dynamic rendering function
-    function renderStylePanel(styles, containerId) {
-      const container = document.getElementById(containerId);
-      styles.forEach(style => {
-        const wrapper = document.createElement("div");
-        wrapper.className = "style-control";
-
-        const label = document.createElement("label");
-        label.innerText = style.label;
-        wrapper.appendChild(label);
-
-        let input;
-        if (style.type === "input") {
-          input = document.createElement("input");
-          input.type = style.inputType || "text";
-          input.placeholder = style.placeholder || "";
-        } else if (style.type === "select") {
-          input = document.createElement("select");
-          style.options.forEach(opt => {
-            const option = document.createElement("option");
-            option.value = opt;
-            option.textContent = opt;
-            input.appendChild(option);
-          });
-        }
-
-        input.addEventListener("input", () => {
-          if (selectedElement) {
-            selectedElement.target.style.setProperty(style.property, input.value);
-          }
-        });
-
-        wrapper.appendChild(input);
-        container.appendChild(wrapper);
-      });
-    }
-
-
-
-    // Call render
-    renderStylePanel(styleOptions, "style-options-container");
 </script>
 </body>
 </html>

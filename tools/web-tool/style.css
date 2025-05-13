@@ -70,11 +70,13 @@ body {
   }
 
   #style-options-container {
-      width: 300px;
+      width: 200px;
       padding: 20px;
       border: 1px solid #ccc;
       border-radius: 8px;
       background-color: #f7f7f7;
+      height:80vh;
+      overflow-y: auto;
     }
 
     .style-control {
@@ -94,3 +96,10 @@ body {
       border: 1px solid #aaa;
       border-radius: 4px;
     }
+
+    #style-panel-wrapper input[type="text"] {
+  width: 100%;
+  padding: 6px 10px;
+  margin-bottom: 10px;
+  font-size: 14px;
+}

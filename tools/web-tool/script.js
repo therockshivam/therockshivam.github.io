@@ -78,7 +78,7 @@ function renderToolbox() {
     },
     image: () => {
       const el = document.createElement('img');
-      el.src = 'https://via.placeholder.com/100';
+      el.src = 'image editor.png';
       el.alt = 'Placeholder Image';
       el.style.width = '100px';
       return el;
@@ -86,37 +86,38 @@ function renderToolbox() {
   };
   
 
-  function renderStyleEditor() {
-    const editor = document.querySelector('#editor');
-    editor.innerHTML = '<h3>Style Editor</h3>';
+  // function renderStyleEditor() {
+  //   const editor = document.querySelector('#editor');
+  //   editor.innerHTML = '<h3>Style Editor</h3>';
   
-    styleFields.forEach(field => {
-      const label = document.createElement('label');
-      label.innerText = `${field.label}: `;
+  //   styleFields.forEach(field => {
+  //     const label = document.createElement('label');
+  //     label.innerText = `${field.label}: `;
   
-      const input = document.createElement('input');
-      input.type = field.type;
-      input.id = field.id;
-      if (field.value !== undefined) {
-        input.value = field.value;
-      }
+  //     const input = document.createElement('input');
+  //     input.type = field.type;
+  //     input.id = field.id;
+  //     if (field.value !== undefined) {
+  //       input.value = field.value;
+  //     }
   
-      label.appendChild(input);
-      editor.appendChild(label);
-    });
+  //     label.appendChild(input);
+  //     editor.appendChild(label);
+  //   });
   
-    const delBtn = document.createElement('button');
-    delBtn.id = 'floatingDelete';
-    delBtn.innerText = '🗑';
-    delBtn.style.position = 'absolute';
-    delBtn.style.display = 'none';
+  //   const delBtn = document.createElement('button');
+  //   delBtn.id = 'floatingDelete';
+  //   delBtn.innerText = '🗑';
+  //   delBtn.style.position = 'absolute';
+  //   delBtn.style.display = 'none';
   
-    editor.appendChild(delBtn);
-  }
+  //   editor.appendChild(delBtn);
+  // }
 
   document.addEventListener('DOMContentLoaded', () => {
     renderToolbox();
-    renderStyleEditor();
+    // renderStyleEditor();
+    loadHtmlContent();
   });
   
   
@@ -192,9 +193,9 @@ if (elementTemplates[type]) {
 });
 
 // STYLE & CONTENT EDITOR
-const textContentInput = document.getElementById('textContent');
-const fontSizeInput = document.getElementById('fontSize');
-const bgColorInput = document.getElementById('bgColor');
+// const textContentInput = document.getElementById('textContent');
+// const fontSizeInput = document.getElementById('fontSize');
+// const bgColorInput = document.getElementById('bgColor');
 
 function selectElement(el) {
   if (selectedElement) {
@@ -204,21 +205,158 @@ function selectElement(el) {
   selectedElement = el;
   selectedElement.classList.add('selected-element');
 
-  textContentInput.value = el.innerText;
-  fontSizeInput.value = parseInt(window.getComputedStyle(el).fontSize);
-  bgColorInput.value = rgbToHex(window.getComputedStyle(el).backgroundColor);
+  // textContentInput.value = el.innerText;
+  // fontSizeInput.value = parseInt(window.getComputedStyle(el).fontSize);
+  // bgColorInput.value = rgbToHex(window.getComputedStyle(el).backgroundColor);
 
   showDeleteButton(el);
 }
 
-textContentInput.addEventListener('input', () => {
-  if (selectedElement) {
-    const before = selectedElement.innerText;
-    selectedElement.innerText = textContentInput.value;
-    recordAction('text', selectedElement, before, selectedElement.innerText);
-    updateHtmlEditor();
+  
+const cssProperties = [
+  "align-items", "align-content", "align-self", "justify-content", "justify-items", "justify-self", "flex-direction", "flex-wrap", "flex-flow", "flex", "flex-grow", "flex-shrink", "flex-basis", "order", "grid-template-columns", "grid-template-rows", "grid-template-areas", "grid-template", "grid-auto-columns", "grid-auto-rows", "grid-auto-flow", "grid", "grid-row-start", "grid-column-start", "grid-row-end", "grid-column-end", "grid-row", "grid-column", "grid-area", "gap", "row-gap", "column-gap", "place-content", "place-items", "place-self", "width", "height", "min-width", "min-height", "max-width", "max-height", "padding", "padding-top", "padding-right", "padding-bottom", "padding-left", "margin", "margin-top", "margin-right", "margin-bottom", "margin-left", "border", "border-width", "border-style", "border-color", "border-top", "border-right", "border-bottom", "border-left", "border-radius", "box-shadow", "background", "background-color", "background-image", "background-size", "background-repeat", "background-position", "color", "font-size", "font-weight", "font-style", "font-family", "text-align", "text-decoration", "line-height", "letter-spacing", "word-spacing", "white-space", "overflow", "overflow-x", "overflow-y", "visibility", "z-index", "position", "top", "right", "bottom", "left", "display", "vertical-align", "opacity", "cursor", "transition", "transition-property", "transition-duration", "transition-timing-function", "animation", "animation-name", "animation-duration", "animation-timing-function", "animation-delay", "animation-iteration-count", "animation-direction", "animation-fill-mode", "animation-play-state", "transform", "transform-origin", "clip", "filter", "box-sizing", "object-fit", "object-position", "resize", "pointer-events", "user-select", "content", "quotes", "counter-reset", "counter-increment", "list-style", "list-style-type", "list-style-position", "list-style-image", "table-layout", "border-collapse", "border-spacing", "empty-cells", "caption-side", "direction", "unicode-bidi", "writing-mode", "text-orientation", "hyphens", "tab-size", "word-break", "word-wrap", "overflow-wrap"
+];
+
+
+const styleOptions = cssProperties.map(prop => {
+  const label = prop
+    .split("-")
+    .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+    .join(" ");
+
+  let type = "input";
+  let inputType = "text";
+  let options;
+
+  const selectProps = {
+    "display": ["block", "inline", "flex", "inline-flex", "grid", "inline-block", "none"],
+    "position": ["static", "relative", "absolute", "fixed", "sticky"],
+    "flex-direction": ["row", "row-reverse", "column", "column-reverse"],
+    "flex-wrap": ["nowrap", "wrap", "wrap-reverse"],
+    "justify-content": ["flex-start", "flex-end", "center", "space-between", "space-around", "space-evenly"],
+    "align-items": ["stretch", "flex-start", "flex-end", "center", "baseline"],
+    "text-align": ["left", "center", "right", "justify"],
+    "font-weight": ["normal", "bold", "bolder", "lighter", "100", "200", "300", "400", "500", "600", "700", "800", "900"],
+    "overflow": ["visible", "hidden", "scroll", "auto"],
+    "white-space": ["normal", "nowrap", "pre", "pre-line", "pre-wrap"]
+  };
+
+  if (prop.includes("color")) {
+    inputType = "color";
   }
+
+  if (selectProps[prop]) {
+    type = "select";
+    options = selectProps[prop];
+  }
+
+  const entry = { label, property: prop, type };
+
+  if (type === "input") {
+    entry.inputType = inputType;
+    const pixelProperties = [
+      "width", "height", "padding", "margin", "top", "left", "right", "bottom",
+      "font-size", "border-width", "border-radius", "line-height", "letter-spacing",
+      "gap", "row-gap", "column-gap"
+    ];
+
+    const unitlessProperties = ["opacity", "z-index", "order", "flex-grow", "flex-shrink", "font-weight"];
+    const keywordProperties = ["cursor", "background", "overflow", "position", "display"];
+
+    if (pixelProperties.includes(prop)) {
+      entry.placeholder = "e.g. 10px, 1em, auto";
+    } else if (unitlessProperties.includes(prop)) {
+      entry.placeholder = "e.g. 0, 0.5, 1";
+    } else if (keywordProperties.includes(prop)) {
+      entry.placeholder = "e.g. pointer, cover, hidden";
+    } else {
+      entry.placeholder = "Enter value";
+    }
+  } else if (type === "select") {
+    entry.options = options;
+  }
+
+  return entry;
 });
+
+function renderStylePanel(styles, containerId) {
+  const container = document.getElementById(containerId);
+  container.innerHTML = ""; // clear old content
+
+  styles.forEach(style => {
+    const wrapper = document.createElement("div");
+    wrapper.className = "style-control";
+
+    const label = document.createElement("label");
+    label.innerText = style.label;
+    wrapper.appendChild(label);
+
+    let input;
+    if (style.type === "input") {
+      input = document.createElement("input");
+      input.type = style.inputType || "text";
+      input.placeholder = style.placeholder || "";
+    } else if (style.type === "select") {
+      input = document.createElement("select");
+      style.options.forEach(opt => {
+        const option = document.createElement("option");
+        option.value = opt;
+        option.textContent = opt;
+        input.appendChild(option);
+      });
+    }
+
+    input.addEventListener("input", () => {
+      // const selected = document.getElementsByClassName("selected-element")[0];
+      // selectedElement = selected;
+      if (selectedElement) {
+        selectedElement.style.setProperty(style.property, input.value);
+      }
+    });
+
+    wrapper.appendChild(input);
+    container.appendChild(wrapper);
+  });
+}
+
+// Search functionality
+function filterAndRenderStyles(filterText, allStyles, containerId) {
+  const filtered = allStyles.filter(style =>
+    style.label.toLowerCase().includes(filterText.toLowerCase())
+  );
+  renderStylePanel(filtered, containerId);
+}
+
+// Create search input
+function createSearchInput(allStyles, containerId) {
+  const wrapper = document.getElementById(containerId).parentElement;
+  const input = document.createElement("input");
+  input.type = "text";
+  input.placeholder = "Search CSS property...";
+  input.style.width = "100%";
+  input.style.padding = "8px";
+  input.style.marginBottom = "10px";
+  input.style.fontSize = "14px";
+
+  input.addEventListener("input", () => {
+    filterAndRenderStyles(input.value, allStyles, containerId);
+  });
+
+  wrapper.insertBefore(input, wrapper.firstChild);
+}
+
+// Final call
+renderStylePanel(styleOptions, "style-options-container");
+createSearchInput(styleOptions, "style-options-container");
+
+// textContentInput.addEventListener('input', () => {
+//   if (selectedElement) {
+//     const before = selectedElement.innerText;
+//     selectedElement.innerText = textContentInput.value;
+//     recordAction('text', selectedElement, before, selectedElement.innerText);
+//     updateHtmlEditor();
+//   }
+// });
 
 fontSizeInput.addEventListener('input', () => {
   if (selectedElement) {
@@ -332,9 +470,13 @@ document.addEventListener('keydown', e => {
 });
 
 function showDeleteButton(el) {
+
   const rect = el.getBoundingClientRect();
   const deleteBtn = document.getElementById('floatingDelete');
-
+      if (!deleteBtn) {
+    console.warn('floatingDelete button not found in DOM.');
+    return;
+  }
   deleteBtn.style.top = `${rect.top - 10 + window.scrollY}px`;
   deleteBtn.style.left = `${rect.right + 10 + window.scrollX}px`;
   deleteBtn.style.display = 'block';
@@ -358,6 +500,8 @@ document.addEventListener('click', (e) => {
 
 function makeDraggable(el) {
   el.setAttribute('draggable', true);
+  // el.setAttribute('contenteditable', true);
+  
   el.addEventListener('dragstart', e => {
     e.stopPropagation();
     e.dataTransfer.setData('dragged-element-id', el.dataset.id);
@@ -367,15 +511,38 @@ function makeDraggable(el) {
 // RAW HTML EDITOR: Update the textarea
 function updateHtmlEditor() {
   const htmlContent = canvas.innerHTML;
-  document.getElementById('htmlEditor').value = htmlContent;
+  document.getElementById('code-preview').innerText = htmlContent;
+    localStorage.setItem('htmlContent', htmlContent);
 }
 
 // Apply the raw HTML from the editor
 function applyRawHtml() {
-  const html = document.getElementById('htmlEditor').value;
-  canvas.innerHTML = html;
-  updateHtmlEditor(); // Refresh the editor after applying
+  const html = document.getElementById('code-preview').innerText;
+  canvas.innerHTML = html; 
+   localStorage.setItem('htmlContent', html);
+  // updateHtmlEditor(); // Refresh the editor after applying
+}
+
+function loadHtmlContent() {
+  const savedHtml = localStorage.getItem('htmlContent');
+  if (savedHtml) {
+    canvas.innerHTML = savedHtml;
+    updateHtmlEditor();
+  }
+}
+
+function clearCode(){
+  document.getElementById('code-preview').innerText = '';
+  canvas.innerHTML = '';
+  selectedElement = null;
+  undoStack.length = 0;
+  redoStack.length = 0;
+  updateHtmlEditor();
 }
 
 
+
+
 // style editor
+
+
