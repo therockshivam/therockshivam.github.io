@@ -1,44 +1,248 @@
-Docker
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Docker Commands</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-light">
+    <div class="container my-5">
+        <h1 class="text-center text-primary mb-4">Docker Commands</h1>
 
-📦 Image Command:
-List images - docker images
-Pull image - docker pull <image-name>
-Remove image - docker rmi <image-id or image-name>
-Build image -	docker build -t <tag-name> .
+        <div class="card mb-4">
+            <div class="card-header bg-info text-white">
+                <h5>📦 Image Commands</h5>
+            </div>
+            <div class="card-body">
+                <div class="mb-3">
+                    <div class="terminal"></div>
+                        <button class="copy-btn" onclick="copyToClipboard('docker images')">Copy</button>
+                        docker images
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <div class="terminal">
+                        <button class="copy-btn" onclick="copyToClipboard('docker pull <image-name>')">Copy</button>
+                        docker pull &lt;image-name&gt;
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <div class="terminal">
+                        <button class="copy-btn" onclick="copyToClipboard('docker rmi <image-id or image-name>')">Copy</button>
+                        docker rmi &lt;image-id or image-name&gt;
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <div class="terminal">
+                        <button class="copy-btn" onclick="copyToClipboard('docker build -t <tag-name> .')">Copy</button>
+                        docker build -t &lt;tag-name&gt; .
+                    </div>
+                </div>
+            </div>
 
-🧱 Container Commands:
-List running containers - docker ps
-List all containers (including stopped) - docker ps -a
-Run a container - docker run <image-name>
-Run in background (detached) - docker run -d <image>
-Run with port mapping - docker run -p 8080:80 <image>
-Name a container - docker run --name mycontainer <image>
-Start a container - docker start <container-id or name>
-Stop a container - docker stop <container-id or name>
-Restart a container - docker restart <container-id or name>
-Remove container - docker rm <container-id or name>
-Run interactive shell - docker run -it <image> bash
-Exec command in running container - docker exec -it <container-name> bash
+        <div class="card mb-4">
+            <div class="card-header bg-success text-white">
+                <h5>🧱 Container Commands</h5>
+            </div>
+            <div class="card-body">
+                <div class="mb-3">
+                    <div class="terminal">
+                        <button class="copy-btn" onclick="copyToClipboard('docker ps')">Copy</button>
+                        docker ps
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <div class="terminal">
+                        <button class="copy-btn" onclick="copyToClipboard('docker ps -a')">Copy</button>
+                        docker ps -a
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <div class="terminal">
+                        <button class="copy-btn" onclick="copyToClipboard('docker run <image-name>')">Copy</button>
+                        docker run &lt;image-name&gt;
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <div class="terminal">
+                        <button class="copy-btn" onclick="copyToClipboard('docker run -d <image>')">Copy</button>
+                        docker run -d &lt;image&gt;
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <div class="terminal">
+                        <button class="copy-btn" onclick="copyToClipboard('docker run -p 8080:80 <image>')">Copy</button>
+                        docker run -p 8080:80 &lt;image&gt;
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <div class="terminal">
+                        <button class="copy-btn" onclick="copyToClipboard('docker run --name mycontainer <image>')">Copy</button>
+                        docker run --name mycontainer &lt;image&gt;
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <div class="terminal">
+                        <button class="copy-btn" onclick="copyToClipboard('docker start <container-id or name>')">Copy</button>
+                        docker start &lt;container-id or name&gt;
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <div class="terminal">
+                        <button class="copy-btn" onclick="copyToClipboard('docker stop <container-id or name>')">Copy</button>
+                        docker stop &lt;container-id or name&gt;
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <div class="terminal">
+                        <button class="copy-btn" onclick="copyToClipboard('docker restart <container-id or name>')">Copy</button>
+                        docker restart &lt;container-id or name&gt;
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <div class="terminal">
+                        <button class="copy-btn" onclick="copyToClipboard('docker rm <container-id or name>')">Copy</button>
+                        docker rm &lt;container-id or name&gt;
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <div class="terminal">
+                        <button class="copy-btn" onclick="copyToClipboard('docker run -it <image> bash')">Copy</button>
+                        docker run -it &lt;image&gt; bash
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <div class="terminal">
+                        <button class="copy-btn" onclick="copyToClipboard('docker exec -it <container-name> bash')">Copy</button>
+                        docker exec -it &lt;container-name&gt; bash
+                    </div>
+                </div>
+            </div>
+        </div>
 
-🔍  Inspect & Logs :
-Inspect container details - docker inspect <container-id>
-View container logs -	docker logs <container-id>
-Follow real-time logs - docker logs -f <container-id>
+        <div class="card mb-4">
+            <div class="card-header bg-warning text-dark">
+                <h5>🔍 Inspect & Logs</h5>
+            </div>
+            <div class="card-body">
+                <div class="mb-3">
+                    <div class="terminal">
+                        <button class="copy-btn" onclick="copyToClipboard('docker inspect <container-id>')">Copy</button>
+                        docker inspect &lt;container-id&gt;
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <div class="terminal">
+                        <button class="copy-btn" onclick="copyToClipboard('docker logs <container-id>')">Copy</button>
+                        docker logs &lt;container-id&gt;
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <div class="terminal">
+                        <button class="copy-btn" onclick="copyToClipboard('docker logs -f <container-id>')">Copy</button>
+                        docker logs -f &lt;container-id&gt;
+                    </div>
+                </div>
+            </div>
+        </div>
 
-📂Volumes & Data :
-List volumes - docker volume ls
-Create a volume - docker volume create <volume-name>
-Mount volume to container - docker run -v <volume-name>:/path/in/container <image>
+        <div class="card mb-4">
+            <div class="card-header bg-secondary text-white">
+                <h5>📂 Volumes & Data</h5>
+            </div>
+            <div class="card-body">
+                <div class="mb-3">
+                    <div class="terminal">
+                        <button class="copy-btn" onclick="copyToClipboard('docker volume ls')">Copy</button>
+                        docker volume ls
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <div class="terminal">
+                        <button class="copy-btn" onclick="copyToClipboard('docker volume create <volume-name>')">Copy</button>
+                        docker volume create &lt;volume-name&gt;
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <div class="terminal">
+                        <button class="copy-btn" onclick="copyToClipboard('docker run -v <volume-name>:/path/in/container <image>')">Copy</button>
+                        docker run -v &lt;volume-name&gt;:/path/in/container &lt;image&gt;
+                    </div>
+                </div>
+            </div>
+        </div>
 
+        <div class="card mb-4">
+            <div class="card-header bg-danger text-white">
+                <h5>🧹 Cleanup Commands</h5>
+            </div>
+            <div class="card-body">
+                <div class="mb-3">
+                    <div class="terminal">
+                        <button class="copy-btn" onclick="copyToClipboard('docker container prune')">Copy</button>
+                        docker container prune
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <div class="terminal">
+                        <button class="copy-btn" onclick="copyToClipboard('docker image prune')">Copy</button>
+                        docker image prune
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <div class="terminal">
+                        <button class="copy-btn" onclick="copyToClipboard('docker volume prune')">Copy</button>
+                        docker volume prune
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <div class="terminal">
+                        <button class="copy-btn" onclick="copyToClipboard('docker system prune')">Copy</button>
+                        docker system prune
+                    </div>
+                </div>
+            </div>
+        </div>
 
-🧹 Cleanup Commands :
-Remove all stopped containers - docker container prune
-Remove all unused images - docker image prune
-Remove all unused volumes - docker volume prune
-Remove everything unused - docker system prune
+        <div class="card mb-4">
+            <div class="card-header bg-primary text-white">
+                <h5>🧰 Docker Compose</h5>
+            </div>
+            <div class="card-body">
+                <div class="mb-3">
+                    <div class="terminal">
+                        <button class="copy-btn" onclick="copyToClipboard('docker-compose up')">Copy</button>
+                        docker-compose up
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <div class="terminal">
+                        <button class="copy-btn" onclick="copyToClipboard('docker-compose up -d')">Copy</button>
+                        docker-compose up -d
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <div class="terminal">
+                        <button class="copy-btn" onclick="copyToClipboard('docker-compose down')">Copy</button>
+                        docker-compose down
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <div class="terminal">
+                        <button class="copy-btn" onclick="copyToClipboard('docker-compose up --build')">Copy</button>
+                        docker-compose up --build
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+         </div>
 
-🧰 Docker Compose
-Start containers - docker-compose up
-Start in background - docker-compose up -d
-Stop containers - docker-compose down
-Rebuild services - docker-compose up --build
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

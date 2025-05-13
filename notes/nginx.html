@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NGINX Commands</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-light">
+    <div class="container my-5">
+        <h1 class="text-center text-primary mb-4">NGINX Overview and Commands</h1>
+
+        <div class="card mb-4">
+            <div class="card-header bg-info text-white">
+                <h5>🌐 Introduction to NGINX</h5>
+            </div>
+            <div class="card-body">
+                <p>NGINX is a high-performance web server, reverse proxy server, and load balancer. It is widely used for serving static content, handling HTTP requests, and acting as a gateway for dynamic applications.</p>
+            </div>
+        </div>
+
+        <div class="card mb-4">
+            <div class="card-header bg-info text-white">
+                <h5>⚙️ Common NGINX Commands</h5>
+            </div>
+            <div class="card-body">
+                <div class="mb-3">
+                    <div class="terminal">
+                        <button class="copy-btn" onclick="copyToClipboard('sudo systemctl start nginx')">Copy</button>
+                        sudo systemctl start nginx
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <div class="terminal">
+                        <button class="copy-btn" onclick="copyToClipboard('sudo systemctl stop nginx')">Copy</button>
+                        sudo systemctl stop nginx
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <div class="terminal">
+                        <button class="copy-btn" onclick="copyToClipboard('sudo systemctl restart nginx')">Copy</button>
+                        sudo systemctl restart nginx
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <div class="terminal">
+                        <button class="copy-btn" onclick="copyToClipboard('sudo systemctl reload nginx')">Copy</button>
+                        sudo systemctl reload nginx
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <div class="terminal">
+                        <button class="copy-btn" onclick="copyToClipboard('sudo systemctl status nginx')">Copy</button>
+                        sudo systemctl status nginx
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <div class="terminal">
+                        <button class="copy-btn" onclick="copyToClipboard('nginx -t')">Copy</button>
+                        nginx -t
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <div class="terminal">
+                        <button class="copy-btn" onclick="copyToClipboard('sudo nginx -s reload')">Copy</button>
+                        sudo nginx -s reload
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card mb-4">
+            <div class="card-header bg-info text-white">
+                <h5>📂 Configuration File</h5>
+            </div>
+            <div class="card-body">
+                <p>The main configuration file for NGINX is located at <code>/etc/nginx/nginx.conf</code>. You can edit this file to customize NGINX settings.</p>
+                <div class="mb-3">
+                    <div class="terminal">
+                        <button class="copy-btn" onclick="copyToClipboard('sudo nano /etc/nginx/nginx.conf')">Copy</button>
+                        sudo nano /etc/nginx/nginx.conf
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html></div>
