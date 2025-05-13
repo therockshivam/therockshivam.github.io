@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Password Manager</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Password Manager</h1>
+    
+    <!-- Login Form -->
+    <div id="login-section">
+      <label for="username">Username: </label>
+      <input type="text" id="username" placeholder="Username">
+      <label for="login-password">Password: </label>
+      <input type="password" id="login-password" placeholder="Password">
+      <button onclick="login()">Login</button>
+    </div>
+    
+    <!-- Password Manager Section (hidden by default) -->
+    <div id="password-section" style="display:none;">
+      <h2>Manage Passwords</h2>
+      <div>
+        <label for="password-name">Password Name:</label>
+        <input type="text" id="password-name" placeholder="Personal or Site Name">
+      </div>
+      <div>
+        <label for="password">Password:</label>
+        <input type="password" id="password" placeholder="Password">
+      </div>
+      <div>
+        <label for="encryption-key">Encryption Key:</label>
+        <input type="password" id="encryption-key" placeholder="Enter a key for encryption">
+      </div>
+      <button onclick="addPassword()">Add Password</button>
+      <button onclick="clearPasswords()">Clear All Passwords</button>
+
+      <h3>Saved Passwords:</h3>
+      <ul id="password-list"></ul>
+
+      <button onclick="downloadPasswordFile()">Download Password File</button>
+    </div>
+
+    <!-- Modal for entering view password -->
+    <div id="view-password-modal" class="modal">
+        <div class="modal-content">
+          <label for="view-password-input">Enter View Password:</label>
+          <input type="password" id="view-password-input" placeholder="Enter password">
+          <button onclick="submitViewPassword()">Submit</button>
+          <button onclick="closeModal()">Cancel</button>
+        </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

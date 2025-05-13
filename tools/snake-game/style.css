@@ -1,0 +1,32 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #222;
+}
+.grid {
+    display: grid;
+    grid-template-columns: repeat(50, 15px); /* 50 columns */
+    grid-template-rows: repeat(50, 15px); /* 50 rows */
+    gap: 1px; /* Space between cells */
+    background-color: #444;
+}
+.cell {
+    width: 15px;
+    height: 15px;
+    background-color: #666;
+}
+
+.snake {
+    background-color: #00ff00; /* Snake color */
+}
+
+.action-button{
+    background-color: red;
+float:right;
+}
+
+.food {
+    background-color: red; /* Food color */
+}

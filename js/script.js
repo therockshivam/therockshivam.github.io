@@ -99,6 +99,28 @@ typeWriter();
         link: "/tools/web-dev-toolkit",
         status: "live"
       },
+           {
+        title: "🐍 Snake Game",
+        description: "A simple snake game built with HTML, CSS, and JS.",
+        link: "tools/snake-game",
+        status: "live"
+      },  {
+        title: "🗺️ Travel Management System",
+        description: "A travel management system to manage your trips and expenses.",
+        link: "/tools/travel-management-system",
+        status: "live"
+      },  {
+        title: "🧾 Split Expense",
+        description: "A simple tool to split expenses among friends and family.",
+        link: "/tools/split-expense",
+        status: "live"
+      },
+        {
+        title: " Password Manager",
+        description: " A simple password manager to store your passwords securely.",
+        link: "/tools/password-manager",
+        status: "live"
+      },
       {
         title: "📋 Resume Generator",
         description: "Build modern resumes effortlessly with AI-guided content.",
