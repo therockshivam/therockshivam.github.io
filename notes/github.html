@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Git Commands</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #f4f4f9;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+            color: #444;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            background: #fff;
+            margin: 10px 0;
+            padding: 15px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        li span {
+            font-weight: bold;
+            color: #0078d7;
+        }
+        .note {
+            margin-top: 20px;
+            font-style: italic;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+    <h1>Git Commands</h1>
+    <ul>
+        <li><span>git diff:</span> To see modified file difference with git committed file</li>
+        <li><span>git add file_name:</span> Add file to the staged area before commit</li>
+        <li><span>git commit -m "message":</span> Commit the new changes in file (-m means message)</li>
+        <li><span>git log:</span> See the latest commit log</li>
+        <li><span>git log --oneline:</span> See all the commits in a concise format</li>
+        <li><span>git branch:</span> See the current branch in your repository</li>
+        <li><span>git branch branch_name:</span> Create a new branch (e.g., fix/ or feat/)</li>
+        <li><span>git checkout branch_name:</span> Switch to another branch (* denotes the current branch)</li>
+        <li><span>git checkout -b branch_name:</span> Create and switch to the new branch</li>
+        <li><span>git merge branch_name:</span> Merge a branch into the current branch</li>
+        <li><span>git branch -d branch_name:</span> Delete a branch (-d stands for delete)</li>
+        <li><span>git rebase branch_name:</span> Rebase a branch instead of merging</li>
+        <li><span>git rebase --continue:</span> Continue after resolving conflicts</li>
+        <li><span>git stash:</span> Temporarily store changes aside</li>
+        <li><span>git stash list:</span> View the stashed changes</li>
+        <li><span>git stash pop:</span> Bring the changes back to the current branch</li>
+        <li><span>git stash show:</span> View a condensed version of the latest stash</li>
+        <li><span>git stash show -p:</span> View detailed changes in the latest stash (-p is for patch)</li>
+        <li><span>git stash apply:</span> Add stash list to your working tree</li>
+        <li><span>git stash show stash@{1}:</span> View a specific stash by name (e.g., stash@{1})</li>
+        <li><span>git stash show -p stash@{1}:</span> View detailed changes in a specific stash</li>
+        <li><span>git stash drop stash_name:</span> Drop a specific stash item</li>
+        <li><span>git reset:</span> Travel to any point in your commit history</li>
+        <li><span>git reset HEAD~1:</span> Reset to the previous commit</li>
+        <li><span>git reset HEAD~1 --soft:</span> Keep changes in the working tree</li>
+        <li><span>git reset HEAD~1 --hard:</span> Discard changes from the working tree</li>
+        <li><span>git revert HEAD~1:</span> Revert the most recent commit</li>
+    </ul>
+    <p class="note">Note: The code from the stash was added to your working tree, and the stash is still there in case you want to add it somewhere else. Stash the changes again if needed.</p>
+</body>
+</html>

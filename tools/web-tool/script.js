@@ -317,6 +317,7 @@ const styleOptions = cssProperties.map(prop => {
   return entry;
 });
 
+
 function renderStylePanel(styles, containerId) {
   const container = document.getElementById(containerId);
   container.innerHTML = ""; // clear old content

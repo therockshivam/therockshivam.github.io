@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DSA Algorithms and Arrays</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 20px;
+            background-color: #f4f4f9;
+        }
+        h2 {
+            color: #4CAF50;
+        }
+        .container {
+            margin-bottom: 30px;
+        }
+        .input-section {
+            margin: 20px 0;
+        }
+        .array-output {
+            font-size: 20px;
+            font-weight: bold;
+            color: #333;
+        }
+        .button {
+            padding: 10px 20px;
+            margin-top: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        .button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Interactive Data Structures & Algorithms (DSA) with Arrays</h1>
+    <p>Explore algorithms like Sorting (Bubble Sort, Quick Sort, Merge Sort) and Searching (Linear & Binary) using arrays.</p>
+
+    <div class="container">
+        <h2>1. Array Operations</h2>
+        <div class="input-section">
+            <input type="text" id="arrayInput" placeholder="Enter array elements (comma separated)">
+            <button class="button" onclick="createArray()">Create Array</button>
+        </div>
+        <div id="arrayOutput" class="array-output"></div>
+    </div>
+
+    <div class="container">
+        <h2>2. Bubble Sort</h2>
+        <button class="button" onclick="bubbleSort()">Sort Array using Bubble Sort</button>
+        <div id="bubbleSortOutput" class="array-output"></div>
+    </div>
+
+    <div class="container">
+        <h2>3. Selection Sort</h2>
+        <button class="button" onclick="selectionSort()">Sort Array using Selection Sort</button>
+        <div id="selectionSortOutput" class="array-output"></div>
+    </div>
+
+    <div class="container">
+        <h2>4. Insertion Sort</h2>
+        <button class="button" onclick="insertionSort()">Sort Array using Insertion Sort</button>
+        <div id="insertionSortOutput" class="array-output"></div>
+    </div>
+
+    <div class="container">
+        <h2>5. Quick Sort</h2>
+        <button class="button" onclick="quickSort()">Sort Array using Quick Sort</button>
+        <div id="quickSortOutput" class="array-output"></div>
+    </div>
+
+    <div class="container">
+        <h2>6. Merge Sort</h2>
+        <button class="button" onclick="mergeSort()">Sort Array using Merge Sort</button>
+        <div id="mergeSortOutput" class="array-output"></div>
+    </div>
+
+    <div class="container">
+        <h2>7. Linear Search</h2>
+        <input type="number" id="linearSearchValue" placeholder="Enter value to search">
+        <button class="button" onclick="linearSearch()">Search in Array (Linear Search)</button>
+        <div id="linearSearchOutput" class="array-output"></div>
+    </div>
+
+    <div class="container">
+        <h2>8. Binary Search</h2>
+        <input type="number" id="binarySearchValue" placeholder="Enter value to search (Array must be sorted)">
+        <button class="button" onclick="binarySearch()">Search in Array (Binary Search)</button>
+        <div id="binarySearchOutput" class="array-output"></div>
+    </div>
+
+    <script>
+        let array = [];
+
+        function createArray() {
+            const input = document.getElementById('arrayInput').value;
+            array = input.split(',').map(num => parseInt(num.trim())).filter(num => !isNaN(num));
+            document.getElementById('arrayOutput').innerText = 'Array: ' + array.join(', ');
+        }
+
+        function bubbleSort() {
+            let arr = [...array];
+            for (let i = 0; i < arr.length - 1; i++) {
+                for (let j = 0; j < arr.length - i - 1; j++) {
+                    if (arr[j] > arr[j + 1]) {
+                        [arr[j], arr[j + 1]] = [arr[j + 1], arr[j]];
+                    }
+                }
+            }
+            document.getElementById('bubbleSortOutput').innerText = 'Sorted Array: ' + arr.join(', ');
+        }
+
+        function selectionSort() {
+            let arr = [...array];
+            for (let i = 0; i < arr.length - 1; i++) {
+                let minIdx = i;
+                for (let j = i + 1; j < arr.length; j++) {
+                    if (arr[j] < arr[minIdx]) {
+                        minIdx = j;
+                    }
+                }
+                [arr[i], arr[minIdx]] = [arr[minIdx], arr[i]];
+            }
+            document.getElementById('selectionSortOutput').innerText = 'Sorted Array: ' + arr.join(', ');
+        }
+
+        function insertionSort() {
+            let arr = [...array];
+            for (let i = 1; i < arr.length; i++) {
+                let key = arr[i];
+                let j = i - 1;
+                while (j >= 0 && arr[j] > key) {
+                    arr[j + 1] = arr[j];
+                    j = j - 1;
+                }
+                arr[j + 1] = key;
+            }
+            document.getElementById('insertionSortOutput').innerText = 'Sorted Array: ' + arr.join(', ');
+        }
+
+        function quickSort() {
+            let arr = [...array];
+            function partition(arr, low, high) {
+                let pivot = arr[high];
+                let i = low - 1;
+                for (let j = low; j < high; j++) {
+                    if (arr[j] < pivot) {
+                        i++;
+                        [arr[i], arr[j]] = [arr[j], arr[i]];
+                    }
+                }
+                [arr[i + 1], arr[high]] = [arr[high], arr[i + 1]];
+                return i + 1;
+            }
+            function sort(arr, low, high) {
+                if (low < high) {
+                    let pi = partition(arr, low, high);
+                    sort(arr, low, pi - 1);
+                    sort(arr, pi + 1, high);
+                }
+            }
+            sort(arr, 0, arr.length - 1);
+            document.getElementById('quickSortOutput').innerText = 'Sorted Array: ' + arr.join(', ');
+        }
+
+        function mergeSort() {
+            let arr = [...array];
+            function merge(left, right) {
+                let result = [], i = 0, j = 0;
+                while (i < left.length && j < right.length) {
+                    if (left[i] < right[j]) result.push(left[i++]);
+                    else result.push(right[j++]);
+                }
+                return result.concat(left.slice(i)).concat(right.slice(j));
+            }
+            function sort(arr) {
+                if (arr.length <= 1) return arr;
+                const mid = Math.floor(arr.length / 2);
+                const left = sort(arr.slice(0, mid));
+                const right = sort(arr.slice(mid));
+                return merge(left, right);
+            }
+            const sortedArr = sort(arr);
+            document.getElementById('mergeSortOutput').innerText = 'Sorted Array: ' + sortedArr.join(', ');
+        }
+
+        function linearSearch() {
+            const value = parseInt(document.getElementById('linearSearchValue').value);
+            const index = array.indexOf(value);
+            if (index !== -1) {
+                document.getElementById('linearSearchOutput').innerText = `Value ${value} found at index ${index}.`;
+            } else {
+                document.getElementById('linearSearchOutput').innerText = `Value ${value} not found.`;
+            }
+        }
+
+        function binarySearch() {
+            const value = parseInt(document.getElementById('binarySearchValue').value);
+            let left = 0, right = array.length - 1;
+            let found = false;
+            while (left <= right) {
+                const mid = Math.floor((left + right) / 2);
+                if (array[mid] === value) {
+                    found = true;
+                    break;
+                } else if (array[mid] < value) {
+                    left = mid + 1;
+                } else {
+                    right = mid - 1;
+                }
+            }
+            if (found) {
+                document.getElementById('binarySearchOutput').innerText = `Value ${value} found in array.`;
+            } else {
+                document.getElementById('binarySearchOutput').innerText = `Value ${value} not found in array.`;
+            }
+        }
+    </script>
+
+</body>
+</html>
