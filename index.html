@@ -44,52 +44,98 @@
   <!-- Projects Section -->
   <section id="projects" data-aos="fade-up">
     <h2>🛠️ Projects</h2>
-    <div class="project-card" data-aos="zoom-in">
-      <img src="#" alt="SmartBill App" />
-      <h3>SmartBill</h3>
-      <p>A Java desktop billing app built using Swing & Spring Boot.</p>
-    </div>
-    <div class="project-card" data-aos="zoom-in" data-aos-delay="100">
-      <img src="#" alt="ChatterBox App" />
-      <h3>ChatterBox</h3>
-      <p>An Angular-based chat app made for smooth real-time conversations.</p>
-    </div>
-    <div class="project-card" data-aos="zoom-in" data-aos-delay="200">
-      <img src="#" alt="MindFlow App" />
-      <h3>MindFlow</h3>
-      <p>An AI-powered thought organizer – part memory, part mentor.</p>
-    </div>
+    <div id="projects-container"></div>
   </section>
+  <script>
+    // Example projects data as JSON
+    const projects = [
+      {
+        img: "#",
+        alt: "SmartBill App",
+        title: "SmartBill",
+        description: "A Java desktop billing app built using Swing & Spring Boot."
+      },
+      {
+        img: "#",
+        alt: "ChatterBox App",
+        title: "ChatterBox",
+        description: "An Angular-based chat app made for smooth real-time conversations."
+      },
+      {
+        img: "#",
+        alt: "MindFlow App",
+        title: "MindFlow",
+        description: "An AI-powered thought organizer – part memory, part mentor."
+      },
+           {
+        img: "#",
+        alt: "PostHub App",
+        title: "PostHub",
+        description: "A web app for sharing and discovering posts, built with Angular and Spring boot."
+      },
+
+    ];
+
+    // Render projects dynamically
+    const projectsContainer = document.getElementById('projects-container');
+    projects.forEach((project, idx) => {
+      const div = document.createElement('div');
+      div.className = 'project-card';
+      div.setAttribute('data-aos', 'zoom-in');
+      if (idx > 0) div.setAttribute('data-aos-delay', idx * 100);
+      div.innerHTML = `
+        <img src="${project.img}" alt="${project.alt}" />
+        <h3>${project.title}</h3>
+        <p>${project.description}</p>
+      `;
+      projectsContainer.appendChild(div);
+    });
+  </script>
 
   <!-- Vault / Notes -->
   <section id="vault" data-aos="fade-right">
     <h2>📚 Shivam's Vault</h2>
-    <div class="note-snippet" data-aos="fade-left">
-      <h3>Docker Commands</h3>
-      <p>A list of essential Docker commands to manage containers and images efficiently.</p>
-      <a href="./notes/docker.html">Read More →</a>
-    </div>
-      <div class="note-snippet" data-aos="fade-left">
-      <h3>NGINX Commands</h3>
-      <p>A list of essential NGINX commands to configure and manage web servers efficiently.</p>
-      <a href="./notes/nginx.html">Read More →</a>
-    </div>
-       <div class="note-snippet" data-aos="fade-left">
-      <h3>Understanding the WHERE Clause in SQL</h3>
-      <p>Learn how to filter your database queries using SQL WHERE. Easy syntax with real examples...</p>
-      <a href="#">Read More →</a>
-    </div>
-    <div class="note-snippet" data-aos="fade-left">
-      <h3>Understanding the WHERE Clause in SQL</h3>
-      <p>Learn how to filter your database queries using SQL WHERE. Easy syntax with real examples...</p>
-      <a href="#">Read More →</a>
-    </div>
-    <div class="note-snippet" data-aos="fade-left" data-aos-delay="100">
-      <h3>Fixing Java Heap Space Errors</h3>
-      <p>A quick guide on diagnosing and fixing memory overflow issues in Java apps.</p>
-      <a href="#">Read More →</a>
-    </div>
+    <div id="vault-notes-container"></div>
   </section>
+  <script>
+    // Example notes data as JSON
+    const vaultNotes = [
+      {
+        title: "Docker Commands",
+        description: "A list of essential Docker commands to manage containers and images efficiently.",
+        link: "./notes/docker.html"
+      },
+      {
+        title: "NGINX Commands",
+        description: "A list of essential NGINX commands to configure and manage web servers efficiently.",
+        link: "./notes/nginx.html"
+      },
+      {
+        title: "Understanding the WHERE Clause in SQL",
+        description: "Learn how to filter your database queries using SQL WHERE. Easy syntax with real examples...",
+        link: "#"
+      },
+      {
+        title: "Fixing Java Heap Space Errors",
+        description: "A quick guide on diagnosing and fixing memory overflow issues in Java apps.",
+        link: "#"
+      }
+    ];
+
+    // Render notes dynamically
+    const vaultContainer = document.getElementById('vault-notes-container');
+    vaultNotes.forEach(note => {
+      const div = document.createElement('div');
+      div.className = 'note-snippet';
+      div.setAttribute('data-aos', 'fade-left');
+      div.innerHTML = `
+        <h3>${note.title}</h3>
+        <p>${note.description}</p>
+        <a href="${note.link}">Read More →</a>
+      `;
+      vaultContainer.appendChild(div);
+    });
+  </script>
 
   <!-- Contact -->
   <section id="contact" data-aos="zoom-in-up">
