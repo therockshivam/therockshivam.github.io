@@ -1,32 +1,19 @@
 @import url('/css/parent.css');
 
-.footer{
+.footer {
     position: fixed;
     width: 100%;
-    bottom:0;
+    bottom: 0;
 }
 
-
-/* body {
-    font-family: Arial, sans-serif;
-    background: var(--bg-color);
-    line-height: 1.6;
-    color: var(--text-color);
-} */
-
-
 .container {
-    /* background: var(--container-bg-color) !important; */
     border-radius: 10px;
     padding: 25px;
-    margin-top:3% !important;
+    margin-top: 3% !important;
     max-width: 800px;
     margin: auto;
     padding-bottom: 200px;
 }
-
-
-
 
 h2 {
     color: var(--h2-color);
@@ -54,14 +41,12 @@ h2 {
     border: 1px solid var(--border-color);
     cursor: pointer;
     transition: 0.3s ease;
-    background:  var(--footer-bg);
+    background: var(--footer-bg);
 }
-
-/* //#ccc */
 
 .option:hover {
     background: var(--hover-color);
-    color:var(--text-color);
+    color: var(--text-color);
 }
 
 .option.correct {
@@ -80,9 +65,6 @@ h2 {
     pointer-events: none;
     opacity: 0.7;
 }
-
-
-
 
 .material-field-input.login-input {
     width: 100%;
@@ -141,11 +123,11 @@ h2 {
 
 .input-container {
     position: fixed;
-    bottom:14%;
-    width: 100% ;
+    bottom: 14%;
+    width: 100%;
     display: flex;
     justify-content: center;
-    height:65px;
+    height: 65px;
     margin: 20px 0;
     border-radius: 0px 0px 20px 20px;
     text-indent: 5px;
@@ -158,125 +140,121 @@ h2 {
     background-color: white;
     max-width: 800px;
     width: 100%;
-    display: flex
-;
+    display: flex;
     justify-content: space-between;
     padding: 0px 25px;
 }
 
-.input-container textarea{
-    
+.input-container textarea {
+
     border-radius: 50px;
     text-align: left;
     align-content: center;
-    /* width: 50vw; */
-    max-width: 800px;width: 100%;
+    max-width: 800px;
+    width: 100%;
     height: auto;
-    padding:20px;
-    /* -webkit-text-stroke: thin; */
-    -ms-overflow-style: none;  /* IE and Edge */
-  scrollbar-width: none; 
-  border: none;
+    padding: 20px;
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    border: none;
 
 }
 
 .input-container textarea:focus {
     outline: none;
     box-shadow: none;
-  }
-/* 
-.input-container button {
-    position: relative;
-     right: 60px; 
-    width: 40px;
-    top: 10px;
-    font-size: 30px;
-    text-align: center;
-    height: 40px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border:none;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-} */
-
+}
 
 .input-container button {
-    /* position: relative; */
-    /* right: 60px; */
-    /* width: 40px; */
-    /* top: 10px; */
     font-size: 30px;
     text-align: center;
-    /* height: 40px; */
-    /* display: flex
-; */
-    /* justify-content: center; */
-    /* align-items: center; */
     border: none;
     padding: 2px;
-    /* box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); */
 }
 
 
 #inputText::-webkit-scrollbar {
     display: none;
-  }
+}
 
-  .input-container button:hover {
-    transform: scale(1.1); /* Zoom a little */
-    transition: transform 0.3s ease; /* Smooth animation */
-  }
+.input-container button:hover {
+    transform: scale(1.1);
+    /* Zoom a little */
+    transition: transform 0.3s ease;
+    /* Smooth animation */
+}
 
-  #inputText {
-    overflow: hidden; /* Hides both vertical and horizontal scrollbars */
-    resize: none;     /* Optional: disables manual resizing */
-  }
+#inputText {
+    overflow: hidden;
+    /* Hides both vertical and horizontal scrollbars */
+    resize: none;
+    /* Optional: disables manual resizing */
+}
 
 
-
-/* HTML: <div class="loader2"></div> */
 .loader {
     width: 80px;
     height: 40px;
     border-radius: 100px 100px 0 0;
     position: relative;
     overflow: hidden;
-  }
-  .loader:before {
+}
+
+.loader:before {
     content: "";
     position: absolute;
     inset: 0 0 -100%;
-    background: 
-      radial-gradient(farthest-side,#ffd738 80%,#0000) left 70% top    20%/15px 15px,
-      radial-gradient(farthest-side,#020308 92%,#0000) left 65% bottom 19%/12px 12px,
-      radial-gradient(farthest-side,#ecfefe 92%,#0000) left 70% bottom 20%/15px 15px,
-      linear-gradient(#9eddfe 50%,#020308 0);
+    background:
+        radial-gradient(farthest-side, #ffd738 80%, #0000) left 70% top 20%/15px 15px,
+        radial-gradient(farthest-side, #020308 92%, #0000) left 65% bottom 19%/12px 12px,
+        radial-gradient(farthest-side, #ecfefe 92%, #0000) left 70% bottom 20%/15px 15px,
+        linear-gradient(#9eddfe 50%, #020308 0);
     background-repeat: no-repeat;
     animation: l5 2s infinite;
-  }
-  @keyframes l5 {
-    0%,20%   {transform: rotate(0)}
-    40%,60%  {transform: rotate(.5turn)}
-    80%,100% {transform: rotate(1turn)}
-  }
-  
-
-
- /* HTML: <div class="loader"></div> */
-.loader2 {
-  width: 60px;
-  aspect-ratio: 4;
-  --_g: no-repeat radial-gradient(circle closest-side,#000 90%,#0000);
-  background: 
-    var(--_g) 0%   50%,
-    var(--_g) 50%  50%,
-    var(--_g) 100% 50%;
-  background-size: calc(100%/3) 100%;
-  animation: l7 1s infinite linear;
 }
+
+@keyframes l5 {
+
+    0%,
+    20% {
+        transform: rotate(0)
+    }
+
+    40%,
+    60% {
+        transform: rotate(.5turn)
+    }
+
+    80%,
+    100% {
+        transform: rotate(1turn)
+    }
+}
+
+
+.loader2 {
+    width: 60px;
+    aspect-ratio: 4;
+    --_g: no-repeat radial-gradient(circle closest-side, var(--h2-color) 90%, var(--bg-color) 0);
+    background:
+        var(--_g) 0% 50%,
+        var(--_g) 50% 50%,
+        var(--_g) 100% 50%;
+    background-size: calc(100%/3) 100%;
+    animation: l7 1s infinite linear;
+}
+
 @keyframes l7 {
-    33%{background-size:calc(100%/3) 0%  ,calc(100%/3) 100%,calc(100%/3) 100%}
-    50%{background-size:calc(100%/3) 100%,calc(100%/3) 0%  ,calc(100%/3) 100%}
-    66%{background-size:calc(100%/3) 100%,calc(100%/3) 100%,calc(100%/3) 0%  }
+    33% {
+        background-size: calc(100%/3) 0%, calc(100%/3) 100%, calc(100%/3) 100%
+    }
+
+    50% {
+        background-size: calc(100%/3) 100%, calc(100%/3) 0%, calc(100%/3) 100%
+    }
+
+    66% {
+        background-size: calc(100%/3) 100%, calc(100%/3) 100%, calc(100%/3) 0%
+    }
 }

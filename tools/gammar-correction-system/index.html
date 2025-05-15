@@ -16,18 +16,13 @@
 <body>
     <div id="navbar"></div>
     <div id="input-container" class="input-container">
-        <!-- <textarea oninput="validateText()" id="inputText" rows="4" cols="60"
-            placeholder="Enter a sentence..."></textarea><br /><br /> -->
-            <div class="form-container">
-            <textarea oninput="validateText()" id="inputText" class="form-control" rows="4" placeholder="Enter a sentence..."></textarea>
-            <button id="submitButton"  class="btn btn-lg" onclick="checkGrammar()">🛠️
-                <!-- <div class="spinner-grow" role="status">
-            <span class="visually-hidden">Loading...</span>
-          </div> -->    
+        <div class="form-container">
+            <textarea oninput="validateText()" id="inputText" class="form-control" rows="4"
+                placeholder="Enter a sentence..."></textarea>
+            <button id="submitButton" class="btn btn-lg" onclick="checkGrammar()">🛠️
             </button>
         </div>
-            </div>
-    <!-- <button onclick="expandInput()">Expand</button> -->
+    </div>
     <div id="response" class="text-center"> </div>
     <div class="container" id="grammar-container">
     </div>
