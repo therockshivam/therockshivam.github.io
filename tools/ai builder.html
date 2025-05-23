@@ -1,0 +1,242 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI UI Generator</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px;
+      background-color: #f4f4f4;
+    }
+    textarea {
+      width: 80%;
+      height: 100px;
+      padding: 10px;
+      margin-bottom: 10px;
+    }
+    button {
+      padding: 10px 20px;
+      margin-bottom: 20px;
+    }
+    .container {
+      display: flex;
+      gap: 20px;
+      width: 100%;
+      justify-content: center;
+    }
+    .output {
+      width: 45%;
+      background-color: #fff;
+      padding: 10px;
+      border: 1px solid #ccc;
+    }
+    iframe {
+      width: 100%;
+      height: 400px;
+      border: 1px solid #ccc;
+    }
+  </style>
+</head>
+<body>
+  <h1>AI UI Generator (Mock)</h1>
+  <textarea id="description" placeholder="Describe the UI you want to generate..."></textarea>
+  <button onclick="generateUI()">Generate UI</button>
+  <div class="container">
+    <div class="output">
+      <h3>Generated Code</h3>
+      <pre id="codeDisplay"></pre>
+    </div>
+    <div class="output">
+      <h3>Live Preview</h3>
+      <iframe id="preview"></iframe>
+    </div>
+  </div>
+
+  <script>
+    function generateUI() {
+      const desc = document.getElementById("description").value.toLowerCase();
+      let html = "";
+
+      if (desc.includes("login")) {
+        html = `
+          <style>
+            body { font-family: sans-serif; display: flex; justify-content: center; align-items: center; height: 100vh; }
+            form { border: 1px solid #ccc; padding: 20px; border-radius: 10px; width: 300px; }
+            input { display: block; margin-bottom: 10px; width: 100%; padding: 8px; }
+            button { padding: 10px; width: 100%; background: blue; color: white; border: none; }
+          </style>
+          <form>
+            <h2>Login</h2>
+            <input type="text" placeholder="Username" />
+            <input type="password" placeholder="Password" />
+            <button type="submit">Login</button>
+          </form>
+        `;
+      } else if (desc.includes("portfolio")) {
+        html = `
+          <style>
+            body { font-family: sans-serif; padding: 20px; }
+            h1 { color: darkblue; }
+            .project { margin: 10px 0; }
+          </style>
+          <h1>My Portfolio</h1>
+          <div class="project">Project 1 - Web Design</div>
+          <div class="project">Project 2 - App Development</div>
+        `;
+      } else {
+        html = `<p>Sorry, I could not understand your request. Try including 'login' or 'portfolio'.</p>`;
+      }
+
+      document.getElementById("codeDisplay").textContent = html;
+      const previewFrame = document.getElementById("preview");
+      const doc = previewFrame.contentDocument || previewFrame.contentWindow.document;
+      doc.open();
+      doc.write(html);
+      doc.close();
+    }
+  </script>
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>AI UI Generator (Gemini)</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f4f4;
+      margin: 0;
+      padding: 2rem;
+      color: #333;
+    }
+    h1 {
+      text-align: center;
+    }
+    #prompt {
+      width: 100%;
+      padding: 1rem;
+      font-size: 1rem;
+      margin-bottom: 1rem;
+    }
+    button {
+      padding: 0.7rem 1.5rem;
+      font-size: 1rem;
+      background-color: #4CAF50;
+      border: none;
+      color: white;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #45a049;
+    }
+    #result {
+      display: flex;
+      margin-top: 2rem;
+      gap: 2rem;
+    }
+    textarea {
+      width: 48%;
+      height: 400px;
+      font-family: monospace;
+      padding: 1rem;
+      font-size: 0.9rem;
+    }
+    iframe {
+      width: 48%;
+      height: 400px;
+      border: 1px solid #ccc;
+      background: white;
+    }
+    .copy-btn {
+      margin-top: 0.5rem;
+      padding: 0.4rem 1rem;
+      font-size: 0.9rem;
+      background-color: #007bff;
+      color: white;
+      border: none;
+    }
+    .copy-btn:hover {
+      background-color: #0069d9;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>AI UI Generator (Gemini)</h1>
+  <input type="text" id="prompt" placeholder="Describe the UI you want to generate (e.g., create a login form)">
+  <button onclick="generateUI()">Generate</button>
+
+  <div id="result">
+    <div>
+      <textarea id="code" readonly></textarea>
+      <button class="copy-btn" onclick="copyCode()">Copy Code</button>
+    </div>
+    <iframe id="preview"></iframe>
+  </div>
+
+  <script>
+    const API_KEY = "AIzaSyAKoFxivtkxVL5DjzfwQKodCZGObEYTlJA";
+
+    async function generateUI() {
+      const prompt = document.getElementById('prompt').value;
+      const fullPrompt = `
+Generate a complete standalone HTML file including HTML, CSS, and JavaScript (if needed) based on the following description:
+"${prompt}"
+Do not include explanations, only return code inside one code block.`;
+
+    //   const res = await fetch(
+    //     `https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent?key=${API_KEY}`,
+    //     {
+    //       method: "POST",
+    //       headers: {
+    //         "Content-Type": "application/json"
+    //       },
+    //       body: JSON.stringify({
+    //         contents: [{ parts: [{ text: fullPrompt }] }]
+    //       })
+    //     }
+    //   );
+
+    const res = await fetch(
+  `https://generativelanguage.googleapis.com/v1/models/gemini-pro:generateContent?key=${API_KEY}`,
+  {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify({
+      contents: [{ parts: [{ text: fullPrompt }] }]
+    })
+  }
+);
+
+
+      const data = await res.json();
+      const raw = data?.candidates?.[0]?.content?.parts?.[0]?.text || "No code received.";
+
+      const code = extractHTML(raw);
+      document.getElementById('code').value = code;
+      document.getElementById('preview').srcdoc = code;
+    }
+
+    function extractHTML(rawText) {
+      // Removes ```html blocks
+      return rawText.replace(/```html|```/g, '').trim();
+    }
+
+    function copyCode() {
+      const code = document.getElementById('code');
+      code.select();
+      document.execCommand("copy");
+      alert("Code copied to clipboard!");
+    }
+  </script>
+</body>
+</html>
