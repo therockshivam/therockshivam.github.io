@@ -17,10 +17,7 @@ function getData(param) {
         if (this.readyState === this.DONE) {
             console.log(this.responseText);
             var dt=JSON.parse(this.responseText)
-            console.log(dt);
-            // document.write(this.responseText);
-
-    console.log(dt.result.extraction_output.owner_name);
+                    
 document.getElementById('value1').innerText=dt.action;
 document.getElementById('value2').innerText=dt.completed_at;
 
