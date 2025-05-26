@@ -8,7 +8,7 @@ async function checkGrammar() {
   }
 resetUI();
 
-  const A9f2XkL7qPz3RmW6 = 'AIzaSyDbxx_D6EVmsb6X4q09UWw08DkFALS3W5I';
+  const A9f2XkL7qPz3RmW6 = 'AIzaSyAWGetkcibgz2jwIcCvf_ft5x8Zvwi7UAI';
   const text = document.getElementById("inputText").value;
   document.getElementById("grammar-container").classList.add('loader2');
   const body = {
