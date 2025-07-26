@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shop Bill Generator</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 2rem;
+      background-color: #f0f0f0;
+    }
+    .container {
+      max-width: 800px;
+      margin: auto;
+      background: white;
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    input, button, select, textarea {
+      margin: 0.5rem 0;
+      padding: 0.5rem;
+      /* width: 100%; */
+    }
+    .item-row {
+      display: flex;
+      gap: 1rem;
+    }
+    .item-row input {
+      flex: 1;
+    }
+    .bill-output {
+      white-space: pre-wrap;
+      background: #f9f9f9;
+      padding: 1rem;
+      border-radius: 5px;
+      margin-top: 1rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>🧾 Shop Bill Generator</h2>
+    <input type="text" id="shopName" placeholder="Shop Name">
+    <input type="text" id="contact" placeholder="Contact Details">
+    <input type="text" id="welcome" placeholder="Welcome Message">
+    <input type="file" id="logo" accept="image/*">
+
+    <div id="items"></div>
+    <button onclick="addItem()">Add Item</button>
+
+    <input type="number" id="gst" placeholder="GST %">
+    <input type="number" id="discount" placeholder="Discount %">
+
+    <select id="template">
+      <option value="basic">Basic Template</option>
+      <option value="modern">Modern Template</option>
+    </select>
+
+    <button onclick="generateBill()">Generate Bill</button>
+    <button onclick="downloadBill()">Download Bill</button>
+    <input type="file" id="uploadOld" onchange="uploadOldSlip()">
+
+    <div class="bill-output" id="billDisplay"></div>
+  </div>
+
+  <script>
+    let items = [];
+
+    function addItem(name = '', price = '', count = '') {
+      const itemDiv = document.createElement('div');
+      itemDiv.className = 'item-row';
+
+      itemDiv.innerHTML = `
+        <input placeholder="Item Name" value="${name}" onchange="this.setAttribute('data-name', this.value)" data-name="${name}" />
+        <input type="number" placeholder="Price" value="${price}" onchange="this.setAttribute('data-price', this.value)" data-price="${price}" />
+        <input type="number" placeholder="Count" value="${count}" onchange="this.setAttribute('data-count', this.value)" data-count="${count}" />
+        <button onclick="this.parentElement.remove()">❌</button>
+      `;
+
+      document.getElementById('items').appendChild(itemDiv);
+    }
+
+    function generateBill() {
+      const shop = document.getElementById('shopName').value;
+      const contact = document.getElementById('contact').value;
+      const welcome = document.getElementById('welcome').value;
+      const gst = parseFloat(document.getElementById('gst').value || 0);
+      const discount = parseFloat(document.getElementById('discount').value || 0);
+      const template = document.getElementById('template').value;
+
+      let total = 0;
+      const billLines = [];
+      billLines.push(`${welcome}\n${shop}\n${contact}\n\nItems:`);
+
+      const itemDivs = document.querySelectorAll('#items .item-row');
+      itemDivs.forEach(div => {
+        const name = div.querySelector('input[placeholder="Item Name"]').getAttribute('data-name');
+        const price = parseFloat(div.querySelector('input[placeholder="Price"]').getAttribute('data-price'));
+        const count = parseInt(div.querySelector('input[placeholder="Count"]').getAttribute('data-count'));
+        const lineTotal = price * count;
+        total += lineTotal;
+        billLines.push(`${name} - ₹${price} x ${count} = ₹${lineTotal}`);
+      });
+
+      const gstAmount = total * (gst / 100);
+      const discountAmount = total * (discount / 100);
+      const grandTotal = total + gstAmount - discountAmount;
+
+      billLines.push(`\nSubtotal: ₹${total.toFixed(2)}`);
+      billLines.push(`GST (${gst}%): ₹${gstAmount.toFixed(2)}`);
+      billLines.push(`Discount (${discount}%): -₹${discountAmount.toFixed(2)}`);
+      billLines.push(`\nTotal: ₹${grandTotal.toFixed(2)}`);
+
+      document.getElementById('billDisplay').textContent = billLines.join('\n');
+    }
+
+    function downloadBill() {
+      const text = document.getElementById('billDisplay').textContent;
+      const blob = new Blob([text], { type: 'text/plain' });
+      const a = document.createElement('a');
+      a.href = URL.createObjectURL(blob);
+      a.download = 'bill.txt';
+      a.click();
+    }
+
+    function uploadOldSlip() {
+      const file = document.getElementById('uploadOld').files[0];
+      const reader = new FileReader();
+      reader.onload = function(e) {
+        document.getElementById('billDisplay').textContent = e.target.result;
+      }
+      reader.readAsText(file);
+    }
+  </script>
+</body>
+</html>

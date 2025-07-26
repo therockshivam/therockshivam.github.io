@@ -82,6 +82,12 @@ typeWriter();
         status: "live"
       },
       {
+        title: "🧾 Bill Slip Generator",
+        description: "A tool that allows users to create and manage bill slips.",
+        link: "/tools/bill-generator-tool/",
+        status: "live"
+      },
+      {
         title: "🚗🔎 Plate Identifier",
         description: "Instantly fetch vehicle details by simply entering a number plate.",
         link: "/tools/plate-identifier",
