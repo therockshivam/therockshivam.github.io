@@ -103,6 +103,7 @@ function renderGrammarUI(data) {
     container.innerHTML = `
       <div class="section">
         <h2>Grammar Feedback</h2>
+        <p><span class="label">Your Sentence:</span> ${document.getElementById("inputText").value}</p>
         <p><span class="label">Response:</span> ${data.response}</p>
         <p><span class="label">Error Description:</span> ${data.mistake}</p>
         <p><span class="label">Correction:</span> ${data.correction}</p>
@@ -151,6 +152,7 @@ function renderGrammarUI(data) {
   } else {
     container.innerHTML = ` <div class="section">
     <h2>Grammar Feedback</h2>
+    <p><span class="label">Your Sentence:</span> ${document.getElementById("inputText").value}</p>
     <p><span class="label">Response:</span> ${data.response}</p> 
     <p><span class="label">Grammar Rule:</span> ${data.formula}</p>
   </div>`
