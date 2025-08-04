@@ -1,12 +1,66 @@
 
 
 let response;
+let response_language = "English"; 
+
+const languages = [
+  "English", "Hindi", "Spanish", "French", "German", "Italian", "Russian", "Arabic", "Bengali",
+  "Chinese", "Japanese", "Korean", "Tamil", "Telugu", "Gujarati", "Urdu", "Portuguese", "Greek",
+  "Thai", "Polish", "Turkish", "Swedish", "Dutch", "Romanian", "Hebrew", "Persian", "Indonesian",
+  "Punjabi", "Malayalam", "Kannada", "Marathi", "Ukrainian", "Vietnamese", "Czech", "Slovak"
+  // Add more languages here
+];
+
+function renderLanguageList() {
+  const listContainer = document.getElementById('language-list');
+  listContainer.innerHTML = '';
+  languages.forEach(lang => {
+    const li = document.createElement('li');
+    li.className = 'listitem';
+    li.textContent = lang;
+    li.onclick = () => selectItem(li);
+    listContainer.appendChild(li);
+  });
+}
+
+function filterList(input) {
+  const filter = input.value.toLowerCase();
+  const listItems = document.querySelectorAll('.listitem');
+  listItems.forEach(item => {
+    item.style.display = item.textContent.toLowerCase().includes(filter) ? 'block' : 'none';
+  });
+}
+
+function selectItem(item) {
+  document.getElementById('selected-value').textContent = item.textContent.trim();
+  document.getElementById('state-dropdown').checked = false;
+}
+
+// Render the language list on page load
+document.addEventListener('DOMContentLoaded', renderLanguageList);
+
+
+// for dropdown
+function filterList(input) {
+  const filter = input.value.toLowerCase();
+  const listItems = input.parentElement.querySelectorAll('.listitem');
+  listItems.forEach(item => {
+    item.style.display = item.textContent.toLowerCase().includes(filter) ? 'block' : 'none';
+  });
+}
+
+function selectItem(item) {
+  document.getElementById('selected-value').textContent = item.textContent.trim();
+  response_language = item.textContent.trim(); // Update the response language
+  document.getElementById('state-dropdown').checked = false; // close dropdown
+} 
+
 
 async function checkGrammar() {
   if (!validateText()) {
     return;
   }
-resetUI();
+  resetUI();
 
   const A9f2XkL7qPz3RmW6 = 'AIzaSyAWGetkcibgz2jwIcCvf_ft5x8Zvwi7UAI';
   const text = document.getElementById("inputText").value;
@@ -23,43 +77,55 @@ resetUI();
     systemInstruction: {
       role: "user",
       parts: [{
-        text: `Act as an English teacher. When I make any grammar mistake, respond to the request, then give:
-- A brief description of the mistake
-- The corrected sentence
-- Grammar rule details (rule name, formula, description, 2 examples, 1 MCQ with 4 options and correct answer)
---Format example:
-e.g. 1 {
-"isCorrect": false,
-  "response": "what this is",
-  "mistake": "Incorrect word order and missing verb",
-  "correction": "What is this?",
-  "grammarRule": {
-    "ruleName": "Word Order in Questions",
-    "formula": "Auxiliary Verb + Subject + Main Verb",
-    "description": "In English, most questions require inverting the subject and the auxiliary verb (helping verb).  If there's no auxiliary verb, use 'do', 'does', or 'did'.",
-    "examples": [
-      "Correct: Where are you going? Incorrect: Where you are going?",
-      "Correct: Does she sing well? Incorrect: She sings well?"
-    ],
-    "mcq": {
-      "question": "Which of the following sentences is grammatically correct?",
-      "options": [
-        "What is this?",
-        "What this is?",
-        "This is what?",
-        "Is this what?"
-      ],
-      "correctAnswer": "What is this?"
-    }
-  }
+        text: `Act as a multilingual language tutor. You will be given:
 
-  e.g. 2 {
-"isCorrect": true,
-"response": "The sentence is correct.",
-"formula": The rule of the given sentence.
-            
-  }
-}`
+        - 'inputSentence': the sentence to check (it may be in any language)
+        - 'response_language': the language in which the user wants the explanation
+        
+        Your task is to:
+        1. Identify the language of the input sentence.
+        2. Evaluate whether the sentence is grammatically correct **based on its own language rules**.
+        3. Respond using the following JSON format:
+        
+        If the sentence has grammar mistakes:
+        {
+          "isCorrect": false,
+          "response": "Your input sentence",
+          "mistake": "Brief explanation of the mistake in ${response_language}",
+          "correction": "Corrected version of the sentence (in the original language)",
+          "grammarRule": {
+            "ruleName": "Name of the grammar rule (in ${response_language})",
+            "formula": "Grammar formula or pattern (in ${response_language})",
+            "description": "Short explanation of the rule (in ${response_language})",
+            "examples": [
+              "Correct: [correct example in original sentence language]",
+              "Incorrect: [incorrect example in original sentence language]"
+            ],
+            "mcq": {
+              "question": "MCQ testing this rule (in ${response_language})",
+              "options": [
+                "Option A (in original sentence language)",
+                "Option B (in original sentence language)",
+                "Option C (in original sentence language)",
+                "Option D (in original sentence language)"
+              ],
+              "correctAnswer": "Correct option (in original sentence language)"
+            }
+          }
+        }
+        
+        If the sentence is already correct:
+        {
+          "isCorrect": true,
+          "response": "The sentence is correct.",
+          "formula": "Mention the grammar rule applied, in ${response_language}"
+        }
+        
+        Make sure:
+        - You do not translate the sentence itself or its correction.
+        - All explanations and descriptions must be written in the ${response_language}.
+        - Grammar should always be judged based on the original input language."
+        `
       }]
     }
   };
@@ -133,22 +199,37 @@ function renderGrammarUI(data) {
     `;
 
     const optionElements = document.querySelectorAll('.option');
+    const correctAnswer = data.grammarRule.mcq.correctAnswer;
+    
     optionElements.forEach(option => {
       option.addEventListener('click', () => {
         const selectedAnswer = option.getAttribute('data-answer');
-        const correctAnswer = data.grammarRule.mcq.correctAnswer;
-
+    
+        // Prevent clicking again
+        if (document.querySelector('.disabled')) return;
+    
         optionElements.forEach(opt => {
           const answer = opt.getAttribute('data-answer');
-          opt.classList.add('disabled');
-          if (answer === correctAnswer) {
-            opt.classList.add('correct');
-          } else if (answer === selectedAnswer) {
-            opt.classList.add('wrong');
+    
+          opt.classList.add('disabled'); // Disable all options
+    
+          if (selectedAnswer === correctAnswer) {
+            if (answer === correctAnswer) {
+              opt.classList.add('correct');
+            }
+          } else {
+            if (answer === selectedAnswer) {
+              opt.classList.add('wrong');
+            }
+            if (answer === correctAnswer) {
+              opt.classList.add('correct');
+            }
           }
         });
       });
     });
+
+    
   } else {
     container.innerHTML = ` <div class="section">
     <h2>Grammar Feedback</h2>
@@ -185,7 +266,7 @@ function resetInput() {
   document.getElementById("inputText").value = "";
 }
 
-function resetUI(){
+function resetUI() {
   document.getElementById("grammar-container").innerHTML = "";
 }
 
