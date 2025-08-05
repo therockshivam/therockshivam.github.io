@@ -413,14 +413,7 @@ h2 {
       #363636
     ); */
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-    background: linear-gradient(
-      to bottom right,
-      #d45353,
-      #742020,
-      #7b4949,
-      #9c4e4e,
-      #e13939
-    );
+    background: var(--container-chat-options-bg);
     border-radius: 16px;
     padding: 1.5px;
     /* overflow: hidden; */
@@ -440,7 +433,6 @@ h2 {
         rgba(0, 0, 0, 0),
         rgba(0, 0, 0, 0)
       );
-      /* background-color: rgba(255, 255, 255, 0.7);  */
       width: 30px;
       height: 30px;
       filter: blur(1px);
@@ -450,7 +442,7 @@ h2 {
   .container_chat_bot .container-chat-options .chat {
     display: flex;
     flex-direction: column;
-    background-color: rgba(255, 255, 255, 0.7);
+    background-color: var(--variable-container-chat-option-chat-bg);
     /* background-color: rgba(0, 0, 0, 0.5); */
     border-radius: 15px;
     width: 100%;

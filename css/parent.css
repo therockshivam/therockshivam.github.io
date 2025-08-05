@@ -14,6 +14,15 @@
     --card: #f2f2f2;
     --hover-color:violet;
     --list-bg: antiquewhite;
+    --container-chat-options-bg: linear-gradient(
+      to bottom right,
+      #d45353,
+      #742020,
+      #7b4949,
+      #9c4e4e,
+      #e13939
+    );
+    --container-chat-option-chat-bg: rgba(255, 255, 255, 0.7);
 }  
 
 
@@ -30,6 +39,16 @@ body.dark-mode {
     --h2-color: #e2e4f6;
     --hover-color:green;
     --list-bg:  rgb(139, 139, 139);
+    --container-chat-options-bg: linear-gradient(
+       to bottom right,
+      #7e7e7e,
+      #363636,
+      #363636,
+      #363636,
+      #363636
+    );
+    --container-chat-option-chat-bg:rgba(0, 0, 0, 0.5)  ;
+    
 }
 
 
