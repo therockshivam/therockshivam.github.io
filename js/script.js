@@ -78,7 +78,7 @@ typeWriter();
       {
         title: "🧠 Grammar AI",
         description: "An AI-powered grammar correction system to make your writing shine.",
-        link: "/tools/gammar-correction-system",
+        link: "/tools/grammar-correction-system",
         status: "live"
       },
       {
