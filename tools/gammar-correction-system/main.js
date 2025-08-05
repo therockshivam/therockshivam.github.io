@@ -1,13 +1,13 @@
 
 
 let response;
-let response_language = "English"; 
+let response_language = "English";
 
 const languages = [
-  "English", "Hindi", "Spanish", "French", "German", "Italian", "Russian", "Arabic", "Bengali",
+  "English", "Hindi","Bundelkhandi", "Spanish", "French", "German", "Italian", "Russian", "Arabic", "Bengali",
   "Chinese", "Japanese", "Korean", "Tamil", "Telugu", "Gujarati", "Urdu", "Portuguese", "Greek",
   "Thai", "Polish", "Turkish", "Swedish", "Dutch", "Romanian", "Hebrew", "Persian", "Indonesian",
-  "Punjabi", "Malayalam", "Kannada", "Marathi", "Ukrainian", "Vietnamese", "Czech", "Slovak"
+  "Punjabi", "Malayalam", "Kannada", "Marathi", "Ukrainian", "Vietnamese", "Czech", "Slovak","Bhojpuri","Bihari", "Assamese", "Odia", "Sanskrit", "Nepali", "Sinhala", "Khmer", "Lao", "Filipino" 
   // Add more languages here
 ];
 
@@ -15,21 +15,27 @@ function renderLanguageList() {
   const listContainer = document.getElementById('language-list');
   listContainer.innerHTML = '';
   languages.forEach(lang => {
+   
     const li = document.createElement('li');
     li.className = 'listitem';
     li.textContent = lang;
+    if( lang == "English") {
+     li.setAttribute('selected', 'true'); 
+    }
     li.onclick = () => selectItem(li);
     listContainer.appendChild(li);
   });
 }
 
 function filterList(input) {
+  console.log("Filtering list with input:", input.value);
   const filter = input.value.toLowerCase();
   const listItems = document.querySelectorAll('.listitem');
   listItems.forEach(item => {
     item.style.display = item.textContent.toLowerCase().includes(filter) ? 'block' : 'none';
   });
 }
+
 
 function selectItem(item) {
   document.getElementById('selected-value').textContent = item.textContent.trim();
@@ -41,19 +47,19 @@ document.addEventListener('DOMContentLoaded', renderLanguageList);
 
 
 // for dropdown
-function filterList(input) {
-  const filter = input.value.toLowerCase();
-  const listItems = input.parentElement.querySelectorAll('.listitem');
-  listItems.forEach(item => {
-    item.style.display = item.textContent.toLowerCase().includes(filter) ? 'block' : 'none';
-  });
-}
+// function filterList(input) {
+//   const filter = input.value.toLowerCase();
+//   const listItems = input.parentElement.querySelectorAll('.listitem');
+//   listItems.forEach(item => {
+//     item.style.display = item.textContent.toLowerCase().includes(filter) ? 'block' : 'none';
+//   });
+// }
 
-function selectItem(item) {
-  document.getElementById('selected-value').textContent = item.textContent.trim();
-  response_language = item.textContent.trim(); // Update the response language
-  document.getElementById('state-dropdown').checked = false; // close dropdown
-} 
+// function selectItem(item) {
+//   document.getElementById('selected-value').textContent = item.textContent.trim();
+//   response_language = item.textContent.trim(); // Update the response language
+//   document.getElementById('state-dropdown').checked = false; // close dropdown
+// }
 
 
 async function checkGrammar() {
@@ -200,19 +206,19 @@ function renderGrammarUI(data) {
 
     const optionElements = document.querySelectorAll('.option');
     const correctAnswer = data.grammarRule.mcq.correctAnswer;
-    
+
     optionElements.forEach(option => {
       option.addEventListener('click', () => {
         const selectedAnswer = option.getAttribute('data-answer');
-    
+
         // Prevent clicking again
         if (document.querySelector('.disabled')) return;
-    
+
         optionElements.forEach(opt => {
           const answer = opt.getAttribute('data-answer');
-    
+
           opt.classList.add('disabled'); // Disable all options
-    
+
           if (selectedAnswer === correctAnswer) {
             if (answer === correctAnswer) {
               opt.classList.add('correct');
@@ -229,7 +235,7 @@ function renderGrammarUI(data) {
       });
     });
 
-    
+
   } else {
     container.innerHTML = ` <div class="section">
     <h2>Grammar Feedback</h2>
@@ -300,4 +306,4 @@ function getFooter(location) {
 
 
 getNavbar('../../components/common/navbar.html');
-getFooter('../../components/common/footer.html');
+// getFooter('../../components/common/footer.html');

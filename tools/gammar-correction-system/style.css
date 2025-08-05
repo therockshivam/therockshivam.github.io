@@ -346,7 +346,7 @@ h2 {
   border-radius: 8px;
   margin-top: 0.5rem;
   /* background: var(--footer-bg); ; */
-  background: rgb(139, 139, 139);
+  background:var(--list-bg) !important;
 
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
   opacity: 0;
@@ -404,13 +404,22 @@ h2 {
   .container_chat_bot .container-chat-options {
     position: relative;
     display: flex;
-    background: linear-gradient(
+    /* background: linear-gradient(
       to bottom right,
       #7e7e7e,
       #363636,
       #363636,
       #363636,
       #363636
+    ); */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    background: linear-gradient(
+      to bottom right,
+      #d45353,
+      #742020,
+      #7b4949,
+      #9c4e4e,
+      #e13939
     );
     border-radius: 16px;
     padding: 1.5px;
@@ -431,6 +440,7 @@ h2 {
         rgba(0, 0, 0, 0),
         rgba(0, 0, 0, 0)
       );
+      /* background-color: rgba(255, 255, 255, 0.7);  */
       width: 30px;
       height: 30px;
       filter: blur(1px);
@@ -440,7 +450,8 @@ h2 {
   .container_chat_bot .container-chat-options .chat {
     display: flex;
     flex-direction: column;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(255, 255, 255, 0.7);
+    /* background-color: rgba(0, 0, 0, 0.5); */
     border-radius: 15px;
     width: 100%;
     /* overflow: hidden; */

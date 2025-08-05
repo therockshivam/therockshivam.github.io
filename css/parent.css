@@ -13,6 +13,7 @@
     --label-color:#222;
     --card: #f2f2f2;
     --hover-color:violet;
+    --list-bg: antiquewhite;
 }  
 
 
@@ -28,6 +29,7 @@ body.dark-mode {
     --label-color:#fff;
     --h2-color: #e2e4f6;
     --hover-color:green;
+    --list-bg:  rgb(139, 139, 139);
 }
 
 
