@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Focus Timer</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app">
+    <h1>⏳ Focus Timer</h1>
+    <div class="mode-buttons">
+      <button onclick="setMode('work')">Work</button>
+      <button onclick="setMode('break')">Break</button>
+    </div>
+    <!--<div class="timer-display" id="timer">25:00</div>-->
+    
+    <div class="circle-wrapper">
+  <svg class="progress-ring" width="200" height="200">
+    <circle class="ring-bg" cx="100" cy="100" r="90" />
+    <circle class="ring-progress" cx="100" cy="100" r="90" />
+  </svg>
+  <div class="timer-display" id="timer">25:00</div>
+</div>
+
+    <div class="controls">
+      <button onclick="startTimer()">▶️ Start</button>
+      <button onclick="pauseTimer()">⏸️ Pause</button>
+      <button onclick="resetTimer()">🔁 Reset</button>
+    </div>
+  </div>
+  
+  <audio id="alarmSound" src="https://www.soundjay.com/misc/sounds/bell-ringing-05.mp3" preload="auto"></audio>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
+<style>
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(to bottom, #222, #444);
+  color: white;
+}
+
+.app {
+  text-align: center;
+  background: #333;
+  padding: 2rem;
+  border-radius: 20px;
+  box-shadow: 0 0 20px rgba(255,255,255,0.1);
+}
+
+.timer-display {
+  font-size: 5rem;
+  margin: 1rem 0;
+}
+
+.controls button,
+.mode-buttons button {
+  margin: 0.5rem;
+  padding: 0.7rem 1.2rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 10px;
+  background-color: #555;
+  color: white;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+button:hover {
+  background-color: #777;
+}
+
+
+
+.circle-wrapper {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  margin: auto;
+}
+
+.progress-ring {
+  transform: rotate(-90deg);
+}
+
+.ring-bg,
+.ring-progress {
+  fill: none;
+  stroke-width: 15;
+  r: 90;
+  cx: 100;
+  cy: 100;
+}
+
+.ring-bg {
+  stroke: #444;
+}
+
+.ring-progress {
+  stroke: #4caf50;
+  stroke-dasharray: 565.48; /* 2 * π * 90 */
+  stroke-dashoffset: 0;
+  transition: stroke-dashoffset 1s linear;
+}
+
+.timer-display {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 2rem;
+}
+
+
+</style>
+
+<script>
+
+const ring = document.querySelector('.ring-progress');
+const radius = 90;
+const circumference = 2 * Math.PI * radius;
+ring.style.strokeDasharray = `${circumference}`;
+
+
+let workDuration = 25 * 60;
+let breakDuration = 5 * 60;
+let timeLeft = workDuration;
+let timer;
+let isRunning = false;
+let currentMode = 'work';
+
+function updateDisplay() {
+  const minutes = Math.floor(timeLeft / 60);
+  const seconds = timeLeft % 60;
+  document.getElementById("timer").textContent =
+    `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+}
+
+function startTimer() {
+  if (!isRunning) {
+    isRunning = true;
+    timer = setInterval(() => {
+      timeLeft--;
+      updateDisplay();
+      if (timeLeft <= 0) {
+        clearInterval(timer);
+        isRunning = false;
+       const progress = timeLeft / (currentMode === 'work' ? workDuration : breakDuration);
+ring.style.strokeDashoffset = circumference * (1 - progress);
+ document.getElementById("alarmSound").play();
+alert("⏰ Time's up!");
+
+      }
+    }, 1000);
+  }
+}
+
+function pauseTimer() {
+  clearInterval(timer);
+  isRunning = false;
+}
+
+function resetTimer() {
+  clearInterval(timer);
+  isRunning = false;
+  timeLeft = currentMode === 'work' ? workDuration : breakDuration;
+  ring.style.strokeDashoffset = 0;
+
+  updateDisplay();
+}
+
+function setMode(mode) {
+  currentMode = mode;
+  timeLeft = mode === 'work' ? workDuration : breakDuration;
+  resetTimer();
+  updateDisplay();
+}
+
+updateDisplay();
+
+</script>
