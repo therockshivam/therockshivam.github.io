@@ -144,6 +144,12 @@ typeWriter();
         description: "Face Recognition Attendance System built with real-time detection.",
         link: "#",
         status: "coming-soon"
+      }, 
+      {
+        title: "⏰ LockedIn",
+        description: "A clock to make your efforts easy.",
+        link: "/tools/clockedin.html",
+        status: "coming-soon"
       }
     ];
 
