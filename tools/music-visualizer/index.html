@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Audio Visualizer - Music to Motion</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            overflow: hidden;
+        }
+
+        .container {
+            text-align: center;
+            width: 100%;
+            max-width: 1200px;
+            padding: 20px;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            background: linear-gradient(45deg, #fff, #f0f0f0);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .controls {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 30px;
+            background: rgba(255,255,255,0.1);
+            padding: 20px;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .file-input-wrapper {
+            position: relative;
+            overflow: hidden;
+            display: inline-block;
+        }
+
+        .file-input-wrapper input[type=file] {
+            position: absolute;
+            left: -9999px;
+        }
+
+        .file-input-label {
+            background: linear-gradient(45deg, #ff6b6b, #ee5a24);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-block;
+            font-weight: 600;
+            border: none;
+            box-shadow: 0 4px 15px rgba(238, 90, 36, 0.4);
+        }
+
+        .file-input-label:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(238, 90, 36, 0.6);
+        }
+
+        .btn {
+            background: linear-gradient(45deg, #4ecdc4, #44a08d);
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(78, 205, 196, 0.4);
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(78, 205, 196, 0.6);
+        }
+
+        .btn:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .volume-control {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .volume-slider {
+            width: 100px;
+            height: 6px;
+            border-radius: 3px;
+            background: rgba(255,255,255,0.3);
+            outline: none;
+            -webkit-appearance: none;
+        }
+
+        .volume-slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            background: #4ecdc4;
+            cursor: pointer;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+        }
+
+        .visualizer-container {
+            background: rgba(0,0,0,0.2);
+            border-radius: 15px;
+            padding: 20px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.1);
+            box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+        }
+
+        #visualizer {
+            border-radius: 10px;
+            background: linear-gradient(180deg, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.4) 100%);
+            box-shadow: inset 0 2px 10px rgba(0,0,0,0.5);
+        }
+
+        .status {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.2);
+            font-weight: 500;
+        }
+
+        .track-info {
+            margin-top: 15px;
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .controls {
+                flex-direction: column;
+                gap: 10px;
+            }
+            
+            #visualizer {
+                width: 100% !important;
+                height: 300px !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎵 Audio Visualizer</h1>
+        
+        <div class="controls">
+            <div class="file-input-wrapper">
+                <input type="file" id="audioFile" accept="audio/*">
+                <label for="audioFile" class="file-input-label">
+                    📁 Choose Audio File
+                </label>
+            </div>
+            
+            <button id="micBtn" class="btn">🎤 Use Microphone</button>
+            <button id="playPauseBtn" class="btn" disabled>▶️ Play</button>
+            <button id="stopBtn" class="btn" disabled>⏹️ Stop</button>
+            
+            <div class="volume-control">
+                <span>🔊</span>
+                <input type="range" id="volumeSlider" class="volume-slider" min="0" max="100" value="50">
+            </div>
+        </div>
+
+        <div class="visualizer-container">
+            <canvas id="visualizer" width="800" height="400"></canvas>
+        </div>
+
+        <div id="status" class="status">
+            Select an audio file or use microphone to start visualizing
+        </div>
+
+        <div id="trackInfo" class="track-info"></div>
+    </div>
+
+    <script>
+        class AudioVisualizer {
+            constructor() {
+                this.canvas = document.getElementById('visualizer');
+                this.ctx = this.canvas.getContext('2d');
+                this.audioContext = null;
+                this.analyser = null;
+                this.dataArray = null;
+                this.source = null;
+                this.audio = null;
+                this.isPlaying = false;
+                this.animationId = null;
+                this.isMicMode = false;
+                
+                this.setupCanvas();
+                this.setupEventListeners();
+                this.drawIdleBars();
+            }
+
+            setupCanvas() {
+                const rect = this.canvas.getBoundingClientRect();
+                this.canvas.width = rect.width * window.devicePixelRatio;
+                this.canvas.height = rect.height * window.devicePixelRatio;
+                this.ctx.scale(window.devicePixelRatio, window.devicePixelRatio);
+                this.canvas.style.width = rect.width + 'px';
+                this.canvas.style.height = rect.height + 'px';
+            }
+
+            setupEventListeners() {
+                document.getElementById('audioFile').addEventListener('change', (e) => {
+                    this.loadAudioFile(e.target.files[0]);
+                });
+
+                document.getElementById('micBtn').addEventListener('click', () => {
+                    this.toggleMicrophone();
+                });
+
+                document.getElementById('playPauseBtn').addEventListener('click', () => {
+                    this.togglePlayPause();
+                });
+
+                document.getElementById('stopBtn').addEventListener('click', () => {
+                    this.stop();
+                });
+
+                document.getElementById('volumeSlider').addEventListener('input', (e) => {
+                    if (this.audio) {
+                        this.audio.volume = e.target.value / 100;
+                    }
+                });
+
+                window.addEventListener('resize', () => {
+                    this.setupCanvas();
+                });
+            }
+
+            async loadAudioFile(file) {
+                if (!file) return;
+
+                this.updateStatus('Loading audio file...');
+                this.isMicMode = false;
+                
+                try {
+                    if (this.audio) {
+                        this.audio.pause();
+                        this.audio = null;
+                    }
+
+                    this.audio = new Audio();
+                    this.audio.src = URL.createObjectURL(file);
+                    this.audio.volume = document.getElementById('volumeSlider').value / 100;
+                    
+                    await new Promise((resolve, reject) => {
+                        this.audio.addEventListener('loadedmetadata', resolve);
+                        this.audio.addEventListener('error', reject);
+                    });
+
+                    await this.setupAudioContext();
+                    this.updateStatus(`Loaded: ${file.name}`);
+                    this.updateTrackInfo(file.name);
+                    this.enableControls();
+                    
+                } catch (error) {
+                    this.updateStatus('Error loading audio file');
+                    console.error('Error loading audio:', error);
+                }
+            }
+
+            async toggleMicrophone() {
+                if (this.isMicMode) {
+                    this.stopMicrophone();
+                } else {
+                    await this.startMicrophone();
+                }
+            }
+
+            async startMicrophone() {
+                try {
+                    this.updateStatus('Requesting microphone access...');
+                    this.isMicMode = true;
+                    
+                    const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+                    await this.setupAudioContext();
+                    
+                    this.source = this.audioContext.createMediaStreamSource(stream);
+                    this.source.connect(this.analyser);
+                    
+                    this.updateStatus('Microphone active - Start making noise!');
+                    this.updateTrackInfo('Live Microphone Input');
+                    this.enableControls();
+                    this.startVisualization();
+                    
+                    document.getElementById('micBtn').textContent = '🔴 Stop Microphone';
+                    document.getElementById('playPauseBtn').disabled = true;
+                    
+                } catch (error) {
+                    this.updateStatus('Microphone access denied');
+                    this.isMicMode = false;
+                    console.error('Microphone error:', error);
+                }
+            }
+
+            stopMicrophone() {
+                if (this.source && this.source.mediaStream) {
+                    this.source.mediaStream.getTracks().forEach(track => track.stop());
+                }
+                this.stop();
+                document.getElementById('micBtn').textContent = '🎤 Use Microphone';
+                this.updateStatus('Microphone stopped');
+            }
+
+            async setupAudioContext() {
+                if (this.audioContext) {
+                    await this.audioContext.close();
+                }
+
+                this.audioContext = new (window.AudioContext || window.webkitAudioContext)();
+                this.analyser = this.audioContext.createAnalyser();
+                this.analyser.fftSize = 256;
+                this.analyser.smoothingTimeConstant = 0.8;
+                
+                const bufferLength = this.analyser.frequencyBinCount;
+                this.dataArray = new Uint8Array(bufferLength);
+
+                if (!this.isMicMode && this.audio) {
+                    this.source = this.audioContext.createMediaElementSource(this.audio);
+                    this.source.connect(this.analyser);
+                    this.analyser.connect(this.audioContext.destination);
+                }
+            }
+
+            togglePlayPause() {
+                if (!this.audio) return;
+
+                if (this.isPlaying) {
+                    this.audio.pause();
+                    this.isPlaying = false;
+                    document.getElementById('playPauseBtn').textContent = '▶️ Play';
+                    this.updateStatus('Paused');
+                } else {
+                    this.audio.play();
+                    this.isPlaying = true;
+                    document.getElementById('playPauseBtn').textContent = '⏸️ Pause';
+                    this.updateStatus('Playing');
+                    this.startVisualization();
+                }
+            }
+
+            stop() {
+                if (this.audio) {
+                    this.audio.pause();
+                    this.audio.currentTime = 0;
+                    this.isPlaying = false;
+                }
+                
+                if (this.animationId) {
+                    cancelAnimationFrame(this.animationId);
+                    this.animationId = null;
+                }
+
+                document.getElementById('playPauseBtn').textContent = '▶️ Play';
+                document.getElementById('playPauseBtn').disabled = !this.audio && !this.isMicMode;
+                document.getElementById('stopBtn').disabled = !this.audio && !this.isMicMode;
+                
+                if (!this.isMicMode) {
+                    this.updateStatus('Stopped');
+                    this.drawIdleBars();
+                }
+            }
+
+            startVisualization() {
+                const animate = () => {
+                    this.animationId = requestAnimationFrame(animate);
+                    this.draw();
+                };
+                animate();
+            }
+
+            draw() {
+                if (!this.analyser) return;
+
+                this.analyser.getByteFrequencyData(this.dataArray);
+                
+                const width = this.canvas.width / window.devicePixelRatio;
+                const height = this.canvas.height / window.devicePixelRatio;
+                
+                this.ctx.fillStyle = 'rgba(0, 0, 0, 0.2)';
+                this.ctx.fillRect(0, 0, width, height);
+
+                const barWidth = width / this.dataArray.length * 2;
+                let x = 0;
+
+                for (let i = 0; i < this.dataArray.length; i++) {
+                    const barHeight = (this.dataArray[i] / 255) * height * 0.8;
+                    
+                    // Create gradient for each bar
+                    const gradient = this.ctx.createLinearGradient(0, height - barHeight, 0, height);
+                    const hue = (i / this.dataArray.length) * 360;
+                    gradient.addColorStop(0, `hsl(${hue}, 100%, 60%)`);
+                    gradient.addColorStop(1, `hsl(${hue}, 100%, 40%)`);
+                    
+                    this.ctx.fillStyle = gradient;
+                    this.ctx.fillRect(x, height - barHeight, barWidth - 2, barHeight);
+                    
+                    // Add glow effect for higher frequencies
+                    if (this.dataArray[i] > 200) {
+                        this.ctx.shadowColor = `hsl(${hue}, 100%, 60%)`;
+                        this.ctx.shadowBlur = 10;
+                        this.ctx.fillRect(x, height - barHeight, barWidth - 2, barHeight);
+                        this.ctx.shadowBlur = 0;
+                    }
+                    
+                    x += barWidth;
+                }
+            }
+
+            drawIdleBars() {
+                const width = this.canvas.width / window.devicePixelRatio;
+                const height = this.canvas.height / window.devicePixelRatio;
+                
+                this.ctx.fillStyle = 'rgba(0, 0, 0, 0.8)';
+                this.ctx.fillRect(0, 0, width, height);
+
+                const barCount = 64;
+                const barWidth = width / barCount;
+                
+                for (let i = 0; i < barCount; i++) {
+                    const barHeight = Math.sin(Date.now() * 0.001 + i * 0.1) * 20 + 30;
+                    const gradient = this.ctx.createLinearGradient(0, height - barHeight, 0, height);
+                    const hue = (i / barCount) * 360;
+                    gradient.addColorStop(0, `hsla(${hue}, 70%, 50%, 0.6)`);
+                    gradient.addColorStop(1, `hsla(${hue}, 70%, 30%, 0.3)`);
+                    
+                    this.ctx.fillStyle = gradient;
+                    this.ctx.fillRect(i * barWidth, height - barHeight, barWidth - 2, barHeight);
+                }
+                
+                if (!this.isPlaying && !this.isMicMode) {
+                    requestAnimationFrame(() => this.drawIdleBars());
+                }
+            }
+
+            enableControls() {
+                document.getElementById('playPauseBtn').disabled = this.isMicMode;
+                document.getElementById('stopBtn').disabled = false;
+            }
+
+            updateStatus(message) {
+                document.getElementById('status').textContent = message;
+            }
+
+            updateTrackInfo(info) {
+                document.getElementById('trackInfo').textContent = info ? `🎵 ${info}` : '';
+            }
+        }
+
+        // Initialize the visualizer when the page loads
+        document.addEventListener('DOMContentLoaded', () => {
+            new AudioVisualizer();
+        });
+    </script>
+</body>
+</html>

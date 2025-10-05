@@ -100,6 +100,12 @@ typeWriter();
         status: "live"
       },
       {
+        title: "Music Visualizer",
+        description: "web-based audio visualizer that turns music into moving bars",
+        link: "tools/music-visualizer",
+        status: "live"
+      },
+      {
         title: "🛠️ Web Dev Toolkit",
         description: "A simple drag-and-drop tool to create a proper structure and styling for websites using HTML, CSS, and JS.",
         link: "/tools/web-dev-toolkit",
