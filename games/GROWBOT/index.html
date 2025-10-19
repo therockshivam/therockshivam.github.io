@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>🌿 GrowBot v4 — XP Scaling, Confetti & Best Score</title>
+<style>
+  :root{
+    --bg-1: #071021;
+    --bg-2: #08151f;
+    --accent: #00ff9d;
+    --accent-2: #66ffd1;
+    --bad: #ff6b6b;
+    --glass: rgba(255,255,255,0.04);
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0;
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background: radial-gradient(circle at 20% 20%, #081428 0%, var(--bg-1) 35%, var(--bg-2) 100%);
+    color:#eafaf1;
+    font-family: Inter, System-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    padding:24px;
+  }
+
+  .scene{
+    width: 820px;
+    max-width: 96vw;
+    background: linear-gradient(180deg, rgba(255,255,255,0.02), var(--glass));
+    border-radius:16px;
+    padding:20px;
+    box-shadow: 0 8px 40px rgba(2,6,23,0.7);
+    display:flex;
+    gap:20px;
+    align-items:center;
+    position:relative;
+  }
+
+  .left{
+    width: 360px;
+    max-width: 50%;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:12px;
+  }
+
+  h1{
+    margin:0 0 6px 0;
+    font-size:20px;
+    text-shadow: 0 0 12px rgba(0,255,150,0.06);
+  }
+  p.sub{margin:0; font-size:13px; color:#cfeee0; opacity:0.9}
+
+  #growbotWrap{ width:240px; height:240px; display:grid; place-items:center; position:relative; }
+  #growbot{
+    width:140px; height:140px; border-radius:50%;
+    background: radial-gradient(circle at 35% 35%, #00ff9d 0%, #007f5f 60%);
+    box-shadow: 0 6px 24px rgba(0,255,150,0.12), 0 0 30px rgba(0,255,150,0.06) inset;
+    transition: transform 220ms ease, box-shadow 220ms ease;
+    position:relative; cursor:pointer; display:flex; align-items:center; justify-content:center;
+  }
+
+  .petal{ width:56px; height:112px; background: linear-gradient(180deg,#00ff9d 0%, #006644 100%); border-radius:50% 50% 40% 40%;
+    position:absolute; opacity:0; transform: scale(0) translateY(-12px); transition: transform 500ms cubic-bezier(.2,.9,.2,1), opacity 400ms ease; transform-origin:center 70%;
+    filter: drop-shadow(0 6px 12px rgba(0,0,0,0.25));
+  }
+  .petal.grown{ opacity:1; transform: scale(1) translateY(0); }
+
+  .wave{ position:absolute; width:140px; height:140px; border-radius:50%; border:3px solid var(--accent); opacity:0.75; pointer-events:none; animation: waveExpand 900ms cubic-bezier(.2,.9,.2,1) forwards; }
+  @keyframes waveExpand{ 0%{ transform: scale(1); opacity:0.75 } 100%{ transform: scale(3); opacity:0 } }
+
+  .right{ flex:1; display:flex; flex-direction:column; gap:12px; min-width: 320px; }
+
+  .stats{ display:flex; justify-content:space-between; gap:8px; align-items:center; }
+  .scoreBox{ background: rgba(255,255,255,0.02); border-radius:8px; padding:10px 12px; flex:1; display:flex; align-items:center; justify-content:space-between; gap:8px; }
+  .score{ font-weight:700; color:var(--accent-2); font-size:18px; }
+  .combo{ font-weight:700; color:#ffd66b; font-size:14px; }
+
+  .xpWrap{ margin-top:6px; }
+  .xpLabel{ font-size:13px; color:#cfeee0; margin-bottom:6px; }
+  .xpBar{ width:100%; height:14px; background: rgba(255,255,255,0.03); border-radius:999px; overflow:hidden; position:relative; }
+  .xpFill{ height:100%; width:0%; background: linear-gradient(90deg, #00ff9d, #66ffd1); border-radius:999px; transition: width 600ms cubic-bezier(.2,.9,.2,1); box-shadow: 0 6px 18px rgba(0,255,140,0.06); }
+  .xpText{ margin-top:6px; font-size:12px; color:#bfeed9; text-align:right; }
+
+  .levelGlow{ position:absolute; inset:0; border-radius: 16px; pointer-events:none; box-shadow: 0 0 0px rgba(102,255,209,0); transition: box-shadow 400ms ease; }
+  .scene.levelup .levelGlow{ box-shadow: 0 0 40px 8px rgba(102,255,209,0.08), 0 0 140px 24px rgba(102,255,209,0.06); }
+
+  #growbot.bloom{ animation: bloom 900ms ease forwards; box-shadow: 0 8px 40px rgba(102,255,209,0.12), 0 0 80px rgba(102,255,209,0.06) inset; transform: scale(1.14); }
+  @keyframes bloom{ 0%{ transform: scale(1) } 100%{ transform: scale(1.14) } }
+
+  .hint{ font-size:13px; color:#bfeed9; opacity:0.9 }
+  .controls{ display:flex; gap:8px; margin-top:8px; }
+  button{ padding:8px 12px; border-radius:8px; border:0; cursor:pointer; background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01)); color:#eafaf1; font-weight:600; box-shadow: 0 6px 20px rgba(2,6,23,0.6); }
+
+  .best{ font-size:12px; color:#bfeed9; text-align:right; margin-top:6px; }
+  @media (max-width:900px){ .scene{flex-direction:column; align-items:center} .left{max-width:100%; width:100%} .right{width:100%} #growbotWrap{width:200px;height:200px;} }
+  /* confetti canvas sits on top */
+  canvas#confettiCanvas{ position:absolute; inset:0; pointer-events:none; z-index:999; }
+</style>
+</head>
+<body>
+  <div class="scene" id="scene">
+    <canvas id="confettiCanvas"></canvas>
+
+    <div class="left">
+      <h1>🌿 GrowBot v4</h1>
+      <p class="sub">Click the plant in a steady rhythm. Perfect timing = growth, off-beat = shrink. Combo boosts XP.</p>
+
+      <div id="growbotWrap" aria-hidden="false">
+        <div id="growbot" title="Click me in rhythm"></div>
+      </div>
+
+      <div class="hint">First click sets the tempo. Keep clicks consistent ±200ms. Higher combo → more XP per perfect hit.</div>
+      <div class="controls">
+        <button id="autoplayBtn">Play simple beat</button>
+        <button id="resetBtn">Reset Game</button>
+      </div>
+    </div>
+
+    <div class="right">
+      <div class="stats">
+        <div class="scoreBox">
+          <div>
+            <div style="font-size:12px;color:#bfeed9">Score</div>
+            <div class="score" id="score">0</div>
+          </div>
+          <div style="text-align:right">
+            <div style="font-size:12px;color:#bfeed9">Combo</div>
+            <div class="combo" id="combo">0</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="xpWrap">
+        <div class="xpLabel">XP Progress</div>
+        <div class="xpBar"><div class="xpFill" id="xpFill"></div></div>
+        <div class="xpText" id="xpText">0 / 100 XP</div>
+      </div>
+
+      <div class="best" id="bestText">Best Score: 0</div>
+      <div style="height:12px"></div>
+      <div id="message" class="hint">Click the green orb to begin.</div>
+      <div style="flex:1"></div>
+    </div>
+
+    <div class="levelGlow" id="levelGlow"></div>
+  </div>
+
+<script>
+/* GrowBot v4:
+ - XP scaling: each perfect hit gives baseXP * multiplier where multiplier = 1 + (combo * 0.08)
+ - Score increments by xpGained rounded; Score maps to XP for bar but XP for level is clamped 0..100
+ - Confetti on level-up (canvas particle system)
+ - Best score saved to localStorage under key 'growbot_best'
+*/
+
+const growbot = document.getElementById('growbot');
+const scene = document.getElementById('scene');
+const scoreEl = document.getElementById('score');
+const comboEl = document.getElementById('combo');
+const xpFill = document.getElementById('xpFill');
+const xpText = document.getElementById('xpText');
+const message = document.getElementById('message');
+const autoplayBtn = document.getElementById('autoplayBtn');
+const resetBtn = document.getElementById('resetBtn');
+const bestText = document.getElementById('bestText');
+const confCanvas = document.getElementById('confettiCanvas');
+
+const ctxConf = confCanvas.getContext ? confCanvas.getContext('2d') : null;
+function fitConfettiCanvas(){ confCanvas.width = scene.clientWidth; confCanvas.height = scene.clientHeight; confCanvas.style.width = scene.clientWidth + 'px'; confCanvas.style.height = scene.clientHeight + 'px'; }
+fitConfettiCanvas();
+window.addEventListener('resize', fitConfettiCanvas);
+
+let lastClick = 0;
+let perfectTempo = 0;
+let streak = 0;
+let combo = 0;
+let score = 0;
+let xp = 0;
+const maxPetals = 6;
+const neededForBloom = 10;
+const baseXP = 10; // base XP per perfect hit (before multiplier)
+const maxScoreCap = 200;
+const bestKey = 'growbot_best';
+
+// create petals
+const petals = [];
+for(let i=0;i<maxPetals;i++){
+  const petal = document.createElement('div');
+  petal.className = 'petal';
+  petal.style.transform = `rotate(${i * (360/maxPetals)}deg) translateY(-68px) scale(0)`;
+  growbot.appendChild(petal);
+  petals.push(petal);
+}
+
+// audio helper
+function playTone(freq, duration = 0.12){
+  try{
+    const ctx = new (window.AudioContext||window.webkitAudioContext)();
+    const osc = ctx.createOscillator();
+    const gain = ctx.createGain();
+    osc.type = 'sine';
+    osc.frequency.value = freq;
+    gain.gain.value = 0.08;
+    osc.connect(gain); gain.connect(ctx.destination);
+    osc.start(); osc.stop(ctx.currentTime + duration);
+  }catch(e){ }
+}
+function playGood(){ playTone(720, 0.12); }
+function playBad(){ playTone(240, 0.14); }
+function playLevelUp(){ playTone(980, 0.28); setTimeout(()=>playTone(760,0.18),120); }
+
+// wave pulse
+function createWave(){ const w = document.createElement('div'); w.className='wave'; growbot.appendChild(w); setTimeout(()=> w.remove(), 1000); }
+
+// confetti system
+let confettiParticles = [];
+function spawnConfetti(x,y){
+  if(!ctxConf) return;
+  const count = 80;
+  for(let i=0;i<count;i++){
+    confettiParticles.push({
+      x: x + (Math.random()-0.5)*100,
+      y: y,
+      vx: (Math.random()-0.5)*6,
+      vy: Math.random()*-8 - 2,
+      r: 6 + Math.random()*6,
+      life: 120 + Math.random()*60,
+      color: ['#ff3b3b','#ffd23f','#6effa7','#66d9ff','#c17bff'][Math.floor(Math.random()*5)],
+      angle: Math.random()*Math.PI*2,
+      spin: (Math.random()-0.5)*0.3
+    });
+  }
+}
+function updateConfetti(){
+  if(!ctxConf) return;
+  ctxConf.clearRect(0,0,confCanvas.width,confCanvas.height);
+  for(let i=confettiParticles.length-1;i>=0;i--){
+    const p = confettiParticles[i];
+    p.x += p.vx; p.y += p.vy; p.vy += 0.32; p.angle += p.spin; p.life--;
+    ctxConf.save();
+    ctxConf.translate(p.x, p.y);
+    ctxConf.rotate(p.angle);
+    ctxConf.fillStyle = p.color;
+    ctxConf.fillRect(-p.r/2, -p.r/2, p.r, p.r*0.6);
+    ctxConf.restore();
+    if(p.life <= 0 || p.y > confCanvas.height + 50) confettiParticles.splice(i,1);
+  }
+  requestAnimationFrame(updateConfetti);
+}
+requestAnimationFrame(updateConfetti);
+
+// score update display and best-score handling
+function loadBest(){ const b = Number(localStorage.getItem(bestKey) || 0); bestText.textContent = `Best Score: ${b}`; return b; }
+function saveBestIfBetter(){
+  const prev = Number(localStorage.getItem(bestKey) || 0);
+  if(score > prev){ localStorage.setItem(bestKey, score); bestText.textContent = `Best Score: ${score}`; }
+}
+loadBest();
+
+function updateScoreDisplay(){
+  scoreEl.textContent = score;
+  comboEl.textContent = combo;
+  // xp is clamped 0..100 for the bar
+  xp = Math.max(0, Math.min(100, Math.round(score)));
+  xpFill.style.width = xp + '%';
+  xpText.textContent = `${xp} / 100 XP`;
+
+  if (xp >= 100){
+    scene.classList.add('levelup');
+    message.textContent = '✨ LEVEL UP! GrowBot glows with life.';
+    playLevelUp();
+    // confetti center spawn
+    const rect = scene.getBoundingClientRect();
+    spawnConfetti(rect.width/2, rect.height/5);
+    // small auto-bonus (one-time)
+    saveBestIfBetter();
+    combo = 0;
+    setTimeout(()=> scene.classList.remove('levelup'), 2200);
+  }
+}
+
+function applyGrowth(){
+  const scale = 1 + Math.min(0.9, streak * 0.055);
+  growbot.style.transform = `scale(${scale})`;
+  for(let i=0;i<petals.length;i++){
+    if(i < Math.min(streak, maxPetals)) petals[i].classList.add('grown'); else petals[i].classList.remove('grown');
+  }
+  if (streak >= neededForBloom){
+    growbot.classList.add('bloom');
+    message.textContent = '🌸 Fully bloomed! Nice rhythm — press Reset to restart.';
+    saveBestIfBetter();
+  } else {
+    growbot.classList.remove('bloom');
+  }
+}
+
+// click handler with XP-scaling based on combo
+growbot.addEventListener('click', () => {
+  const now = Date.now();
+  if (lastClick === 0){
+    lastClick = now;
+    message.textContent = 'Tempo set — keep that beat!';
+    playTone(520, 0.12);
+    return;
+  }
+  const diff = now - lastClick;
+  if (perfectTempo === 0) perfectTempo = diff;
+  const deviation = Math.abs(diff - perfectTempo);
+
+  if (deviation <= 200){
+    // perfect
+    streak = Math.min(neededForBloom, streak + 1);
+    combo++;
+    // multiplier grows with combo: 1 + combo*0.08 (8% per combo step)
+    const multiplier = 1 + (combo * 0.08);
+    const xpGained = Math.round(baseXP * multiplier);
+    score = Math.min(maxScoreCap, score + xpGained);
+    createWave(); playGood();
+    message.textContent = `Nice! On beat — Growth ${streak}/${neededForBloom} (+${xpGained} XP)`;
+    // small confetti burst at high combos
+    if(combo > 12){
+      const r = scene.getBoundingClientRect();
+      spawnConfetti(r.width * (0.5 + (Math.random()-0.5)*0.2), r.height * 0.2);
+    }
+  } else {
+    // off-beat
+    combo = 0;
+    streak = Math.max(0, streak - 1);
+    score = Math.max(-50, score - 5);
+    playBad();
+    message.textContent = 'Off-beat — match the tempo (±200ms).';
+  }
+  lastClick = now;
+  updateScoreDisplay();
+  applyGrowth();
+});
+
+// autoplay simple beat
+let autoplayTimer = null;
+autoplayBtn.addEventListener('click', () => {
+  if (autoplayTimer){ clearInterval(autoplayTimer); autoplayTimer = null; autoplayBtn.textContent = 'Play simple beat'; return; }
+  if (!perfectTempo || perfectTempo === 0) perfectTempo = 600;
+  autoplayBtn.textContent = 'Stop beat';
+  autoplayTimer = setInterval(()=>{ playTone(420,0.08); }, perfectTempo);
+});
+
+// reset logic
+resetBtn.addEventListener('click', resetGame);
+function resetGame(){
+  lastClick = 0; perfectTempo = 0; streak = 0; combo = 0; score = 0; xp = 0;
+  message.textContent = 'Click the green orb to begin.'; growbot.classList.remove('bloom');
+  petals.forEach(p => p.classList.remove('grown'));
+  growbot.style.transform = 'scale(1)';
+  updateScoreDisplay();
+  applyGrowth();
+  if (autoplayTimer){ clearInterval(autoplayTimer); autoplayTimer = null; autoplayBtn.textContent = 'Play simple beat'; }
+}
+
+// start displays
+updateScoreDisplay();
+applyGrowth();
+</script>
+</body>
+</html>
