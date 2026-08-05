@@ -156,6 +156,12 @@ typeWriter();
         description: "A clock to make your efforts easy.",
         link: "tools/clockedin",
         status: "coming-soon"
+      }, 
+      {
+        title: "🎥 StreamBox",
+        description: "A Live OTT Platform.",
+        link: "tools/streambox",
+        status: "live"
       }
     ];
 

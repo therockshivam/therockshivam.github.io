@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StreamBox</title>
+
+    <link rel="stylesheet" href="css\style.css">
+</head>
+<body>
+
+<header class="navbar">
+
+    <div class="logo">
+        🎬 StreamBox
+    </div>
+
+    <div class="search-box">
+        <input
+                id="searchInput"
+                type="text"
+                placeholder="Search movies...">
+    </div>
+
+</header>
+
+<section class="hero">
+
+    <div class="hero-overlay">
+
+        <h1>Unlimited Movies & TV Shows</h1>
+
+        <p>
+            Watch thousands of movies instantly.
+        </p>
+
+        <button id="watchNowBtn">
+            ▶ Watch Now
+        </button>
+
+    </div>
+
+</section>
+
+<main>
+
+<section>
+
+    <div class="section-header">
+
+        <h2>Latest Movies</h2>
+
+        <a href="#">View All</a>
+
+    </div>
+
+    <div
+            id="movieGrid"
+            class="media-grid">
+
+    </div>
+
+</section>
+
+<section>
+
+    <div class="section-header">
+
+        <h2>Latest TV Shows</h2>
+
+        <a href="#">View All</a>
+
+    </div>
+
+    <div
+            id="tvGrid"
+            class="media-grid">
+
+    </div>
+
+</section>
+
+</main>
+
+<div id="playerModal" class="modal">
+
+    <div class="modal-content">
+
+        <span class="close">&times;</span>
+
+        <iframe
+                id="playerFrame"
+                allowfullscreen
+                allow="autoplay; encrypted-media; screen-wake-lock">
+        </iframe>
+
+    </div>
+
+</div>
+
+<script src="js/api.js"></script>
+<!-- <script src="js/player.js"></script> -->
+<script src="js/ui.js"></script>
+<script src="js/app.js"></script>
+
+</body>
+</html>
