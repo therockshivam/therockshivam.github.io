@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Admin</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Icons -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    />
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="../css/admin-dashboard.css">
+</head>
+
+<body>
+
+<div class="layout">
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+
+        <div class="logo">
+            <i class="fa-solid fa-layer-group"></i>
+            <span>Portfolio Admin</span>
+        </div>
+
+        <nav>
+
+            <a class="menu active" data-page="dashboard">
+                <i class="fa-solid fa-chart-line"></i>
+                Dashboard
+            </a>
+
+            <a class="menu" data-page="database">
+                <i class="fa-solid fa-database"></i>
+                Database
+            </a>
+
+            <a class="menu" data-page="settings">
+                <i class="fa-solid fa-gear"></i>
+                Settings
+            </a>
+
+            <a id="logoutBtn">
+                <i class="fa-solid fa-right-from-bracket"></i>
+                Logout
+            </a>
+
+        </nav>
+
+    </aside>
+
+    <!-- Main -->
+    <main class="main">
+
+        <!-- Header -->
+        <header>
+
+            <div>
+
+                <h1 id="pageTitle">
+                    Dashboard
+                </h1>
+
+                <small>
+                    Welcome Administrator
+                </small>
+
+            </div>
+
+            <div class="header-right">
+
+                <button id="refreshBtn">
+                    <i class="fa-solid fa-rotate"></i>
+                    Refresh
+                </button>
+
+                <img
+                        src="https://ui-avatars.com/api/?name=Admin"
+                        class="avatar"
+                        alt="Admin">
+
+            </div>
+
+        </header>
+
+        <!-- Dynamic Content -->
+        <section id="content">
+
+            <!-- Dashboard Page -->
+            <div id="dashboardPage">
+
+                <div class="cards">
+
+                    <div class="card">
+
+                        <h4>Total Tables</h4>
+
+                        <h2 id="tableCount">
+                            0
+                        </h2>
+
+                    </div>
+
+                    <div class="card">
+
+                        <h4>Total Records</h4>
+
+                        <h2 id="recordCount">
+                            0
+                        </h2>
+
+                    </div>
+
+                    <div class="card">
+
+                        <h4>Last Updated</h4>
+
+                        <h2 id="lastUpdated">
+                            --
+                        </h2>
+
+                    </div>
+
+                </div>
+
+                <div class="section">
+
+                    <div class="section-header">
+
+                        <h2>Database Tables</h2>
+
+                        <button id="createTableBtn">
+
+                            <i class="fa-solid fa-plus"></i>
+
+                            Create Table
+
+                        </button>
+
+                    </div>
+
+                    <div id="tableList">
+
+                        <!-- Dynamic -->
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</div>
+
+<!-- Global Modal -->
+
+<div id="modalContainer"></div>
+
+<!-- Toast -->
+
+<div id="toastContainer"></div>
+
+<script src="../js/admin/auth.js"></script>
+<script src="../js/admin/database.js"></script>
+<script src="../js/admin/ui.js"></script>
+<script src="../js/admin/router.js"></script>
+<script src="../js/admin/app.js"></script>
+
+</body>
+</html>
