@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>🚌 Bus Fare Tracker – Ahmedabad → Bhopal</title>
+  <meta name="description" content="Monitor Paytm bus fares from Ahmedabad to Bhopal on 6 November 2026. Get alerts when fares drop below ₹1,000." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<!-- ── In-app notification area ─────────────────────────────────────────── -->
+<div id="notification-tray" aria-live="polite" aria-label="Notifications"></div>
+
+<!-- ── Header ─────────────────────────────────────────────────────────────── -->
+<header class="app-header">
+  <div class="header-inner">
+    <div class="header-brand">
+      <span class="brand-icon">🚌</span>
+      <div>
+        <h1 class="brand-title">Bus Fare Tracker</h1>
+        <p class="brand-subtitle">Ahmedabad <span class="route-arrow">→</span> Bhopal · 6 Nov 2026</p>
+      </div>
+    </div>
+    <div class="header-status" id="header-status">
+      <span class="status-dot" id="status-dot"></span>
+      <span id="status-label">Idle</span>
+    </div>
+  </div>
+</header>
+
+<!-- ── Main layout ─────────────────────────────────────────────────────────── -->
+<main class="app-main">
+
+  <!-- ── Stat cards row ─────────────────────────────────────────────── -->
+  <section class="stats-row" aria-label="Summary statistics">
+    <div class="stat-card" id="stat-matching">
+      <div class="stat-value" id="stat-matching-val">–</div>
+      <div class="stat-label">Matching Buses</div>
+    </div>
+    <div class="stat-card highlight" id="stat-lowest">
+      <div class="stat-value" id="stat-lowest-val">–</div>
+      <div class="stat-label">Lowest Fare</div>
+    </div>
+    <div class="stat-card" id="stat-total">
+      <div class="stat-value" id="stat-total-val">–</div>
+      <div class="stat-label">Total Found</div>
+    </div>
+    <div class="stat-card" id="stat-last-check">
+      <div class="stat-value" id="stat-last-check-val">–</div>
+      <div class="stat-label">Last Check</div>
+    </div>
+  </section>
+
+  <!-- ── Two-column layout ─────────────────────────────────────────────── -->
+  <div class="content-grid">
+
+    <!-- ── Left panel: controls ──────────────────────────────────────── -->
+    <aside class="panel controls-panel">
+
+      <section class="panel-section">
+        <h2 class="panel-heading">Monitoring Controls</h2>
+
+        <!-- Monitor buttons -->
+        <div class="btn-group" role="group" aria-label="Monitoring controls">
+          <button id="btn-start"  class="btn btn-primary"   onclick="App.startMonitoring()">▶ Start</button>
+          <button id="btn-pause"  class="btn btn-secondary" onclick="App.pauseMonitoring()"  disabled>⏸ Pause</button>
+          <button id="btn-stop"   class="btn btn-danger"    onclick="App.stopMonitoring()"   disabled>⏹ Stop</button>
+        </div>
+        <button id="btn-check" class="btn btn-accent full-width mt-sm" onclick="App.runCheck()">
+          ⚡ Check Now
+        </button>
+        <button id="btn-demo" class="btn btn-ghost full-width mt-sm" onclick="App.runDemo()">
+          🎭 Demo Mode (fixture data)
+        </button>
+      </section>
+
+      <section class="panel-section">
+        <h2 class="panel-heading">Configuration</h2>
+
+        <label class="form-label" for="input-target-fare">Target Fare (₹)</label>
+        <div class="input-row">
+          <span class="input-prefix">₹</span>
+          <input id="input-target-fare" class="form-input" type="number" min="100" max="50000" value="1000" />
+        </div>
+
+        <label class="form-label" for="input-after-time">Depart After (24h IST)</label>
+        <input id="input-after-time" class="form-input" type="time" value="17:00" />
+
+        <label class="form-label" for="input-interval">Check Interval (minutes)</label>
+        <input id="input-interval" class="form-input" type="number" min="1" max="60" value="5" />
+        <p class="form-hint">Minimum 1 min. Requests are rate-limited to avoid abuse.</p>
+
+        <div class="toggle-row">
+          <label class="toggle-label" for="toggle-filter">Filter by time</label>
+          <label class="toggle">
+            <input id="toggle-filter" type="checkbox" checked />
+            <span class="toggle-slider"></span>
+          </label>
+        </div>
+
+        <div class="toggle-row">
+          <label class="toggle-label" for="toggle-notif">Browser notifications</label>
+          <label class="toggle">
+            <input id="toggle-notif" type="checkbox" />
+            <span class="toggle-slider"></span>
+          </label>
+        </div>
+      </section>
+
+      <section class="panel-section">
+        <h2 class="panel-heading">Sorting</h2>
+        <select id="select-sort" class="form-input" onchange="App.resort()">
+          <option value="fare">Lowest Fare</option>
+          <option value="departure">Earliest Departure</option>
+          <option value="duration">Shortest Journey</option>
+        </select>
+      </section>
+
+      <section class="panel-section">
+        <h2 class="panel-heading">Next Check</h2>
+        <div class="countdown-display">
+          <span id="countdown-label">–</span>
+          <div class="progress-bar-wrap">
+            <div class="progress-bar" id="countdown-bar" style="width:0%"></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="panel-section">
+        <h2 class="panel-heading">Live API Notice</h2>
+        <div class="info-box">
+          <p><strong>How live mode works:</strong></p>
+          <p>Open <a href="https://travel.paytm.com" target="_blank" rel="noopener">travel.paytm.com</a> in this browser and log in. Then click <em>Check Now</em>. The local server proxies the request using your browser session.</p>
+          <p class="mt-sm"><strong>No credentials are stored.</strong> Cookies travel only to Paytm and are never logged.</p>
+          <p class="mt-sm warning-text">⚠️ This uses an undocumented private API. Paytm may block automated requests at any time.</p>
+        </div>
+      </section>
+
+    </aside>
+
+    <!-- ── Right panel: results ───────────────────────────────────────── -->
+    <section class="panel results-panel">
+
+      <!-- Tabs -->
+      <div class="tabs" role="tablist">
+        <button class="tab active" id="tab-buses"  role="tab" aria-selected="true"  aria-controls="panel-buses"  onclick="App.switchTab('buses')">Buses</button>
+        <button class="tab"        id="tab-alerts" role="tab" aria-selected="false" aria-controls="panel-alerts" onclick="App.switchTab('alerts')">Alerts <span class="badge" id="alert-badge"></span></button>
+        <button class="tab"        id="tab-history" role="tab" aria-selected="false" aria-controls="panel-history" onclick="App.switchTab('history')">History</button>
+      </div>
+
+      <!-- ── Buses tab ───────────────────────────────────────────── -->
+      <div id="panel-buses" role="tabpanel" aria-labelledby="tab-buses">
+        <div class="panel-toolbar">
+          <span id="results-meta" class="results-meta"></span>
+          <span id="data-freshness" class="freshness-tag"></span>
+        </div>
+        <div id="bus-list" class="bus-list">
+          <div class="empty-state" id="empty-state">
+            <div class="empty-icon">🔍</div>
+            <p>No buses loaded yet.</p>
+            <p class="hint">Click <strong>Check Now</strong> for live data or <strong>Demo Mode</strong> to preview with fixture data.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── Alerts tab ─────────────────────────────────────────── -->
+      <div id="panel-alerts" role="tabpanel" aria-labelledby="tab-alerts" hidden>
+        <div class="panel-toolbar">
+          <button class="btn btn-ghost btn-sm" onclick="App.dismissAllAlerts()">Dismiss All</button>
+        </div>
+        <div id="alert-list" class="alert-list">
+          <div class="empty-state">
+            <div class="empty-icon">🔔</div>
+            <p>No active alerts.</p>
+            <p class="hint">Alerts appear when fares drop, new buses appear, or your target fare is reached.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── History tab ────────────────────────────────────────── -->
+      <div id="panel-history" role="tabpanel" aria-labelledby="tab-history" hidden>
+        <div class="panel-toolbar">
+          <span class="hint">Persisted in SQLite. A browser refresh does not erase this data.</span>
+        </div>
+        <div id="history-list" class="history-container">
+          <p class="hint">Load history by switching to this tab after a check.</p>
+        </div>
+      </div>
+
+    </section>
+  </div>
+</main>
+
+<!-- ── Bus card template (cloned by JS) ──────────────────────────────────── -->
+<template id="bus-card-template">
+  <article class="bus-card" tabindex="0">
+    <div class="bus-card-header">
+      <div class="bus-card-operator"></div>
+      <div class="bus-card-fare-wrap">
+        <div class="bus-card-fare"></div>
+        <div class="bus-card-fare-sub"></div>
+      </div>
+    </div>
+    <div class="bus-card-times">
+      <div class="bus-time-dep">
+        <span class="time-value dep-time"></span>
+        <span class="time-label">Dep</span>
+      </div>
+      <div class="bus-duration">
+        <div class="duration-line"></div>
+        <span class="duration-label"></span>
+        <div class="duration-line"></div>
+      </div>
+      <div class="bus-time-arr">
+        <span class="time-value arr-time"></span>
+        <span class="time-label">Arr</span>
+      </div>
+    </div>
+    <div class="bus-card-tags"></div>
+    <div class="bus-card-details">
+      <div class="bus-detail-row boarding-row">
+        <span class="detail-icon">📍</span>
+        <span class="detail-text boarding-pts"></span>
+      </div>
+      <div class="bus-detail-row dropping-row">
+        <span class="detail-icon">🏁</span>
+        <span class="detail-text dropping-pts"></span>
+      </div>
+    </div>
+    <div class="bus-card-footer">
+      <div class="bus-seats"></div>
+      <div class="bus-rating"></div>
+      <a class="btn btn-accent btn-sm bus-book-btn" href="#" target="_blank" rel="noopener">Book →</a>
+    </div>
+    <div class="bus-fare-history-toggle" role="button" tabindex="0">Show fare history ▾</div>
+    <div class="bus-fare-history" hidden></div>
+  </article>
+</template>
+
+<script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,4548 @@
+{
+    "error": null,
+    "code": 200,
+    "status": {
+        "result": "success",
+        "message": {}
+    },
+    "body": {
+        "t": [
+            {
+                "seats": 34,
+                "btn": "ASHOK LEYLAND A/C PACK GLASS AIR SUSPENSION",
+                "dur": "1220",
+                "bid": "3461::2342::2026-11-06::42::172323::onward_leg",
+                "tid": "3461:2342:4604:2000:0850:1:1",
+                "rtid": "3461:2342:4604:42:172323",
+                "ptid": "172323",
+                "oid": 4604,
+                "propn": "B R Travels",
+                "rnr": {
+                    "avg": 4.1,
+                    "cnt": 64,
+                    "r_cnt": null,
+                    "cc": "#27ae5f"
+                },
+                "fs": {
+                    "sl": true,
+                    "ac": true,
+                    "can": true,
+                    "st": false,
+                    "ss": false,
+                    "is_elec": false,
+                    "bst": null
+                },
+                "ft": {
+                    "s_lady": false,
+                    "clbp": false
+                },
+                "pht": 0,
+                "df": [
+                    {
+                        "bf": 3333,
+                        "g": 167,
+                        "of": 0,
+                        "st": 2,
+                        "d": null,
+                        "fd": null,
+                        "fs": null,
+                        "ofr": null
+                    }
+                ],
+                "btt": [
+                    "Leyland",
+                    "AC",
+                    "Sleeper"
+                ],
+                "rnr_src": "paytm_route_time_id",
+                "srt_rt_val": 4.1,
+                "as_info": {
+                    "0": {
+                        "5": 0,
+                        "6": 0,
+                        "7": 0
+                    },
+                    "1": {
+                        "5": 0,
+                        "6": 0,
+                        "7": 0
+                    },
+                    "2": {
+                        "5": 0,
+                        "6": 0,
+                        "7": 34
+                    },
+                    "3": {
+                        "0": 0,
+                        "1": 0,
+                        "2": 34
+                    },
+                    "4": {
+                        "5": 0,
+                        "6": 0,
+                        "7": 34
+                    },
+                    "8": 14,
+                    "9": 20
+                },
+                "d_r": {
+                    "avg": 4.1,
+                    "cnt": 64,
+                    "tags": [
+                        "Clean Bus",
+                        "Comfortable Seats",
+                        "On Time"
+                    ]
+                },
+                "f_r": {
+                    "disp": 4.1,
+                    "srt": 4.1,
+                    "cnt": 20
+                },
+                "ss_c": false,
+                "bp": [
+                    "R T O Circle Subhash Brige",
+                    "B R Travels Sahibaugh Namaste Circle",
+                    "Paldi Neetaspeedlink Travels Opp Navchetan School Paldi",
+                    "Aavkar Travels Nr Bhagyoday Ho Opp St Stand No 6",
+                    "Br Travels Near Ctm Express Highway Beside Amts Bus Stop Ctm Hatkeshwar"
+                ],
+                "dp": [
+                    "Habib Ganj",
+                    "Lal Ghati Circle",
+                    "Isbt Bus Stand"
+                ],
+                "offers": [],
+                "dep_dt": "2026-11-06 20:30:00",
+                "arr_dt": "2026-11-07 08:50:00",
+                "st": {
+                    "so": false,
+                    "d": false,
+                    "s_ddd": 0
+                },
+                "p_score": 20,
+                "is_most_booked_by_female": true,
+                "fp_score": 4,
+                "is_gps": false,
+                "op_tags": [
+                    536
+                ],
+                "rt_deal": {},
+                "amen": [
+                    1,
+                    3,
+                    5,
+                    6,
+                    7,
+                    8,
+                    12,
+                    19,
+                    20,
+                    24
+                ],
+                "is_spon": false,
+                "pa": 0,
+                "sc_i": {
+                    "bk": 1.3063,
+                    "bk_cnt": 1531
+                },
+                "trav_pht": 0
+            },
+            {
+                "seats": 18,
+                "btn": "2 X 1 (42) A/C VOLVO MULTI AXLE SLEEPER B11R  I-SHIFT [DP]",
+                "dur": "1000",
+                "bid": "3461::2342::2026-11-06::43::203#1#1373#49612#105763#22417#06112026#10:00__PM#10:00__PM#2::onward_leg",
+                "tid": "3461:2342:4350:2115:0800:1:1",
+                "rtid": "3461:2342:4350:43:105763",
+                "ptid": "203#1#1373#49612#105763#22417#06112026#10:00 PM#10:00 PM#2",
+                "oid": 4350,
+                "propn": "M R Travels",
+                "rnr": {
+                    "avg": 3.6,
+                    "cnt": 184,
+                    "r_cnt": null,
+                    "cc": "#27ae5f"
+                },
+                "fs": {
+                    "sl": true,
+                    "ac": true,
+                    "can": true,
+                    "st": false,
+                    "ss": false,
+                    "is_elec": false,
+                    "bst": true
+                },
+                "ft": {
+                    "s_lady": false,
+                    "clbp": false
+                },
+                "pht": 0,
+                "df": [
+                    {
+                        "bf": 5201,
+                        "g": 0,
+                        "of": 0,
+                        "st": 0,
+                        "d": null,
+                        "fd": null,
+                        "fs": null,
+                        "ofr": null
+                    }
+                ],
+                "btt": [
+                    "Volvo",
+                    "AC",
+                    "Sleeper",
+                    "2+1",
+                    "Multi Axle",
+                    "I-Shift"
+                ],
+                "rnr_src": "paytm_route_time_id",
+                "srt_rt_val": 3.6,
+                "as_info": null,
+                "d_r": {
+                    "avg": 3.6,
+                    "cnt": 184,
+                    "tags": [
+                        "Clean Bus",
+                        "Comfortable Seats",
+                        "On Time"
+                    ]
+                },
+                "f_r": {
+                    "disp": 3.9,
+                    "srt": 3.9,
+                    "cnt": 2
+                },
+                "ss_c": true,
+                "bp": [
+                    "Rto Circle Brts Bus Stop",
+                    "Shahibag",
+                    "Paladi",
+                    "Kiran Travels Brts Bus Stand Geeta Mandir",
+                    "Ctm Char Rasta Surya Travels",
+                    "Soni Ki Chal End Of The Bridge",
+                    "Sun Business Hub Gf Shop No 21 Opp Odhav Police Chowkdi Sp Ring Road Circle"
+                ],
+                "dp": [
+                    "Vit University Main Highway",
+                    "Kubeshwar Dham Sehore",
+                    "Ho Cresent Sehore",
+                    "M R Travels Lal Ghati Circle Bairagadh Road Near Hp Petrol Pump",
+                    "Isbt Bus Stand Opp Sanchi Dairy"
+                ],
+                "offers": [],
+                "dep_dt": "2026-11-06 22:00:00",
+                "arr_dt": "2026-11-07 08:00:00",
+                "st": {
+                    "so": false,
+                    "d": false,
+                    "s_ddd": 0
+                },
+                "p_score": 41,
+                "fp_score": 4,
+                "is_gps": false,
+                "op_tags": [],
+                "rt_deal": {},
+                "amen": [],
+                "is_spon": false,
+                "pa": 0,
+                "sc_i": {
+                    "bk": 1.7054,
+                    "bk_cnt": 2580
+                },
+                "trav_pht": 0
+            },
+            {
+                "seats": 21,
+                "btn": "2 X 1 (36) VE A/C SLEEPER",
+                "dur": "1315",
+                "bid": "3461::2342::2026-11-06::43::31#1#1373#24624#64103#17830#06112026#6:15__PM#11:15__PM#2::onward_leg",
+                "tid": "3461:2342:3108:2230:1230:1:1",
+                "rtid": "3461:2342:3108:43:64103",
+                "ptid": "31#1#1373#24624#64103#17830#06112026#6:15 PM#11:15 PM#2",
+                "oid": 3108,
+                "propn": "Raj Ratan Tours & Travels",
+                "rnr": {
+                    "avg": 3.4,
+                    "cnt": 58,
+                    "r_cnt": null,
+                    "cc": "#27ae5f"
+                },
+                "fs": {
+                    "sl": true,
+                    "ac": true,
+                    "can": true,
+                    "st": false,
+                    "ss": false,
+                    "is_elec": false,
+                    "bst": true
+                },
+                "ft": {
+                    "s_lady": false,
+                    "clbp": false
+                },
+                "pht": 0,
+                "df": [
+                    {
+                        "bf": 1299,
+                        "g": 0,
+                        "of": 0,
+                        "st": 2,
+                        "d": null,
+                        "fd": null,
+                        "fs": null,
+                        "ofr": null
+                    },
+                    {
+                        "bf": 1399,
+                        "g": 0,
+                        "of": 0,
+                        "st": 2,
+                        "d": null,
+                        "fd": null,
+                        "fs": null,
+                        "ofr": null
+                    },
+                    {
+                        "bf": 4441,
+                        "g": 0,
+                        "of": 0,
+                        "st": 2,
+                        "d": null,
+                        "fd": null,
+                        "fs": null,
+                        "ofr": null
+                    },
+                    {
+                        "bf": 4662,
+                        "g": 0,
+                        "of": 0,
+                        "st": 2,
+                        "d": null,
+                        "fd": null,
+                        "fs": null,
+                        "ofr": null
+                    },
+                    {
+                        "bf": 4885,
+                        "g": 0,
+                        "of": 0,
+                        "st": 2,
+                        "d": null,
+                        "fd": null,
+                        "fs": null,
+                        "ofr": null
+                    },
+                    {
+                        "bf": 5106,
+                        "g": 0,
+                        "of": 0,
+                        "st": 2,
+                        "d": null,
+                        "fd": null,
+                        "fs": null,
+                        "ofr": null
+                    },
+                    {
+                        "bf": 5328,
+                        "g": 0,
+                        "of": 0,
+                        "st": 2,
+                        "d": null,
+                        "fd": null,
+                        "fs": null,
+                        "ofr": null
+                    }
+                ],
+                "btt": [
+                    "VE",
+                    "AC",
+                    "Sleeper",
+                    "2+1"
+                ],
+                "rnr_src": "paytm_route_time_id",
+                "srt_rt_val": 3.4,
+                "as_info": {
+                    "0": {
+                        "5": 0,
+                        "6": 0,
+                        "7": 0
+                    },
+                    "1": {
+                        "5": 0,
+                        "6": 0,
+                        "7": 0
+                    },
+                    "2": {
+                        "5": 0,
+                        "6": 0,
+                        "7": 21
+                    },
+                    "3": {
+                        "0": 0,
+                        "1": 0,
+                        "2": 21
+                    },
+                    "4": {
+                        "5": 0,
+                        "6": 0,
+                        "7": 21
+                    },
+                    "8": 5,
+                    "9": 13
+                },
+                "d_r": {
+                    "avg": 3.4,
+                    "cnt": 58,
+                    "tags": [
+                        "Clean Bus",
+                        "Comfortable Seats"
+                    ]
+                },
+                "f_r": {
+                    "disp": 3.4,
+                    "srt": 3.4,
+                    "cnt": 1
+                },
+                "ss_c": true,
+                "bp": [
+                    "Bavla",
+                    "Sanathal Circle",
+                    "Sa Lite Raj Ratan Tours And Travels",
+                    "Paldi Raj Ratan Tours And Travels",
+                    "Soni Ni Chawl",
+                    "Odhav Circle"
+                ],
+                "dp": [
+                    "Vit Bhopal Connecting Sleeper Volvo Multiaxle Bus From Indore To Bhopal",
+                    "Crescent Resorts New Bypass Road Sehore Connecting Sleeper Volvo Multiaxle Bus From Indore To Bhopal",
+                    "Asharam Tiraha Connecting Sleeper Volvo Multiaxle Bus From Indore To Bhopal",
+                    "Peoples Mall Connecting Sleeper Volvo Multiaxle Bus From Indore To Bhopal",
+                    "Gate No 2 Minal Residency Connecting Sleeper Volvo Multiaxle Bus From Indore To Bhopal",
+                    "Inter State Bus Terminal Connecting Sleeper Volvo Multiaxle Bus From Indore To Bhopal"
+                ],
+                "offers": [],
+                "dep_dt": "2026-11-06 23:15:00",
+                "arr_dt": "2026-11-07 12:30:00",
+                "st": {
+                    "so": false,
+                    "d": false,
+                    "s_ddd": 0
+                },
+                "p_score": 5,
+                "fp_score": 2,
+                "is_gps": false,
+                "op_tags": [],
+                "rt_deal": {},
+                "amen": [
+                    1,
+                    3,
+                    5,
+                    6,
+                    8,
+                    9,
+                    12,
+                    19
+                ],
+                "is_spon": false,
+                "pa": 1,
+                "sc_i": {
+                    "bk": 0.3035,
+                    "bk_cnt": 1977
+                },
+                "trav_pht": 0
+            },
+            {
+                "seats": 27,
+                "btn": "VOLVO B11R BS6 MULTI-AXLE SLEEPER (2+1)",
+                "dur": "1255",
+                "bid": "3461::2342::2026-11-06::43::31#1#1373#23597#60767#20326#06112026#10:45__PM#10:45__PM#2::onward_leg",
+                "tid": "3461:2342:3108:2245:1140:1:1",
+                "rtid": "3461:2342:3108:43:60767",
+                "ptid": "31#1#1373#23597#60767#20326#06112026#10:45 PM#10:45 PM#2",
+                "oid": 3108,
+                "propn": "Raj Ratan Tours & Travels",
+                "rnr": {
+                    "avg": 3.1,
+                    "cnt": 58,
+                    "r_cnt": null,
+                    "cc": "#27ae5f"
+                },
+                "fs": {
+                    "sl": true,
+                    "ac": true,
+                    "can": true,
+                    "st": false,
+                    "ss": false,
+                    "is_elec": false,
+                    "bst": true
+                },
+                "ft": {
+                    "s_lady": false,
+                    "clbp": false
+                },
+                "pht": 9,
+                "df": [
+                    {
+                        "bf": 1399,
+                        "g": 0,
+                        "of": 0,
+                        "st": 2,
+                        "d": null,
+                        "fd": null,
+                        "fs": null,
+                        "ofr": null
+                    },
+                    {
+                        "bf": 1599,
+                        "g": 0,
+                        "of": 0,
+                        "st": 2,
+                        "d": null,
+                        "fd": null,
+                        "fs": null,
+                        "ofr": null
+                    },
+                    {
+                        "bf": 4781,
+                        "g": 0,
+                        "of": 0,
+                        "st": 2,
+                        "d": null,
+                        "fd": null,
+                        "fs": null,
+                        "ofr": null
+                    },
+                    {
+                        "bf": 4955,
+                        "g": 0,
+                        "of": 0,
+                        "st": 2,
+                        "d": null,
+                        "fd": null,
+                        "fs": null,
+                        "ofr": null
+                    },
+                    {
+                        "bf": 5191,
+                        "g": 0,
+                        "of": 0,
+                        "st": 2,
+                        "d": null,
+                        "fd": null,
+                        "fs": null,
+                        "ofr": null
+                    },
+                    {
+                        "bf": 5662,
+                        "g": 0,
+                        "of": 0,
+                        "st": 2,
+                        "d": null,
+                        "fd": null,
+                        "fs": null,
+                        "ofr": null
+                    },
+                    {
+                        "bf": 5898,
+                        "g": 0,
+                        "of": 0,
+                        "st": 2,
+                        "d": null,
+                        "fd": null,
+                        "fs": null,
+                        "ofr": null
+                    }
+                ],
+                "btt": [
+                    "Volvo",
+                    "AC",
+                    "Sleeper",
+                    "Multi Axle",
+                    "I-Shift"
+                ],
+                "rnr_src": "paytm_route_time_id",
+                "srt_rt_val": 3.1,
+                "as_info": {
+                    "0": {
+                        "5": 0,
+                        "6": 0,
+                        "7": 0
+                    },
+                    "1": {
+                        "5": 0,
+                        "6": 0,
+                        "7": 0
+                    },
+                    "2": {
+                        "5": 1,
+                        "6": 0,
+                        "7": 26
+                    },
+                    "3": {
+                        "0": 0,
+                        "1": 0,
+                        "2": 27
+                    },
+                    "4": {
+                        "5": 1,
+                        "6": 0,
+                        "7": 26
+                    },
+                    "8": 8,
+                    "9": 17
+                },
+                "d_r": {
+                    "avg": 3.1,
+                    "cnt": 58,
+                    "tags": [
+                        "Clean Bus",
+                        "Comfortable Seats"
+                    ]
+                },
+                "f_r": {
+                    "disp": 3.1,
+                    "srt": 3.1,
+                    "cnt": 2
+                },
+                "ss_c": false,
+                "bp": [
+                    "Sa Lite Raj Ratan Tours And Travels",
+                    "Paldi Raj Ratan Tours And Travels",
+                    "Geeta Mandir",
+                    "Amraiwadi"
+                ],
+                "dp": [
+                    "Vit Bhopal Connecting Seating Volvo Multiaxle Bus From Indore To Bhopal",
+                    "Crescent Resorts New Bypass Road Sehore Connecting Seating Volvo Multiaxle Bus From Indore To Bhopal",
+                    "Asharam Tiraha Connecting Seating Volvo Multiaxle Bus From Indore To Bhopal",
+                    "Gate No 2 Minal Residency Connecting Seating Volvo Multiaxle Bus From Indore To Bhopal",
+                    "Inter State Bus Terminal Connecting Seating Volvo Multiaxle Bus From Indore To Bhopal"
+                ],
+                "offers": [],
+                "dep_dt": "2026-11-06 22:45:00",
+                "arr_dt": "2026-11-07 11:40:00",
+                "st": {
+                    "so": false,
+                    "d": false,
+                    "s_ddd": 0
+                },
+                "p_score": 6,
+                "fp_score": 0,
+                "is_gps": false,
+                "op_tags": [],
+                "rt_deal": {},
+                "amen": [
+                    1,
+                    3,
+                    5,
+                    6,
+                    8,
+                    9,
+                    12,
+                    19
+                ],
+                "is_spon": false,
+                "pa": 1,
+                "sc_i": {
+                    "bk": 0.407,
+                    "bk_cnt": 1720
+                },
+                "trav_pht": 0
+            },
+            {
+                "seats": 16,
+                "btn": "2+1, AIR SUSPENSION AC SLEEPER, AC",
+                "dur": "1130",
+                "bid": "3461::2342::2026-11-06::39::20261106598920::onward_leg",
+                "tid": "3461:2342:5639:1945:0830:1:1",
+                "rtid": "3461:2342:5639:39:BITLA:3205:20",
+                "ptid": "20261106598920",
+                "oid": 5639,
+                "propn": "National Travels",
+                "rnr": {
+                    "avg": 3.5,
+                    "cnt": 254,
+                    "r_cnt": null,
+                    "cc": "#27ae5f"
+                },
+                "fs": {
+                    "sl": true,
+                    "ac": true,
+                    "can": true,
+                    "st": false,
+                    "ss": false,
+                    "is_elec": false,
+                    "bst": null
+                },
+                "ft": {
+                    "s_lady": false,
+                    "clbp": false
+                },
+                "pht": 0,
+                "df": [
+                    {
+                        "bf": 4000,
+                        "g": 200,
+                        "of": 0,
+                        "st": 2,
+                        "d": null,
+                        "fd": null,
+                        "fs": null,
+                        "ofr": null
+                    },
+                    {
+                        "bf": 4000,
+                        "g": 200,
+                        "of": 0,
+                        "st": 2,
+                        "d": null,
+                        "fd": null,
+                        "fs": null,
+                        "ofr": null
+                    },
+                    {
+                        "bf": 4200,
+                        "g": 210,
+                        "of": 0,
+                        "st": 2,
+                        "d": null,
+                        "fd": null,
+                        "fs": null,
+                        "ofr": null
+                    },
+                    {
+                        "bf": 4200,
+                        "g": 210,
+                        "of": 0,
+                        "st": 2,
+                        "d": null,
+                        "fd": null,
+                        "fs": null,
+                        "ofr": null
+                    }
+                ],
+                "btt": [
+                    "AC",
+                    "Sleeper",
+                    "2+1",
+                    "Air Suspension"
+                ],
+                "rnr_src": "paytm_route_time_id",
+                "srt_rt_val": 3.5,
+                "as_info": null,
+                "d_r": {
+                    "avg": 3.5,
+                    "cnt": 254,
+                    "tags": null
+                },
+                "f_r": {
+                    "disp": 3.2,
+                    "srt": 3.2,
+                    "cnt": 20
+                },
+                "ss_c": true,
+                "bp": [
+                    "Paldi New Limda Travels S R S Trvl Pickup By Auto",
+                    "Vishala Circle National Travels",
+                    "Ctm Cross Road Mittal Travels",
+                    "Ramol"
+                ],
+                "dp": [
+                    "Lalghati",
+                    "Isbt Bus Stand"
+                ],
+                "offers": [],
+                "dep_dt": "2026-11-06 21:00:00",
+                "arr_dt": "2026-11-07 08:30:00",
+                "st": {
+                    "so": false,
+                    "d": false,
+                    "s_ddd": 0
+                },
+                "p_score": 18,
+                "fp_score": 2,
+                "is_gps": false,
+                "op_tags": [],
+                "rt_deal": {},
+                "amen": [
+                    1
+                ],
+                "is_spon": false,
+                "pa": 0,
+                "sc_i": {
+                    "bk": 0.91,
+                    "bk_cnt": 1978
+                },
+                "trav_pht": 0
+            },
+            {
+                "seats": 12,
+                "btn": "ASHOK LEYLAND",
+                "dur": "1545",
+                "bid": "3461::2342::2026-11-06::42::187702::onward_leg",
+                "tid": "3461:2342:4661:2030:1245:0:1",
+                "rtid": "3461:2342:4661:42:187702",
+                "ptid": "187702",
+                "oid": 4661,
+                "propn": "Hans Travels (I) Private Limited",
+                "rnr": {
+                    "avg": 3.1,
+                    "cnt": 5,
+                    "r_cnt": null,
+                    "cc": "#27ae5f"
+                },
+                "fs": {
+                    "sl": true,
+                    "ac": false,
+                    "can": true,
+                    "st": false,
+                    "ss": false,
+                    "is_elec": false,
+                    "bst": true
+                },
+                "ft": {
+                    "s_lady": false,
+                    "clbp": false
+                },
+                "pht": 0,
+                "df": [
+                    {
+                        "bf": 3099,
+                        "g": 154,
+                        "of": 0,
+                        "st": 2,
+                        "d": null,
+                        "fd": null,
+                        "fs": null,
+                        "ofr": null
+                    },
+                    {
+                        "bf": 3099,
+                        "g": 154,
+                        "of": 0,
+                        "st": 2,
+                        "d": null,
+                        "fd": null,
+                        "fs": null,
+                        "ofr": null
+                    }
+                ],
+                "btt": [
+                    "Leyland",
+                    "Non AC",
+                    "Sleeper"
+                ],
+                "rnr_src": "paytm_route_time_id",
+                "srt_rt_val": 3.1,
+                "as_info": null,
+                "d_r": {
+                    "avg": 3.1,
+                    "cnt": 5,
+                    "tags": null
+                },
+                "f_r": {
+                    "disp": null,
+                    "srt": null,
+                    "cnt": null
+                },
+                "ss_c": false,
+                "bp": [
+                    "Big Bazar Kankariya Road Parking Ke Andar St Bus Stand",
+                    "Hans Travels Ctm Express Highway Near Sahajanand Shoping Center Ahmedabad"
+                ],
+                "dp": [
+                    "Isbt Drop Connecting Sitting Ac Bus From Indore"
+                ],
+                "offers": [],
+                "dep_dt": "2026-11-06 21:00:00",
+                "arr_dt": "2026-11-07 12:45:00",
+                "st": {
+                    "so": false,
+                    "d": false,
+                    "s_ddd": 0
+                },
+                "p_score": 0,
+                "fp_score": 1,
+                "is_gps": false,
+                "op_tags": [
+                    762
+                ],
+                "rt_deal": {},
+                "amen": [
+                    1,
+                    2,
+                    8,
+                    19,
+                    24,
+                    25,
+                    26,
+                    27
+                ],
+                "is_spon": false,
+                "pa": 0,
+                "sc_i": {
+                    "bk": 0.1958,
+                    "bk_cnt": 2043
+                },
+                "trav_pht": 0
+            },
+            {
+                "seats": 12,
+                "btn": "2 X 1 (36) SLP NON A/C",
+                "dur": "1130",
+                "bid": "3461::2342::2026-11-06::43::126#1#1373#48478#104121#1643#06112026#9:30__PM#9:30__PM#2::onward_leg",
+                "tid": "3461:2342:1475:2030:0900:0:1",
+                "rtid": "3461:2342:1475:43:104121",
+                "ptid": "126#1#1373#48478#104121#1643#06112026#9:30 PM#9:30 PM#2",
+                "oid": 1475,
+                "propn": "H K Bus Services",
+                "rnr": {
+                    "avg": 2.3,
+                    "cnt": 101,
+                    "r_cnt": null,
+                    "cc": "#FF9D00"
+                },
+                "fs": {
+                    "sl": true,
+                    "ac": false,
+                    "can": true,
+                    "st": false,
+                    "ss": false,
+                    "is_elec": false,
+                    "bst": null
+                },
+                "ft": {
+                    "s_lady": false,
+                    "clbp": false
+                },
+                "pht": 0,
+                "df": [
+                    {
+                        "bf": 2500,
+                        "g": 0,
+                        "of": 0,
+                        "st": 0,
+                        "d": null,
+                        "fd": null,
+                        "fs": null,
+                        "ofr": null
+                    }
+                ],
+                "btt": [
+                    "Non AC",
+                    "Sleeper",
+                    "2+1"
+                ],
+                "rnr_src": "paytm_route_time_id",
+                "srt_rt_val": 2.3,
+                "as_info": null,
+                "d_r": {
+                    "avg": 2.3,
+                    "cnt": 101,
+                    "tags": null
+                },
+                "f_r": {
+                    "disp": 2.3,
+                    "srt": 2.3,
+                    "cnt": 6
+                },
+                "ss_c": true,
+                "bp": [
+                    "H K Travels Paldi Cross Road",
+                    "Shree Hari H K Travels Ratnamani Complex Sa Lite Pickup By Auto",
+                    "H K Travels S T Nr Bhagyoday Ho Gita Mandir Pickup By Auto",
+                    "Opp Vishala Ho H K Travels Shop No 10 Ujala Avenue Complex",
+                    "H K Travels Ctm",
+                    "Odhav Om Arcade"
+                ],
+                "dp": [
+                    "Vit University",
+                    "Sehore Bypass Crescent",
+                    "Lalghati",
+                    "Bhopal Travels Isbt Main Building"
+                ],
+                "offers": [],
+                "dep_dt": "2026-11-06 21:30:00",
+                "arr_dt": "2026-11-07 09:00:00",
+                "st": {
+                    "so": false,
+                    "d": false,
+                    "s_ddd": 0
+                },
+                "p_score": 17,
+                "fp_score": 2,
+                "is_gps": false,
+                "op_tags": [
+                    658
+                ],
+                "rt_deal": {},
+                "amen": [],
+                "is_spon": false,
+                "pa": 0,
+                "sc_i": {
+                    "bk": 1.3007,
+                    "bk_cnt": 1307
+                },
+                "trav_pht": 0
+            },
+            {
+                "seats": 34,
+                "btn": "2+1, SLEEPER, AC",
+                "dur": "1345",
+                "bid": "3461::2342::2026-11-06::39::202611062128723::onward_leg",
+                "tid": "3461:2342:5691:1915:1030:1:1",
+                "rtid": "3461:2342:5691:39:BITLA:3243:64",
+                "ptid": "202611062128723",
+                "oid": 5691,
+                "propn": "Veer Travels",
+                "rnr": {
+                    "avg": 3.7,
+                    "cnt": 38,
+                    "r_cnt": null,
+                    "cc": "#27ae5f"
+                },
+                "fs": {
+                    "sl": true,
+                    "ac": true,
+                    "can": true,
+                    "st": false,
+                    "ss": false,
+                    "is_elec": false,
+                    "bst": null
+                },
+                "ft": {
+                    "s_lady": false,
+                    "clbp": false
+                },
+                "pht": 0,
+                "df": [
+                    {
+                        "bf": 3799,
+                        "g": 189,
+                        "of": 0,
+                        "st": 2,
+                        "d": null,
+                        "fd": null,
+                        "fs": null,
+                        "ofr": null
+                    },
+                    {
+                        "bf": 3799,
+                        "g": 189,
+                        "of": 0,
+                        "st": 2,
+                        "d": null,
+                        "fd": null,
+                        "fs": null,
+                        "ofr": null
+                    },
+                    {
+                        "bf": 4019,
+                        "g": 200,
+                        "of": 0,
+                        "st": 2,
+                        "d": null,
+                        "fd": null,
+                        "fs": null,
+                        "ofr": null
+                    },
+                    {
+                        "bf": 4019,
+                        "g": 200,
+                        "of": 0,
+                        "st": 2,
+                        "d": null,
+                        "fd": null,
+                        "fs": null,
+                        "ofr": null
+                    }
+                ],
+                "btt": [
+                    "AC",
+                    "Sleeper",
+                    "2+1"
+                ],
+                "rnr_src": "paytm_route_time_id",
+                "srt_rt_val": 3.7,
+                "as_info": null,
+                "d_r": {
+                    "avg": 3.7,
+                    "cnt": 38,
+                    "tags": [
+                        "Clean Bus",
+                        "Comfortable Seats"
+                    ]
+                },
+                "f_r": {
+                    "disp": 3.4,
+                    "srt": 3.4,
+                    "cnt": 4
+                },
+                "ss_c": true,
+                "bp": [
+                    "Paldi R K Travels Pickup By Auto",
+                    "St Geeta Mandir",
+                    "Gujarat Vahan Parking S P Ring Road",
+                    "Ctm Cross Road Ho Veer Travels"
+                ],
+                "dp": [
+                    "Crescent Water Park Sehore",
+                    "Lalghati Near Bharat Petrol Pump"
+                ],
+                "offers": [],
+                "dep_dt": "2026-11-06 20:45:00",
+                "arr_dt": "2026-11-07 10:30:00",
+                "st": {
+                    "so": false,
+                    "d": false,
+                    "s_ddd": 0
+                },
+                "p_score": 0,
+                "fp_score": 0,
+                "is_gps": false,
+                "op_tags": [],
+                "rt_deal": {},
+                "amen": [],
+                "is_spon": false,
+                "pa": 0,
+                "sc_i": {
+                    "bk": 0.2943,
+                    "bk_cnt": 1359
+                },
+                "trav_pht": 0
+            },
+            {
+                "seats": 16,
+                "btn": "2+1, AIR SUSPENSION AC SLEEPER, AC",
+                "dur": "1050",
+                "bid": "3461::2342::2026-11-06::39::20261106823935::onward_leg",
+                "tid": "3461:2342:5639:2045:0820:1:1",
+                "rtid": "3461:2342:5639:39:BITLA:3205:27",
+                "ptid": "20261106823935",
+                "oid": 5639,
+                "propn": "National Travels",
+                "rnr": {
+                    "avg": 3.29,
+                    "cnt": 0,
+                    "r_cnt": null,
+                    "cc": "#27ae5f"
+                },
+                "fs": {
+                    "sl": true,
+                    "ac": true,
+                    "can": true,
+                    "st": false,
+                    "ss": false,
+                    "is_elec": false,
+                    "bst": null
+                },
+                "ft": {
+                    "s_lady": false,
+                    "clbp": false
+                },
+                "pht": 0,
+                "df": [
+                    {
+                        "bf": 3800,
+                        "g": 190,
+                        "of": 0,
+                        "st": 2,
+                        "d": null,
+                        "fd": null,
+                        "fs": null,
+                        "ofr": null
+                    },
+                    {
+                        "bf": 3800,
+                        "g": 190,
+                        "of": 0,
+                        "st": 2,
+                        "d": null,
+                        "fd": null,
+                        "fs": null,
+                        "ofr": null
+                    },
+                    {
+                        "bf": 4000,
+                        "g": 200,
+                        "of": 0,
+                        "st": 2,
+                        "d": null,
+                        "fd": null,
+                        "fs": null,
+                        "ofr": null
+                    },
+                    {
+                        "bf": 4000,
+                        "g": 200,
+                        "of": 0,
+                        "st": 2,
+                        "d": null,
+                        "fd": null,
+                        "fs": null,
+                        "ofr": null
+                    }
+                ],
+                "btt": [
+                    "AC",
+                    "Sleeper",
+                    "2+1",
+                    "Air Suspension"
+                ],
+                "rnr_src": "paytm_route_time_id",
+                "srt_rt_val": 3.29,
+                "as_info": null,
+                "d_r": {
+                    "avg": 3.29,
+                    "cnt": 0,
+                    "tags": null
+                },
+                "f_r": {
+                    "disp": null,
+                    "srt": null,
+                    "cnt": null
+                },
+                "ss_c": true,
+                "bp": [
+                    "Vishala Circle National Travels",
+                    "Paldi New Limda Travels S R S Trvl Pickup By Auto",
+                    "Ctm Cross Road Mittal Travels"
+                ],
+                "dp": [
+                    "Lalghati",
+                    "Isbt Bus Stand"
+                ],
+                "offers": [],
+                "dep_dt": "2026-11-06 21:30:00",
+                "arr_dt": "2026-11-07 08:20:00",
+                "st": {
+                    "so": false,
+                    "d": false,
+                    "s_ddd": 0
+                },
+                "p_score": 0,
+                "fp_score": 1,
+                "is_gps": false,
+                "op_tags": [],
+                "rt_deal": {},
+                "amen": [
+                    1
+                ],
+                "is_spon": false,
+                "pa": 0,
+                "sc_i": {
+                    "bk": 0.2725,
+                    "bk_cnt": 367
+                },
+                "trav_pht": 0
+            },
+            {
+                "seats": 20,
+                "btn": "2+1, AIR SUSPENSION PREMIUM SLEEPER, AC",
+                "dur": "1245",
+                "bid": "3461::2342::2026-11-06::39::20261106222271::onward_leg",
+                "tid": "3461:2342:7495:1900:0915:1:1",
+                "rtid": "3461:2342:7495:39:BITLA:6101:56",
+                "ptid": "20261106222271",
+                "oid": 7495,
+                "propn": "Starline Bus®",
+                "rnr": {
+                    "avg": 3.65,
+                    "cnt": 0,
+                    "r_cnt": null,
+                    "cc": "#27ae5f"
+                },
+                "fs": {
+                    "sl": true,
+                    "ac": true,
+                    "can": true,
+                    "st": false,
+                    "ss": false,
+                    "is_elec": false,
+                    "bst": null
+                },
+                "ft": {
+                    "s_lady": false,
+                    "clbp": false
+                },
+                "pht": 0,
+                "df": [
+                    {
+                        "bf": 4399,
+                        "g": 219,
+                        "of": 0,
+                        "st": 2,
+                        "d": null,
+                        "fd": null,
+                        "fs": null,
+                        "ofr": null
+                    },
+                    {
+                        "bf": 4499,
+                        "g": 224,
+                        "of": 0,
+                        "st": 2,
+                        "d": null,
+                        "fd": null,
+                        "fs": null,
+                        "ofr": null
+                    },
+                    {
+                        "bf": 5099,
+                        "g": 254,
+                        "of": 0,
+                        "st": 2,
+                        "d": null,
+                        "fd": null,
+                        "fs": null,
+                        "ofr": null
+                    },
+                    {
+                        "bf": 5199,
+                        "g": 259,
+                        "of": 0,
+                        "st": 2,
+                        "d": null,
+                        "fd": null,
+                        "fs": null,
+                        "ofr": null
+                    }
+                ],
+                "btt": [
+                    "AC",
+                    "Sleeper",
+                    "2+1",
+                    "Air Suspension"
+                ],
+                "rnr_src": "paytm_route_time_id",
+                "srt_rt_val": 3.65,
+                "as_info": null,
+                "d_r": {
+                    "avg": 3.65,
+                    "cnt": 0,
+                    "tags": null
+                },
+                "f_r": {
+                    "disp": null,
+                    "srt": null,
+                    "cnt": null
+                },
+                "ss_c": true,
+                "bp": [
+                    "Shahibagh To Ctm Rs 70 Cash Auto Charge Per Seat",
+                    "Geeta Mandir To Ctm Rs 50 Cash Auto Charge Per Seat",
+                    "Ramol Parking Nr Ramol Police Station",
+                    "Amraiwadi"
+                ],
+                "dp": [
+                    "Cresent Resort Sehore",
+                    "Lal Ghati Circle",
+                    "Isbt Habibganj"
+                ],
+                "offers": [],
+                "dep_dt": "2026-11-06 20:30:00",
+                "arr_dt": "2026-11-07 09:15:00",
+                "st": {
+                    "so": false,
+                    "d": false,
+                    "s_ddd": 0
+                },
+                "p_score": 6,
+                "fp_score": 0,
+                "is_gps": false,
+                "op_tags": [],
+                "rt_deal": {},
+                "amen": [],
+                "is_spon": false,
+                "pa": 1,
+                "sc_i": {
+                    "bk": 0.4934,
+                    "bk_cnt": 1216
+                },
+                "trav_pht": 0
+            },
+            {
+                "seats": 19,
+                "btn": "2+1, SLEEPER, AC",
+                "dur": "1030",
+                "bid": "3461::2342::2026-11-06::39::20261106563569::onward_leg",
+                "tid": "3461:2342:3178:2145:0845:1:1",
+                "rtid": "3461:2342:3178:39:BITLA:487:2526",
+                "ptid": "20261106563569",
+                "oid": 3178,
+                "propn": "Verma Travels",
+                "rnr": {
+                    "avg": 2.57,
+                    "cnt": 0,
+                    "r_cnt": null,
+                    "cc": "#FF9D00"
+                },
+                "fs": {
+                    "sl": true,
+                    "ac": true,
+                    "can": true,
+                    "st": false,
+                    "ss": false,
+                    "is_elec": false,
+                    "bst": null
+                },
+                "ft": {
+                    "s_lady": false,
+                    "clbp": false
+                },
+                "pht": 0,
+                "df": [
+                    {
+                        "bf": 4099,
+                        "g": 204,
+                        "of": 0,
+                        "st": 2,
+                        "d": null,
+                        "fd": null,
+                        "fs": null,
+                        "ofr": null
+                    },
+                    {
+                        "bf": 4099,
+                        "g": 204,
+                        "of": 0,
+                        "st": 2,
+                        "d": null,
+                        "fd": null,
+                        "fs": null,
+                        "ofr": null
+                    },
+                    {
+                        "bf": 4300,
+                        "g": 215,
+                        "of": 0,
+                        "st": 2,
+                        "d": null,
+                        "fd": null,
+                        "fs": null,
+                        "ofr": null
+                    },
+                    {
+                        "bf": 4300,
+                        "g": 215,
+                        "of": 0,
+                        "st": 2,
+                        "d": null,
+                        "fd": null,
+                        "fs": null,
+                        "ofr": null
+                    }
+                ],
+                "btt": [
+                    "AC",
+                    "Sleeper",
+                    "2+1"
+                ],
+                "rnr_src": "paytm_route_time_id",
+                "srt_rt_val": 2.57,
+                "as_info": null,
+                "d_r": {
+                    "avg": 2.57,
+                    "cnt": 0,
+                    "tags": null
+                },
+                "f_r": {
+                    "disp": null,
+                    "srt": null,
+                    "cnt": null
+                },
+                "ss_c": true,
+                "bp": [
+                    "Sanathal Circle Bypass",
+                    "Ujala Circle Ahmedabad",
+                    "Vishala Circle Apmc Market",
+                    "Paladi",
+                    "Ctm Rk Travels",
+                    "Soni Ni Chal",
+                    "Odhav Ring Road Circles"
+                ],
+                "dp": [
+                    "Vit University",
+                    "Sehor By Pass Near For Crescent Water Park",
+                    "Lal Ghati Circle",
+                    "Isbt Shop No 1 Commercial Complex Verma Travels"
+                ],
+                "offers": [],
+                "dep_dt": "2026-11-06 22:15:00",
+                "arr_dt": "2026-11-07 08:45:00",
+                "st": {
+                    "so": false,
+                    "d": false,
+                    "s_ddd": 0
+                },
+                "p_score": 7,
+                "fp_score": 4,
+                "is_gps": false,
+                "op_tags": [],
+                "rt_deal": {},
+                "amen": [
+                    1,
+                    5,
+                    8,
+                    9,
+                    11,
+                    12,
+                    24,
+                    25,
+                    161
+                ],
+                "is_spon": false,
+                "pa": 0,
+                "sc_i": {
+                    "bk": 0.5852,
+                    "bk_cnt": 1367
+                },
+                "trav_pht": 0
+            },
+            {
+                "seats": 12,
+                "btn": "2+1, AIR SUSPENSION PREMIUM SLEEPER, AC",
+                "dur": "1245",
+                "bid": "3461::2342::2026-11-06::39::20261106556709::onward_leg",
+                "tid": "3461:2342:7495:1945:1000:1:1",
+                "rtid": "3461:2342:7495:39:BITLA:6101:91",
+                "ptid": "20261106556709",
+                "oid": 7495,
+                "propn": "Starline Bus®",
+                "rnr": {
+                    "avg": 3.6,
+                    "cnt": 12,
+                    "r_cnt": null,
+                    "cc": "#27ae5f"
+                },
+                "fs": {
+                    "sl": true,
+                    "ac": true,
+                    "can": true,
+                    "st": false,
+                    "ss": false,
+                    "is_elec": false,
+                    "bst": null
+                },
+                "ft": {
+                    "s_lady": false,
+                    "clbp": false
+                },
+                "pht": 0,
+                "df": [
+                    {
+                        "bf": 4099,
+                        "g": 204,
+                        "of": 0,
+                        "st": 2,
+                        "d": null,
+                        "fd": null,
+                        "fs": null,
+                        "ofr": null
+                    },
+                    {
+                        "bf": 4299,
+                        "g": 214,
+                        "of": 0,
+                        "st": 2,
+                        "d": null,
+                        "fd": null,
+                        "fs": null,
+                        "ofr": null
+                    },
+                    {
+                        "bf": 4999,
+                        "g": 249,
+                        "of": 0,
+                        "st": 2,
+                        "d": null,
+                        "fd": null,
+                        "fs": null,
+                        "ofr": null
+                    },
+                    {
+                        "bf": 5000,
+                        "g": 250,
+                        "of": 0,
+                        "st": 2,
+                        "d": null,
+                        "fd": null,
+                        "fs": null,
+                        "ofr": null
+                    }
+                ],
+                "btt": [
+                    "AC",
+                    "Sleeper",
+                    "2+1",
+                    "Air Suspension"
+                ],
+                "rnr_src": "paytm_route_time_id",
+                "srt_rt_val": 3.6,
+                "as_info": null,
+                "d_r": {
+                    "avg": 3.6,
+                    "cnt": 12,
+                    "tags": null
+                },
+                "f_r": {
+                    "disp": 3.3,
+                    "srt": 3.3,
+                    "cnt": 3
+                },
+                "ss_c": true,
+                "bp": [
+                    "Shahibagh To Ctm Rs 70 Cash Auto Charge Per Seat",
+                    "Geeta Mandir To Ctm Rs 50 Cash Auto Charge Per Seat",
+                    "Amraiwadi"
+                ],
+                "dp": [
+                    "Cresent Resort Sehore",
+                    "Lal Ghati Circle",
+                    "Isbt Habibganj"
+                ],
+                "offers": [],
+                "dep_dt": "2026-11-06 21:15:00",
+                "arr_dt": "2026-11-07 10:00:00",
+                "st": {
+                    "so": false,
+                    "d": false,
+                    "s_ddd": 0
+                },
+                "p_score": 0,
+                "fp_score": 0,
+                "is_gps": false,
+                "op_tags": [],
+                "rt_deal": {},
+                "amen": [],
+                "is_spon": false,
+                "pa": 1,
+                "sc_i": {
+                    "bk": 0,
+                    "bk_cnt": 161
+                },
+                "trav_pht": 0
+            },
+            {
+                "seats": 19,
+                "btn": "2X1(36) A/C SLEEPER",
+                "dur": "1230",
+                "bid": "3461::2342::2026-11-06::43::1666#1#1373#59427#120365#20682#06112026#8:30__PM#8:30__PM#2::onward_leg",
+                "tid": "3461:2342:4731:1845:0900:1:1",
+                "rtid": "3461:2342:4731:43:120365",
+                "ptid": "1666#1#1373#59427#120365#20682#06112026#8:30 PM#8:30 PM#2",
+                "oid": 4731,
+                "propn": "Deep Travels",
+                "rnr": {
+                    "avg": 2.2,
+                    "cnt": 84,
+                    "r_cnt": null,
+                    "cc": "#FF9D00"
+                },
+                "fs": {
+                    "sl": true,
+                    "ac": true,
+                    "can": true,
+                    "st": false,
+                    "ss": false,
+                    "is_elec": false,
+                    "bst": null
+                },
+                "ft": {
+                    "s_lady": false,
+                    "clbp": false
+                },
+                "pht": 0,
+                "df": [
+                    {
+                        "bf": 4500,
+                        "g": 0,
+                        "of": 0,
+                        "st": 0,
+                        "d": null,
+                        "fd": null,
+                        "fs": null,
+                        "ofr": null
+                    }
+                ],
+                "btt": [
+                    "AC",
+                    "Sleeper",
+                    "2+1"
+                ],
+                "rnr_src": "paytm_route_time_id",
+                "srt_rt_val": 2.2,
+                "as_info": null,
+                "d_r": {
+                    "avg": 2.2,
+                    "cnt": 84,
+                    "tags": null
+                },
+                "f_r": {
+                    "disp": 2.2,
+                    "srt": 2.2,
+                    "cnt": 10
+                },
+                "ss_c": true,
+                "bp": [
+                    "Deep Travels Manas Complex Opp Star Bazaar Jodhpur Char Rasta Sa Lite Pickup By Auto Rs 70 Cash Extra Par Person At Pickup",
+                    "Deep Travels Shroff Chamber Paldi Opp Navchetan School",
+                    "Narol Bridge Corner Near Reliance Petrol Pump",
+                    "Deep Travels Ctm Near Brts Bus Stand Opp Ctm Fly Over"
+                ],
+                "dp": [
+                    "Lalghati Infront Of Police Chowki",
+                    "Deep Travels Shop Num 19 Isbt Bus Stand Bhopal"
+                ],
+                "offers": [],
+                "dep_dt": "2026-11-06 20:30:00",
+                "arr_dt": "2026-11-07 09:00:00",
+                "st": {
+                    "so": false,
+                    "d": false,
+                    "s_ddd": 0
+                },
+                "p_score": 11,
+                "fp_score": 0,
+                "is_gps": false,
+                "op_tags": [],
+                "rt_deal": {},
+                "amen": [
+                    1,
+                    5,
+                    8,
+                    11,
+                    12
+                ],
+                "is_spon": false,
+                "pa": 0,
+                "sc_i": {
+                    "bk": 0.9167,
+                    "bk_cnt": 1309
+                },
+                "trav_pht": 0
+            },
+            {
+                "seats": 19,
+                "btn": "2+1, BHARATH BENZ SLEEPER, AC",
+                "dur": "1200",
+                "bid": "3461::2342::2026-11-06::39::20261106563549::onward_leg",
+                "tid": "3461:2342:3178:1930:0830:1:1",
+                "rtid": "3461:2342:3178:39:BITLA:487:1879",
+                "ptid": "20261106563549",
+                "oid": 3178,
+                "propn": "Verma Travels",
+                "rnr": {
+                    "avg": 2.4,
+                    "cnt": 756,
+                    "r_cnt": null,
+                    "cc": "#FF9D00"
+                },
+                "fs": {
+                    "sl": true,
+                    "ac": true,
+                    "can": true,
+                    "st": false,
+                    "ss": false,
+                    "is_elec": false,
+                    "bst": null
+                },
+                "ft": {
+                    "s_lady": false,
+                    "clbp": false
+                },
+                "pht": 0,
+                "df": [
+                    {
+                        "bf": 3999,
+                        "g": 199,
+                        "of": 0,
+                        "st": 2,
+                        "d": null,
+                        "fd": null,
+                        "fs": null,
+                        "ofr": null
+                    },
+                    {
+                        "bf": 3999,
+                        "g": 199,
+                        "of": 0,
+                        "st": 2,
+                        "d": null,
+                        "fd": null,
+                        "fs": null,
+                        "ofr": null
+                    },
+                    {
+                        "bf": 4200,
+                        "g": 210,
+                        "of": 0,
+                        "st": 2,
+                        "d": null,
+                        "fd": null,
+                        "fs": null,
+                        "ofr": null
+                    },
+                    {
+                        "bf": 4200,
+                        "g": 210,
+                        "of": 0,
+                        "st": 2,
+                        "d": null,
+                        "fd": null,
+                        "fs": null,
+                        "ofr": null
+                    }
+                ],
+                "btt": [
+                    "Bharat Benz",
+                    "AC",
+                    "Sleeper",
+                    "2+1"
+                ],
+                "rnr_src": "paytm_route_time_id",
+                "srt_rt_val": 2.4,
+                "as_info": null,
+                "d_r": {
+                    "avg": 2.4,
+                    "cnt": 756,
+                    "tags": null
+                },
+                "f_r": {
+                    "disp": 2,
+                    "srt": 2,
+                    "cnt": 10
+                },
+                "ss_c": true,
+                "bp": [
+                    "Radhe Parking Narol Road Gyaspur",
+                    "Paladi",
+                    "Ctm Rk Travels",
+                    "Soni Ni Chal",
+                    "Odhav Ring Road Circles"
+                ],
+                "dp": [
+                    "Sehor By Pass Near For Crescent Water Park",
+                    "Vit University",
+                    "Lal Ghati Circle",
+                    "Isbt Shop No 1 Commercial Complex Verma Travels"
+                ],
+                "offers": [],
+                "dep_dt": "2026-11-06 20:30:00",
+                "arr_dt": "2026-11-07 08:30:00",
+                "st": {
+                    "so": false,
+                    "d": false,
+                    "s_ddd": 0
+                },
+                "p_score": 0,
+                "fp_score": 0,
+                "is_gps": false,
+                "op_tags": [],
+                "rt_deal": {},
+                "amen": [],
+                "is_spon": false,
+                "pa": 0,
+                "sc_i": {
+                    "bk": 0,
+                    "bk_cnt": 987
+                },
+                "trav_pht": 0
+            },
+            {
+                "seats": 29,
+                "btn": "2+1, AIR SUSPENSION PREMIUM SLEEPER, AC",
+                "dur": "1245",
+                "bid": "3461::2342::2026-11-06::39::202611062146937::onward_leg",
+                "tid": "3461:2342:7495:2030:1045:1:1",
+                "rtid": "3461:2342:7495:39:BITLA:6101:96",
+                "ptid": "202611062146937",
+                "oid": 7495,
+                "propn": "Starline Bus®",
+                "rnr": {
+                    "avg": 3.65,
+                    "cnt": 0,
+                    "r_cnt": null,
+                    "cc": "#27ae5f"
+                },
+                "fs": {
+                    "sl": true,
+                    "ac": true,
+                    "can": true,
+                    "st": false,
+                    "ss": false,
+                    "is_elec": false,
+                    "bst": null
+                },
+                "ft": {
+                    "s_lady": false,
+                    "clbp": false
+                },
+                "pht": 0,
+                "df": [
+                    {
+                        "bf": 4799,
+                        "g": 239,
+                        "of": 0,
+                        "st": 2,
+                        "d": null,
+                        "fd": null,
+                        "fs": null,
+                        "ofr": null
+                    },
+                    {
+                        "bf": 4899,
+                        "g": 244,
+                        "of": 0,
+                        "st": 2,
+                        "d": null,
+                        "fd": null,
+                        "fs": null,
+                        "ofr": null
+                    },
+                    {
+                        "bf": 5099,
+                        "g": 254,
+                        "of": 0,
+                        "st": 2,
+                        "d": null,
+                        "fd": null,
+                        "fs": null,
+                        "ofr": null
+                    },
+                    {
+                        "bf": 5199,
+                        "g": 259,
+                        "of": 0,
+                        "st": 2,
+                        "d": null,
+                        "fd": null,
+                        "fs": null,
+                        "ofr": null
+                    }
+                ],
+                "btt": [
+                    "AC",
+                    "Sleeper",
+                    "2+1",
+                    "Air Suspension"
+                ],
+                "rnr_src": "paytm_route_time_id",
+                "srt_rt_val": 3.65,
+                "as_info": null,
+                "d_r": {
+                    "avg": 3.65,
+                    "cnt": 0,
+                    "tags": null
+                },
+                "f_r": {
+                    "disp": null,
+                    "srt": null,
+                    "cnt": null
+                },
+                "ss_c": true,
+                "bp": [
+                    "Shahibagh To Ctm Rs 70 Cash Auto Charge Per Seat",
+                    "Geeta Mandir To Ctm Rs 50 Cash Auto Charge Per Seat",
+                    "Amraiwadi",
+                    "Ramol Parking Nr Ramol Police Station"
+                ],
+                "dp": [
+                    "Cresent Resort Sehore",
+                    "Lal Ghati Circle",
+                    "Isbt Habibganj"
+                ],
+                "offers": [],
+                "dep_dt": "2026-11-06 22:00:00",
+                "arr_dt": "2026-11-07 10:45:00",
+                "st": {
+                    "so": false,
+                    "d": false,
+                    "s_ddd": 0
+                },
+                "p_score": 0,
+                "fp_score": 0,
+                "is_gps": false,
+                "op_tags": [],
+                "rt_deal": {},
+                "amen": [],
+                "is_spon": false,
+                "pa": 1,
+                "sc_i": {
+                    "bk": 0,
+                    "bk_cnt": 110
+                },
+                "trav_pht": 0
+            },
+            {
+                "seats": 16,
+                "btn": "2 X 1 (36) SLP NON A/C",
+                "dur": "1330",
+                "bid": "3461::2342::2026-11-06::43::126#1#1373#53786#111941#1643#06112026#2:30__PM#2:30__PM#2::onward_leg",
+                "tid": "3461:2342:1475:1400:0400:0:1",
+                "rtid": "3461:2342:1475:43:111941",
+                "ptid": "126#1#1373#53786#111941#1643#06112026#2:30 PM#2:30 PM#2",
+                "oid": 1475,
+                "propn": "H K Bus Services",
+                "rnr": {
+                    "avg": 2.9,
+                    "cnt": 26,
+                    "r_cnt": null,
+                    "cc": "#FF9D00"
+                },
+                "fs": {
+                    "sl": true,
+                    "ac": false,
+                    "can": true,
+                    "st": false,
+                    "ss": false,
+                    "is_elec": false,
+                    "bst": null
+                },
+                "ft": {
+                    "s_lady": false,
+                    "clbp": false
+                },
+                "pht": 0,
+                "df": [
+                    {
+                        "bf": 3000,
+                        "g": 0,
+                        "of": 0,
+                        "st": 0,
+                        "d": null,
+                        "fd": null,
+                        "fs": null,
+                        "ofr": null
+                    }
+                ],
+                "btt": [
+                    "Non AC",
+                    "Sleeper",
+                    "2+1"
+                ],
+                "rnr_src": "paytm_route_time_id",
+                "srt_rt_val": 2.9,
+                "as_info": null,
+                "d_r": {
+                    "avg": 2.9,
+                    "cnt": 26,
+                    "tags": null
+                },
+                "f_r": {
+                    "disp": null,
+                    "srt": null,
+                    "cnt": null
+                },
+                "ss_c": true,
+                "bp": [
+                    "H K Travels Paldi Cross Road",
+                    "Shree Hari H K Travels Sa Lite Ratnamani Complex Pickup By Auto",
+                    "H K Travels S T Nr Bhagyoday Ho Gita Mandir Pickup By Auto",
+                    "Opp Vishala Ho H K Travels Shop No 10 Ujala Avenue Complex",
+                    "H K Travels Ctm",
+                    "Odhav Om Arcade",
+                    "Kathlal By Pass Tulsi Ho",
+                    "Balasinordoor By Pass Ahmedabad"
+                ],
+                "dp": [
+                    "Bhopal Travels Isbt Main Building",
+                    "Sehore Bypass Crescent"
+                ],
+                "offers": [],
+                "dep_dt": "2026-11-06 14:30:00",
+                "arr_dt": "2026-11-07 04:00:00",
+                "st": {
+                    "so": false,
+                    "d": false,
+                    "s_ddd": 0
+                },
+                "p_score": 8,
+                "fp_score": 0,
+                "is_gps": false,
+                "op_tags": [
+                    658
+                ],
+                "rt_deal": {},
+                "amen": [],
+                "is_spon": false,
+                "pa": 0,
+                "sc_i": {
+                    "bk": 0.515,
+                    "bk_cnt": 1165
+                },
+                "trav_pht": 0
+            },
+            {
+                "seats": 23,
+                "btn": "2+1, SLEEPER, AC, INDIVIDUAL LED",
+                "dur": "1000",
+                "bid": "3461::2342::2026-11-06::39::20261106563559::onward_leg",
+                "tid": "3461:2342:3178:1930:0700:1:1",
+                "rtid": "3461:2342:3178:39:BITLA:487:1538",
+                "ptid": "20261106563559",
+                "oid": 3178,
+                "propn": "Verma Travels",
+                "rnr": {
+                    "avg": 2.57,
+                    "cnt": 0,
+                    "r_cnt": null,
+                    "cc": "#FF9D00"
+                },
+                "fs": {
+                    "sl": true,
+                    "ac": true,
+                    "can": true,
+                    "st": false,
+                    "ss": false,
+                    "is_elec": false,
+                    "bst": null
+                },
+                "ft": {
+                    "s_lady": false,
+                    "clbp": false
+                },
+                "pht": 0,
+                "df": [
+                    {
+                        "bf": 4599,
+                        "g": 229,
+                        "of": 0,
+                        "st": 2,
+                        "d": null,
+                        "fd": null,
+                        "fs": null,
+                        "ofr": null
+                    },
+                    {
+                        "bf": 4599,
+                        "g": 229,
+                        "of": 0,
+                        "st": 2,
+                        "d": null,
+                        "fd": null,
+                        "fs": null,
+                        "ofr": null
+                    },
+                    {
+                        "bf": 4700,
+                        "g": 235,
+                        "of": 0,
+                        "st": 2,
+                        "d": null,
+                        "fd": null,
+                        "fs": null,
+                        "ofr": null
+                    },
+                    {
+                        "bf": 4700,
+                        "g": 235,
+                        "of": 0,
+                        "st": 2,
+                        "d": null,
+                        "fd": null,
+                        "fs": null,
+                        "ofr": null
+                    }
+                ],
+                "btt": [
+                    "AC",
+                    "Sleeper",
+                    "2+1"
+                ],
+                "rnr_src": "paytm_route_time_id",
+                "srt_rt_val": 2.57,
+                "as_info": null,
+                "d_r": {
+                    "avg": 2.57,
+                    "cnt": 0,
+                    "tags": null
+                },
+                "f_r": {
+                    "disp": null,
+                    "srt": null,
+                    "cnt": null
+                },
+                "ss_c": true,
+                "bp": [
+                    "Radhe Parking Narol Road Gyaspur",
+                    "Paladi",
+                    "Ctm Rk Travels",
+                    "Soni Ni Chal",
+                    "Odhav Ring Road Circles"
+                ],
+                "dp": [
+                    "Sehor By Pass Near For Crescent Water Park",
+                    "Vit University",
+                    "Lal Ghati Circle",
+                    "Isbt Shop No 1 Commercial Complex Verma Travels"
+                ],
+                "offers": [],
+                "dep_dt": "2026-11-06 21:00:00",
+                "arr_dt": "2026-11-07 07:00:00",
+                "st": {
+                    "so": false,
+                    "d": false,
+                    "s_ddd": 0
+                },
+                "p_score": 0,
+                "fp_score": 2,
+                "is_gps": false,
+                "op_tags": [],
+                "rt_deal": {},
+                "amen": [
+                    5,
+                    7,
+                    8,
+                    11,
+                    12,
+                    17,
+                    24,
+                    161
+                ],
+                "is_spon": false,
+                "pa": 0,
+                "sc_i": {
+                    "bk": 0.4278,
+                    "bk_cnt": 935
+                },
+                "trav_pht": 0
+            },
+            {
+                "seats": 10,
+                "btn": "2 X 1 (42) A/C BHARAT BENZ [DP]",
+                "dur": "1135",
+                "bid": "3461::2342::2026-11-06::43::951#1#1373#62329#125257#22485#06112026#4:00__PM#4:00__PM#2::onward_leg",
+                "tid": "3461:2342:5925:1530:0335:1:1",
+                "rtid": "3461:2342:5925:43:125257",
+                "ptid": "951#1#1373#62329#125257#22485#06112026#4:00 PM#4:00 PM#2",
+                "oid": 5925,
+                "propn": "M R Travels",
+                "rnr": {
+                    "avg": 4.3,
+                    "cnt": 18,
+                    "r_cnt": null,
+                    "cc": "#27ae5f"
+                },
+                "fs": {
+                    "sl": true,
+                    "ac": true,
+                    "can": true,
+                    "st": false,
+                    "ss": false,
+                    "is_elec": false,
+                    "bst": null
+                },
+                "ft": {
+                    "s_lady": false,
+                    "clbp": false
+                },
+                "pht": 0,
+                "df": [
+                    {
+                        "bf": 7299,
+                        "g": 0,
+                        "of": 0,
+                        "st": 0,
+                        "d": null,
+                        "fd": null,
+                        "fs": null,
+                        "ofr": null
+                    }
+                ],
+                "btt": [
+                    "Bharat Benz",
+                    "AC",
+                    "Sleeper",
+                    "2+1"
+                ],
+                "rnr_src": "paytm_route_time_id",
+                "srt_rt_val": 4.3,
+                "as_info": null,
+                "d_r": {
+                    "avg": 4.3,
+                    "cnt": 18,
+                    "tags": [
+                        "Clean Bus",
+                        "Comfortable Seats",
+                        "On Time"
+                    ]
+                },
+                "f_r": {
+                    "disp": null,
+                    "srt": null,
+                    "cnt": null
+                },
+                "ss_c": true,
+                "bp": [
+                    "Shahibag",
+                    "A R Travels Saraswati Nagar Ctm Express Highway"
+                ],
+                "dp": [
+                    "Vit University Main Highway",
+                    "Kubeshwar Dham Sehore",
+                    "Ho Cresent Sehore",
+                    "M R Travels Lal Ghati Circle Bairagadh Road Near Hp Petrol Pump",
+                    "Isbt Bus Stand Opp Sanchi Dairy"
+                ],
+                "offers": [],
+                "dep_dt": "2026-11-06 16:00:00",
+                "arr_dt": "2026-11-07 03:35:00",
+                "st": {
+                    "so": false,
+                    "d": false,
+                    "s_ddd": 0
+                },
+                "p_score": 0,
+                "fp_score": 0,
+                "is_gps": false,
+                "op_tags": [],
+                "rt_deal": {},
+                "amen": [],
+                "is_spon": false,
+                "pa": 0,
+                "sc_i": {
+                    "bk": 0.2935,
+                    "bk_cnt": 1363
+                },
+                "trav_pht": 0
+            },
+            {
+                "seats": 38,
+                "btn": "1+2, SLEEPER/SEATER, AC, NON-VIDEO",
+                "dur": "1510",
+                "bid": "3461::2342::2026-11-06::9::202611061190170::onward_leg",
+                "tid": "3461:2342:11413:0130:1730:1:1",
+                "rtid": "3461:2342:11413:9:BITLA:38150:43",
+                "ptid": "202611061190170",
+                "oid": 11413,
+                "propn": "Anshu Travels",
+                "rnr": {
+                    "avg": 1.8,
+                    "cnt": 0,
+                    "r_cnt": null,
+                    "cc": "#EB5757"
+                },
+                "fs": {
+                    "sl": true,
+                    "ac": true,
+                    "can": true,
+                    "st": true,
+                    "ss": false,
+                    "is_elec": false,
+                    "bst": null
+                },
+                "ft": {
+                    "s_lady": false,
+                    "clbp": false
+                },
+                "pht": 0,
+                "df": [
+                    {
+                        "bf": 5000,
+                        "g": 250,
+                        "of": 0,
+                        "st": 2,
+                        "d": null,
+                        "fd": null,
+                        "fs": null,
+                        "ofr": null
+                    },
+                    {
+                        "bf": 5000,
+                        "g": 250,
+                        "of": 0,
+                        "st": 1,
+                        "d": null,
+                        "fd": null,
+                        "fs": null,
+                        "ofr": null
+                    },
+                    {
+                        "bf": 5000,
+                        "g": 250,
+                        "of": 0,
+                        "st": 2,
+                        "d": null,
+                        "fd": null,
+                        "fs": null,
+                        "ofr": null
+                    }
+                ],
+                "btt": [
+                    "AC",
+                    "Seater/Sleeper",
+                    "1+2"
+                ],
+                "rnr_src": "paytm_route_time_id",
+                "srt_rt_val": 1.8,
+                "as_info": {
+                    "0": {
+                        "5": 0,
+                        "6": 0,
+                        "7": 0
+                    },
+                    "1": {
+                        "5": 0,
+                        "6": 0,
+                        "7": 0
+                    },
+                    "2": {
+                        "5": 0,
+                        "6": 0,
+                        "7": 0
+                    },
+                    "3": {
+                        "0": 0,
+                        "1": 0,
+                        "2": 0
+                    },
+                    "4": {
+                        "5": 0,
+                        "6": 0,
+                        "7": 0
+                    },
+                    "8": null,
+                    "9": null
+                },
+                "d_r": {
+                    "avg": 1.8,
+                    "cnt": 0,
+                    "tags": null
+                },
+                "f_r": {
+                    "disp": null,
+                    "srt": null,
+                    "cnt": null
+                },
+                "ss_c": true,
+                "bp": [
+                    "Namsthe Circle Baps Circle",
+                    "Narol",
+                    "Ctm Bus Station"
+                ],
+                "dp": [
+                    "11 Mile Commercial Complex"
+                ],
+                "offers": [],
+                "dep_dt": "2026-11-06 02:20:00",
+                "arr_dt": "2026-11-06 17:30:00",
+                "st": {
+                    "so": false,
+                    "d": false,
+                    "s_ddd": 0
+                },
+                "p_score": 0,
+                "fp_score": 0,
+                "is_gps": false,
+                "op_tags": [],
+                "rt_deal": {},
+                "amen": [],
+                "is_spon": false,
+                "pa": 0,
+                "sc_i": {
+                    "bk": 0,
+                    "bk_cnt": 374
+                },
+                "trav_pht": 0
+            },
+            {
+                "seats": 28,
+                "btn": "2+1, SLEEPER, AC, NON-VIDEO",
+                "dur": "1135",
+                "bid": "3461::2342::2026-11-06::9::20261106544876::onward_leg",
+                "tid": "3461:2342:11190:1415:0245:1:1",
+                "rtid": "3461:2342:11190:9:BITLA:37166:6",
+                "ptid": "20261106544876",
+                "oid": 11190,
+                "propn": "BILLES TRAVELS",
+                "rnr": {
+                    "avg": 3.4,
+                    "cnt": 5,
+                    "r_cnt": null,
+                    "cc": "#27ae5f"
+                },
+                "fs": {
+                    "sl": true,
+                    "ac": true,
+                    "can": true,
+                    "st": false,
+                    "ss": false,
+                    "is_elec": false,
+                    "bst": null
+                },
+                "ft": {
+                    "s_lady": false,
+                    "clbp": false
+                },
+                "pht": 0,
+                "df": [
+                    {
+                        "bf": 6899,
+                        "g": 344,
+                        "of": 0,
+                        "st": 2,
+                        "d": null,
+                        "fd": null,
+                        "fs": null,
+                        "ofr": null
+                    },
+                    {
+                        "bf": 6999,
+                        "g": 349,
+                        "of": 0,
+                        "st": 2,
+                        "d": null,
+                        "fd": null,
+                        "fs": null,
+                        "ofr": null
+                    }
+                ],
+                "btt": [
+                    "AC",
+                    "Sleeper",
+                    "2+1"
+                ],
+                "rnr_src": "paytm_route_time_id",
+                "srt_rt_val": 3.4,
+                "as_info": null,
+                "d_r": {
+                    "avg": 3.4,
+                    "cnt": 5,
+                    "tags": null
+                },
+                "f_r": {
+                    "disp": 3.4,
+                    "srt": 3.4,
+                    "cnt": 2
+                },
+                "ss_c": true,
+                "bp": [
+                    "Jay Travels Shroff Chamber Opp Navchetan High School",
+                    "Aavkar Travels Near Bhagyoday Ho St Geetamandir",
+                    "Ctm Express"
+                ],
+                "dp": [
+                    "Halalpura Bus Stand",
+                    "Lal Gathi",
+                    "Inter State Bus Terminal"
+                ],
+                "offers": [],
+                "dep_dt": "2026-11-06 15:10:00",
+                "arr_dt": "2026-11-07 02:45:00",
+                "st": {
+                    "so": false,
+                    "d": false,
+                    "s_ddd": 0
+                },
+                "p_score": 0,
+                "fp_score": 2,
+                "is_gps": false,
+                "op_tags": [],
+                "rt_deal": {},
+                "amen": [
+                    1,
+                    3,
+                    5,
+                    6,
+                    7,
+                    8,
+                    11,
+                    12,
+                    19,
+                    24,
+                    26,
+                    27,
+                    161
+                ],
+                "is_spon": false,
+                "pa": 0,
+                "sc_i": {
+                    "bk": 0.2497,
+                    "bk_cnt": 801
+                },
+                "trav_pht": 0
+            },
+            {
+                "seats": 33,
+                "btn": "2 X 1 A/C SEAT SLEEPER",
+                "dur": "1120",
+                "bid": "3461::2342::2026-11-06::10::1860#1#1373#68443#134070#23126#06112026#8:00__PM#8:00__PM#2::onward_leg",
+                "tid": "3461:2342:12599:2000:0720:1:1",
+                "rtid": "3461:2342:12599:10:134070",
+                "ptid": "1860#1#1373#68443#134070#23126#06112026#8:00 PM#8:00 PM#2",
+                "oid": 12599,
+                "propn": "Shree Kevaya Travels",
+                "rnr": {
+                    "avg": null,
+                    "cnt": null,
+                    "r_cnt": null,
+                    "cc": null
+                },
+                "fs": {
+                    "sl": true,
+                    "ac": true,
+                    "can": true,
+                    "st": false,
+                    "ss": false,
+                    "is_elec": false,
+                    "bst": null
+                },
+                "ft": {
+                    "s_lady": false,
+                    "clbp": false
+                },
+                "pht": 0,
+                "df": [
+                    {
+                        "bf": 4000,
+                        "g": 0,
+                        "of": 0,
+                        "st": 2,
+                        "d": null,
+                        "fd": null,
+                        "fs": null,
+                        "ofr": null
+                    }
+                ],
+                "btt": [
+                    "AC",
+                    "Sleeper",
+                    "2+1"
+                ],
+                "rnr_src": "paytm_route_time_id",
+                "srt_rt_val": 0,
+                "as_info": {
+                    "0": {
+                        "5": 0,
+                        "6": 0,
+                        "7": 0
+                    },
+                    "1": {
+                        "5": 0,
+                        "6": 0,
+                        "7": 0
+                    },
+                    "2": {
+                        "5": 0,
+                        "6": 0,
+                        "7": 33
+                    },
+                    "3": {
+                        "0": 0,
+                        "1": 0,
+                        "2": 33
+                    },
+                    "4": {
+                        "5": 0,
+                        "6": 0,
+                        "7": 33
+                    },
+                    "8": 15,
+                    "9": 20
+                },
+                "d_r": {
+                    "avg": null,
+                    "cnt": null,
+                    "tags": null
+                },
+                "f_r": {
+                    "disp": null,
+                    "srt": null,
+                    "cnt": null
+                },
+                "ss_c": true,
+                "bp": [
+                    "Sultangadh Travels Sahibaug Namaste Circle",
+                    "Shahibaug",
+                    "Ramadhni Parking",
+                    "Aavkar Travels Nr Bhagyoday Ho Opp St Stand No 6",
+                    "Shree Kevaya Travels Opp Brts Bus Stop Nr Mansi Honda Showroom Ctm"
+                ],
+                "dp": [
+                    "Isbt Bus Stand Bhopal"
+                ],
+                "offers": [],
+                "dep_dt": "2026-11-06 20:00:00",
+                "arr_dt": "2026-11-07 07:20:00",
+                "st": {
+                    "so": false,
+                    "d": false,
+                    "s_ddd": 0
+                },
+                "p_score": 0,
+                "fp_score": 0,
+                "is_gps": false,
+                "op_tags": [],
+                "rt_deal": {},
+                "amen": [],
+                "is_spon": false,
+                "pa": 0,
+                "sc_i": {
+                    "bk": 0.1099,
+                    "bk_cnt": 910
+                },
+                "trav_pht": 0
+            },
+            {
+                "seats": 36,
+                "btn": "ASHOK LEYLAND A/C PACK GLASS AIR SUSPENSION",
+                "dur": "1200",
+                "bid": "3461::2342::2026-11-06::42::171667::onward_leg",
+                "tid": "3461:2342:4604:1400:0245:1:1",
+                "rtid": "3461:2342:4604:42:171667",
+                "ptid": "171667",
+                "oid": 4604,
+                "propn": "B R Travels",
+                "rnr": {
+                    "avg": 3,
+                    "cnt": 7,
+                    "r_cnt": null,
+                    "cc": "#27ae5f"
+                },
+                "fs": {
+                    "sl": true,
+                    "ac": true,
+                    "can": false,
+                    "st": false,
+                    "ss": false,
+                    "is_elec": false,
+                    "bst": null
+                },
+                "ft": {
+                    "s_lady": false,
+                    "clbp": false
+                },
+                "pht": 0,
+                "df": [
+                    {
+                        "bf": 6400,
+                        "g": 320,
+                        "of": 0,
+                        "st": 2,
+                        "d": null,
+                        "fd": null,
+                        "fs": null,
+                        "ofr": null
+                    },
+                    {
+                        "bf": 6400,
+                        "g": 320,
+                        "of": 0,
+                        "st": 2,
+                        "d": null,
+                        "fd": null,
+                        "fs": null,
+                        "ofr": null
+                    }
+                ],
+                "btt": [
+                    "Leyland",
+                    "AC",
+                    "Sleeper"
+                ],
+                "rnr_src": "paytm_route_time_id",
+                "srt_rt_val": 3,
+                "as_info": null,
+                "d_r": {
+                    "avg": 3,
+                    "cnt": 7,
+                    "tags": null
+                },
+                "f_r": {
+                    "disp": null,
+                    "srt": null,
+                    "cnt": null
+                },
+                "ss_c": false,
+                "bp": [
+                    "Vishala",
+                    "Paldi Neetaspeedlink Travels Opp Navchetan School Paldi",
+                    "B R Travels Shaibaug Namstey Circle Hp Petrol Pump Ki Pass Ganesh Bhawan Pickup By Auto 7",
+                    "Near Bhagyoday Ho Geeta Mandir St Pickup By Auto Aavkar Travels",
+                    "Br Travels Near Ctm Express Highway Beside Amts Bus Stop Ctm Hatkeshwar"
+                ],
+                "dp": [
+                    "Isbt Bus Stand"
+                ],
+                "offers": [],
+                "dep_dt": "2026-11-06 14:45:00",
+                "arr_dt": "2026-11-07 02:45:00",
+                "st": {
+                    "so": false,
+                    "d": false,
+                    "s_ddd": 0
+                },
+                "p_score": 0,
+                "fp_score": 0,
+                "is_gps": false,
+                "op_tags": [],
+                "rt_deal": {},
+                "amen": [
+                    1,
+                    3,
+                    5,
+                    7,
+                    8,
+                    12,
+                    19,
+                    24,
+                    25
+                ],
+                "is_spon": false,
+                "pa": 0,
+                "sc_i": {
+                    "bk": 0.1372,
+                    "bk_cnt": 729
+                },
+                "trav_pht": 0
+            },
+            {
+                "seats": 16,
+                "btn": "ASHOK LEYLAND",
+                "dur": "1340",
+                "bid": "3461::2342::2026-11-06::42::187705::onward_leg",
+                "tid": "3461:2342:4661:2230:1240:0:1",
+                "rtid": "3461:2342:4661:42:187705",
+                "ptid": "187705",
+                "oid": 4661,
+                "propn": "Hans Travels (I) Private Limited",
+                "rnr": {
+                    "avg": 1.3,
+                    "cnt": 7,
+                    "r_cnt": null,
+                    "cc": "#EB5757"
+                },
+                "fs": {
+                    "sl": true,
+                    "ac": false,
+                    "can": true,
+                    "st": false,
+                    "ss": false,
+                    "is_elec": false,
+                    "bst": null
+                },
+                "ft": {
+                    "s_lady": false,
+                    "clbp": false
+                },
+                "pht": 0,
+                "df": [
+                    {
+                        "bf": 3099,
+                        "g": 154,
+                        "of": 0,
+                        "st": 2,
+                        "d": null,
+                        "fd": null,
+                        "fs": null,
+                        "ofr": null
+                    },
+                    {
+                        "bf": 3099,
+                        "g": 154,
+                        "of": 0,
+                        "st": 2,
+                        "d": null,
+                        "fd": null,
+                        "fs": null,
+                        "ofr": null
+                    }
+                ],
+                "btt": [
+                    "Leyland",
+                    "Non AC",
+                    "Sleeper"
+                ],
+                "rnr_src": "paytm_route_time_id",
+                "srt_rt_val": 1.3,
+                "as_info": null,
+                "d_r": {
+                    "avg": 1.3,
+                    "cnt": 7,
+                    "tags": null
+                },
+                "f_r": {
+                    "disp": 1.3,
+                    "srt": 1.3,
+                    "cnt": 2
+                },
+                "ss_c": false,
+                "bp": [
+                    "Paldi Shefali Shopping Center",
+                    "Hans Travels Ctm Express Highway Near Sahajanand Shoping Center Ahmedabad",
+                    "Soni Ni Chali Bridge Utarine",
+                    "Odhav Circle"
+                ],
+                "dp": [
+                    "Lalghati Drop Connecting Sitting Ac Bus From Indore",
+                    "Isbt Drop Connecting Sitting Ac Bus From Indore"
+                ],
+                "offers": [],
+                "dep_dt": "2026-11-06 23:00:00",
+                "arr_dt": "2026-11-07 12:40:00",
+                "st": {
+                    "so": false,
+                    "d": false,
+                    "s_ddd": 0
+                },
+                "p_score": 0,
+                "fp_score": 0,
+                "is_gps": false,
+                "op_tags": [
+                    762
+                ],
+                "rt_deal": {},
+                "amen": [
+                    1,
+                    2,
+                    5,
+                    6,
+                    8,
+                    19,
+                    24,
+                    26,
+                    27
+                ],
+                "is_spon": false,
+                "pa": 0,
+                "sc_i": {
+                    "bk": 0,
+                    "bk_cnt": 1026
+                },
+                "trav_pht": 0
+            }
+        ],
+        "d": {
+            "bp": {
+                "R T O Circle Subhash Brige": {
+                    "c": 1,
+                    "pt": false,
+                    "pb": 0,
+                    "lat": null,
+                    "lng": null
+                },
+                "B R Travels Sahibaugh Namaste Circle": {
+                    "c": 1,
+                    "pt": false,
+                    "pb": 0,
+                    "lat": null,
+                    "lng": null
+                },
+                "Paldi Neetaspeedlink Travels Opp Navchetan School Paldi": {
+                    "c": 2,
+                    "pt": false,
+                    "pb": 0,
+                    "lat": null,
+                    "lng": null
+                },
+                "Aavkar Travels Nr Bhagyoday Ho Opp St Stand No 6": {
+                    "c": 2,
+                    "pt": false,
+                    "pb": 0,
+                    "lat": null,
+                    "lng": null
+                },
+                "Br Travels Near Ctm Express Highway Beside Amts Bus Stop Ctm Hatkeshwar": {
+                    "c": 2,
+                    "pt": false,
+                    "pb": 0,
+                    "lat": null,
+                    "lng": null
+                },
+                "Rto Circle Brts Bus Stop": {
+                    "c": 1,
+                    "pt": false,
+                    "pb": 0,
+                    "lat": 23.068962,
+                    "lng": 72.581708
+                },
+                "Shahibag": {
+                    "c": 2,
+                    "pt": true,
+                    "pb": 502,
+                    "lat": 23.067698,
+                    "lng": 72.583845
+                },
+                "Paladi": {
+                    "c": 4,
+                    "pt": true,
+                    "pb": 722,
+                    "lat": 23.014866941582,
+                    "lng": 72.564817
+                },
+                "Kiran Travels Brts Bus Stand Geeta Mandir": {
+                    "c": 1,
+                    "pt": false,
+                    "pb": 0,
+                    "lat": null,
+                    "lng": null
+                },
+                "Ctm Char Rasta Surya Travels": {
+                    "c": 1,
+                    "pt": false,
+                    "pb": 0,
+                    "lat": null,
+                    "lng": null
+                },
+                "Soni Ki Chal End Of The Bridge": {
+                    "c": 1,
+                    "pt": false,
+                    "pb": 0,
+                    "lat": null,
+                    "lng": null
+                },
+                "Sun Business Hub Gf Shop No 21 Opp Odhav Police Chowkdi Sp Ring Road Circle": {
+                    "c": 1,
+                    "pt": false,
+                    "pb": 0,
+                    "lat": null,
+                    "lng": null
+                },
+                "Bavla": {
+                    "c": 1,
+                    "pt": false,
+                    "pb": 0,
+                    "lat": 22.8393683,
+                    "lng": 72.3612116
+                },
+                "Sanathal Circle": {
+                    "c": 1,
+                    "pt": true,
+                    "pb": 35,
+                    "lat": 22.961688,
+                    "lng": 72.475447
+                },
+                "Sa Lite Raj Ratan Tours And Travels": {
+                    "c": 2,
+                    "pt": false,
+                    "pb": 0,
+                    "lat": 23.02674773,
+                    "lng": 72.52356938
+                },
+                "Paldi Raj Ratan Tours And Travels": {
+                    "c": 2,
+                    "pt": false,
+                    "pb": 0,
+                    "lat": 23.0157295,
+                    "lng": 72.563479
+                },
+                "Soni Ni Chawl": {
+                    "c": 1,
+                    "pt": false,
+                    "pb": 0,
+                    "lat": 23.017103,
+                    "lng": 72.635062
+                },
+                "Odhav Circle": {
+                    "c": 2,
+                    "pt": false,
+                    "pb": 0,
+                    "lat": 23.024843,
+                    "lng": 72.673026
+                },
+                "Geeta Mandir": {
+                    "c": 1,
+                    "pt": false,
+                    "pb": 0,
+                    "lat": 23.0136716,
+                    "lng": 72.590953333
+                },
+                "Amraiwadi": {
+                    "c": 4,
+                    "pt": true,
+                    "pb": 344,
+                    "lat": 22.989774,
+                    "lng": 72.630727
+                },
+                "Paldi New Limda Travels S R S Trvl Pickup By Auto": {
+                    "c": 2,
+                    "pt": false,
+                    "pb": 0,
+                    "lat": null,
+                    "lng": null
+                },
+                "Vishala Circle National Travels": {
+                    "c": 2,
+                    "pt": false,
+                    "pb": 0,
+                    "lat": null,
+                    "lng": null
+                },
+                "Ctm Cross Road Mittal Travels": {
+                    "c": 2,
+                    "pt": false,
+                    "pb": 0,
+                    "lat": null,
+                    "lng": null
+                },
+                "Ramol": {
+                    "c": 1,
+                    "pt": true,
+                    "pb": 9,
+                    "lat": 23.0623,
+                    "lng": 72.6227
+                },
+                "Big Bazar Kankariya Road Parking Ke Andar St Bus Stand": {
+                    "c": 1,
+                    "pt": false,
+                    "pb": 0,
+                    "lat": null,
+                    "lng": null
+                },
+                "Hans Travels Ctm Express Highway Near Sahajanand Shoping Center Ahmedabad": {
+                    "c": 2,
+                    "pt": false,
+                    "pb": 0,
+                    "lat": null,
+                    "lng": null
+                },
+                "H K Travels Paldi Cross Road": {
+                    "c": 2,
+                    "pt": false,
+                    "pb": 0,
+                    "lat": 23.014208,
+                    "lng": 72.565018
+                },
+                "Shree Hari H K Travels Ratnamani Complex Sa Lite Pickup By Auto": {
+                    "c": 1,
+                    "pt": false,
+                    "pb": 0,
+                    "lat": null,
+                    "lng": null
+                },
+                "H K Travels S T Nr Bhagyoday Ho Gita Mandir Pickup By Auto": {
+                    "c": 2,
+                    "pt": false,
+                    "pb": 0,
+                    "lat": null,
+                    "lng": null
+                },
+                "Opp Vishala Ho H K Travels Shop No 10 Ujala Avenue Complex": {
+                    "c": 2,
+                    "pt": false,
+                    "pb": 0,
+                    "lat": 22.9922987,
+                    "lng": 72.5369767
+                },
+                "H K Travels Ctm": {
+                    "c": 2,
+                    "pt": false,
+                    "pb": 0,
+                    "lat": 22.991875,
+                    "lng": 72.632564
+                },
+                "Odhav Om Arcade": {
+                    "c": 2,
+                    "pt": false,
+                    "pb": 0,
+                    "lat": null,
+                    "lng": null
+                },
+                "Paldi R K Travels Pickup By Auto": {
+                    "c": 1,
+                    "pt": false,
+                    "pb": 0,
+                    "lat": null,
+                    "lng": null
+                },
+                "St Geeta Mandir": {
+                    "c": 1,
+                    "pt": false,
+                    "pb": 0,
+                    "lat": null,
+                    "lng": null
+                },
+                "Gujarat Vahan Parking S P Ring Road": {
+                    "c": 1,
+                    "pt": false,
+                    "pb": 0,
+                    "lat": null,
+                    "lng": null
+                },
+                "Ctm Cross Road Ho Veer Travels": {
+                    "c": 1,
+                    "pt": false,
+                    "pb": 0,
+                    "lat": null,
+                    "lng": null
+                },
+                "Shahibagh To Ctm Rs 70 Cash Auto Charge Per Seat": {
+                    "c": 3,
+                    "pt": false,
+                    "pb": 0,
+                    "lat": null,
+                    "lng": null
+                },
+                "Geeta Mandir To Ctm Rs 50 Cash Auto Charge Per Seat": {
+                    "c": 3,
+                    "pt": false,
+                    "pb": 0,
+                    "lat": null,
+                    "lng": null
+                },
+                "Ramol Parking Nr Ramol Police Station": {
+                    "c": 2,
+                    "pt": false,
+                    "pb": 0,
+                    "lat": null,
+                    "lng": null
+                },
+                "Sanathal Circle Bypass": {
+                    "c": 1,
+                    "pt": false,
+                    "pb": 0,
+                    "lat": null,
+                    "lng": null
+                },
+                "Ujala Circle Ahmedabad": {
+                    "c": 1,
+                    "pt": false,
+                    "pb": 0,
+                    "lat": null,
+                    "lng": null
+                },
+                "Vishala Circle Apmc Market": {
+                    "c": 1,
+                    "pt": false,
+                    "pb": 0,
+                    "lat": null,
+                    "lng": null
+                },
+                "Ctm Rk Travels": {
+                    "c": 3,
+                    "pt": false,
+                    "pb": 0,
+                    "lat": null,
+                    "lng": null
+                },
+                "Soni Ni Chal": {
+                    "c": 3,
+                    "pt": false,
+                    "pb": 0,
+                    "lat": null,
+                    "lng": null
+                },
+                "Odhav Ring Road Circles": {
+                    "c": 3,
+                    "pt": false,
+                    "pb": 0,
+                    "lat": null,
+                    "lng": null
+                },
+                "Deep Travels Manas Complex Opp Star Bazaar Jodhpur Char Rasta Sa Lite Pickup By Auto Rs 70 Cash Extra Par Person At Pickup": {
+                    "c": 1,
+                    "pt": false,
+                    "pb": 0,
+                    "lat": 23.02826603442037,
+                    "lng": 72.5330027771291
+                },
+                "Deep Travels Shroff Chamber Paldi Opp Navchetan School": {
+                    "c": 1,
+                    "pt": false,
+                    "pb": 0,
+                    "lat": 23.015774772,
+                    "lng": 72.563625356
+                },
+                "Narol Bridge Corner Near Reliance Petrol Pump": {
+                    "c": 1,
+                    "pt": false,
+                    "pb": 0,
+                    "lat": 22.975484626,
+                    "lng": 72.594912737
+                },
+                "Deep Travels Ctm Near Brts Bus Stand Opp Ctm Fly Over": {
+                    "c": 1,
+                    "pt": false,
+                    "pb": 0,
+                    "lat": 22.991399534,
+                    "lng": 72.631250554
+                },
+                "Radhe Parking Narol Road Gyaspur": {
+                    "c": 2,
+                    "pt": false,
+                    "pb": 0,
+                    "lat": null,
+                    "lng": null
+                },
+                "Shree Hari H K Travels Sa Lite Ratnamani Complex Pickup By Auto": {
+                    "c": 1,
+                    "pt": false,
+                    "pb": 0,
+                    "lat": 22.9936354,
+                    "lng": 72.6321281
+                },
+                "Kathlal By Pass Tulsi Ho": {
+                    "c": 1,
+                    "pt": false,
+                    "pb": 0,
+                    "lat": null,
+                    "lng": null
+                },
+                "Balasinordoor By Pass Ahmedabad": {
+                    "c": 1,
+                    "pt": false,
+                    "pb": 0,
+                    "lat": 23.02510157444901,
+                    "lng": 72.54501624753968
+                },
+                "A R Travels Saraswati Nagar Ctm Express Highway": {
+                    "c": 1,
+                    "pt": false,
+                    "pb": 0,
+                    "lat": null,
+                    "lng": null
+                },
+                "Namsthe Circle Baps Circle": {
+                    "c": 1,
+                    "pt": false,
+                    "pb": 0,
+                    "lat": null,
+                    "lng": null
+                },
+                "Narol": {
+                    "c": 1,
+                    "pt": false,
+                    "pb": 0,
+                    "lat": null,
+                    "lng": null
+                },
+                "Ctm Bus Station": {
+                    "c": 1,
+                    "pt": false,
+                    "pb": 0,
+                    "lat": null,
+                    "lng": null
+                },
+                "Jay Travels Shroff Chamber Opp Navchetan High School": {
+                    "c": 1,
+                    "pt": false,
+                    "pb": 0,
+                    "lat": null,
+                    "lng": null
+                },
+                "Aavkar Travels Near Bhagyoday Ho St Geetamandir": {
+                    "c": 1,
+                    "pt": false,
+                    "pb": 0,
+                    "lat": null,
+                    "lng": null
+                },
+                "Ctm Express": {
+                    "c": 1,
+                    "pt": false,
+                    "pb": 0,
+                    "lat": null,
+                    "lng": null
+                },
+                "Sultangadh Travels Sahibaug Namaste Circle": {
+                    "c": 1,
+                    "pt": false,
+                    "pb": 0,
+                    "lat": null,
+                    "lng": null
+                },
+                "Shahibaug": {
+                    "c": 1,
+                    "pt": false,
+                    "pb": 0,
+                    "lat": null,
+                    "lng": null
+                },
+                "Ramadhni Parking": {
+                    "c": 1,
+                    "pt": false,
+                    "pb": 0,
+                    "lat": null,
+                    "lng": null
+                },
+                "Shree Kevaya Travels Opp Brts Bus Stop Nr Mansi Honda Showroom Ctm": {
+                    "c": 1,
+                    "pt": false,
+                    "pb": 0,
+                    "lat": null,
+                    "lng": null
+                },
+                "Vishala": {
+                    "c": 1,
+                    "pt": true,
+                    "pb": 6,
+                    "lat": 22.993892,
+                    "lng": 72.53416
+                },
+                "B R Travels Shaibaug Namstey Circle Hp Petrol Pump Ki Pass Ganesh Bhawan Pickup By Auto 7": {
+                    "c": 1,
+                    "pt": false,
+                    "pb": 0,
+                    "lat": null,
+                    "lng": null
+                },
+                "Near Bhagyoday Ho Geeta Mandir St Pickup By Auto Aavkar Travels": {
+                    "c": 1,
+                    "pt": false,
+                    "pb": 0,
+                    "lat": null,
+                    "lng": null
+                },
+                "Paldi Shefali Shopping Center": {
+                    "c": 1,
+                    "pt": false,
+                    "pb": 0,
+                    "lat": null,
+                    "lng": null
+                },
+                "Soni Ni Chali Bridge Utarine": {
+                    "c": 1,
+                    "pt": false,
+                    "pb": 0,
+                    "lat": null,
+                    "lng": null
+                }
+            },
+            "dp": {
+                "Habib Ganj": {
+                    "c": 1,
+                    "pt": false,
+                    "pb": 0,
+                    "lat": null,
+                    "lng": null
+                },
+                "Lal Ghati Circle": {
+                    "c": 7,
+                    "pt": false,
+                    "pb": 0,
+                    "lat": 23.2730017794692,
+                    "lng": 77.3662255523282
+                },
+                "Isbt Bus Stand": {
+                    "c": 4,
+                    "pt": false,
+                    "pb": 0,
+                    "lat": null,
+                    "lng": null
+                },
+                "Vit University Main Highway": {
+                    "c": 2,
+                    "pt": false,
+                    "pb": 0,
+                    "lat": null,
+                    "lng": null
+                },
+                "Kubeshwar Dham Sehore": {
+                    "c": 2,
+                    "pt": false,
+                    "pb": 0,
+                    "lat": null,
+                    "lng": null
+                },
+                "Ho Cresent Sehore": {
+                    "c": 2,
+                    "pt": false,
+                    "pb": 0,
+                    "lat": null,
+                    "lng": null
+                },
+                "M R Travels Lal Ghati Circle Bairagadh Road Near Hp Petrol Pump": {
+                    "c": 2,
+                    "pt": false,
+                    "pb": 0,
+                    "lat": 23.2752633,
+                    "lng": 77.366178799
+                },
+                "Isbt Bus Stand Opp Sanchi Dairy": {
+                    "c": 2,
+                    "pt": false,
+                    "pb": 0,
+                    "lat": null,
+                    "lng": null
+                },
+                "Vit Bhopal Connecting Sleeper Volvo Multiaxle Bus From Indore To Bhopal": {
+                    "c": 1,
+                    "pt": false,
+                    "pb": 0,
+                    "lat": 23.08295,
+                    "lng": 76.84653
+                },
+                "Crescent Resorts New Bypass Road Sehore Connecting Sleeper Volvo Multiaxle Bus From Indore To Bhopal": {
+                    "c": 1,
+                    "pt": false,
+                    "pb": 0,
+                    "lat": 23.174481,
+                    "lng": 77.061289
+                },
+                "Asharam Tiraha Connecting Sleeper Volvo Multiaxle Bus From Indore To Bhopal": {
+                    "c": 1,
+                    "pt": false,
+                    "pb": 0,
+                    "lat": 23.297018,
+                    "lng": 77.35297
+                },
+                "Peoples Mall Connecting Sleeper Volvo Multiaxle Bus From Indore To Bhopal": {
+                    "c": 1,
+                    "pt": false,
+                    "pb": 0,
+                    "lat": 23.3045214,
+                    "lng": 77.4197434
+                },
+                "Gate No 2 Minal Residency Connecting Sleeper Volvo Multiaxle Bus From Indore To Bhopal": {
+                    "c": 1,
+                    "pt": false,
+                    "pb": 0,
+                    "lat": 23.267893,
+                    "lng": 77.469455
+                },
+                "Inter State Bus Terminal Connecting Sleeper Volvo Multiaxle Bus From Indore To Bhopal": {
+                    "c": 1,
+                    "pt": false,
+                    "pb": 0,
+                    "lat": 28.6674912,
+                    "lng": 77.2244795
+                },
+                "Vit Bhopal Connecting Seating Volvo Multiaxle Bus From Indore To Bhopal": {
+                    "c": 1,
+                    "pt": false,
+                    "pb": 0,
+                    "lat": 23.08295,
+                    "lng": 76.84653
+                },
+                "Crescent Resorts New Bypass Road Sehore Connecting Seating Volvo Multiaxle Bus From Indore To Bhopal": {
+                    "c": 1,
+                    "pt": false,
+                    "pb": 0,
+                    "lat": 23.174481,
+                    "lng": 77.061289
+                },
+                "Asharam Tiraha Connecting Seating Volvo Multiaxle Bus From Indore To Bhopal": {
+                    "c": 1,
+                    "pt": false,
+                    "pb": 0,
+                    "lat": 23.297018,
+                    "lng": 77.35297
+                },
+                "Gate No 2 Minal Residency Connecting Seating Volvo Multiaxle Bus From Indore To Bhopal": {
+                    "c": 1,
+                    "pt": false,
+                    "pb": 0,
+                    "lat": 23.267893,
+                    "lng": 77.469455
+                },
+                "Inter State Bus Terminal Connecting Seating Volvo Multiaxle Bus From Indore To Bhopal": {
+                    "c": 1,
+                    "pt": false,
+                    "pb": 0,
+                    "lat": 28.6674912,
+                    "lng": 77.2244795
+                },
+                "Lalghati": {
+                    "c": 3,
+                    "pt": true,
+                    "pb": 1041,
+                    "lat": 23.2794734,
+                    "lng": 77.3582076
+                },
+                "Isbt Drop Connecting Sitting Ac Bus From Indore": {
+                    "c": 2,
+                    "pt": false,
+                    "pb": 0,
+                    "lat": null,
+                    "lng": null
+                },
+                "Vit University": {
+                    "c": 4,
+                    "pt": false,
+                    "pb": 0,
+                    "lat": 23.07766,
+                    "lng": 76.851271
+                },
+                "Sehore Bypass Crescent": {
+                    "c": 2,
+                    "pt": false,
+                    "pb": 0,
+                    "lat": 23.19566,
+                    "lng": 77.1132567
+                },
+                "Bhopal Travels Isbt Main Building": {
+                    "c": 2,
+                    "pt": false,
+                    "pb": 0,
+                    "lat": 23.231821445402105,
+                    "lng": 77.45064689970269
+                },
+                "Crescent Water Park Sehore": {
+                    "c": 1,
+                    "pt": false,
+                    "pb": 0,
+                    "lat": null,
+                    "lng": null
+                },
+                "Lalghati Near Bharat Petrol Pump": {
+                    "c": 1,
+                    "pt": false,
+                    "pb": 0,
+                    "lat": null,
+                    "lng": null
+                },
+                "Cresent Resort Sehore": {
+                    "c": 3,
+                    "pt": false,
+                    "pb": 0,
+                    "lat": null,
+                    "lng": null
+                },
+                "Isbt Habibganj": {
+                    "c": 3,
+                    "pt": false,
+                    "pb": 0,
+                    "lat": null,
+                    "lng": null
+                },
+                "Sehor By Pass Near For Crescent Water Park": {
+                    "c": 3,
+                    "pt": false,
+                    "pb": 0,
+                    "lat": null,
+                    "lng": null
+                },
+                "Isbt Shop No 1 Commercial Complex Verma Travels": {
+                    "c": 3,
+                    "pt": false,
+                    "pb": 0,
+                    "lat": 23.228520058,
+                    "lng": 77.442387106
+                },
+                "Lalghati Infront Of Police Chowki": {
+                    "c": 1,
+                    "pt": false,
+                    "pb": 0,
+                    "lat": 23.273434919,
+                    "lng": 77.369391283
+                },
+                "Deep Travels Shop Num 19 Isbt Bus Stand Bhopal": {
+                    "c": 1,
+                    "pt": false,
+                    "pb": 0,
+                    "lat": 23.229540431,
+                    "lng": 77.443608152
+                },
+                "11 Mile Commercial Complex": {
+                    "c": 1,
+                    "pt": false,
+                    "pb": 0,
+                    "lat": null,
+                    "lng": null
+                },
+                "Halalpura Bus Stand": {
+                    "c": 1,
+                    "pt": false,
+                    "pb": 0,
+                    "lat": null,
+                    "lng": null
+                },
+                "Lal Gathi": {
+                    "c": 1,
+                    "pt": false,
+                    "pb": 0,
+                    "lat": null,
+                    "lng": null
+                },
+                "Inter State Bus Terminal": {
+                    "c": 1,
+                    "pt": false,
+                    "pb": 0,
+                    "lat": null,
+                    "lng": null
+                },
+                "Isbt Bus Stand Bhopal": {
+                    "c": 1,
+                    "pt": false,
+                    "pb": 0,
+                    "lat": null,
+                    "lng": null
+                },
+                "Lalghati Drop Connecting Sitting Ac Bus From Indore": {
+                    "c": 1,
+                    "pt": false,
+                    "pb": 0,
+                    "lat": null,
+                    "lng": null
+                }
+            },
+            "amen": {
+                "1": {
+                    "id": 1,
+                    "icn": "https://paytmtravel-images-akamai.paytm.com/icons/icon_glyph_live_tracking_main.svg",
+                    "lbl": "Live Tracking",
+                    "nm": "live_tracking"
+                },
+                "2": {
+                    "id": 2,
+                    "icn": "https://paytmtravel-images-akamai.paytm.com/icons/wifi.svg",
+                    "lbl": "Wifi",
+                    "nm": "wifi"
+                },
+                "3": {
+                    "id": 3,
+                    "icn": "https://paytmtravel-images-akamai.paytm.com/icons/icon_glyph_water_bottle_main.svg",
+                    "lbl": "Water Bottle",
+                    "nm": "water_bottle"
+                },
+                "5": {
+                    "id": 5,
+                    "icn": "https://paytmtravel-images-akamai.paytm.com/icons/icon_glyph_blanket_main.svg",
+                    "lbl": "Blanket",
+                    "nm": "blanket"
+                },
+                "6": {
+                    "id": 6,
+                    "icn": "https://paytmtravel-images-akamai.paytm.com/icons/icon_glyph_pillow_main.svg",
+                    "lbl": "Pillow",
+                    "nm": "pillow"
+                },
+                "7": {
+                    "id": 7,
+                    "icn": "https://paytmtravel-images-akamai.paytm.com/icons/icon_glyph_washroom_main.svg",
+                    "lbl": "Washroom",
+                    "nm": "washroom"
+                },
+                "8": {
+                    "id": 8,
+                    "icn": "https://paytmtravel-images-akamai.paytm.com/icons/icon_glyph_charging_point_main.svg",
+                    "lbl": "Charging Point",
+                    "nm": "charging_point"
+                },
+                "9": {
+                    "id": 9,
+                    "icn": "https://paytmtravel-images-akamai.paytm.com/icons/icon_glyph_tv_main.svg",
+                    "lbl": "TV",
+                    "nm": "tv"
+                },
+                "11": {
+                    "id": 11,
+                    "icn": "https://paytmtravel-images-akamai.paytm.com/icons/icon_glyph_ticket_main.svg",
+                    "lbl": "MTicket",
+                    "nm": "mticket"
+                },
+                "12": {
+                    "id": 12,
+                    "icn": "https://paytmtravel-images-akamai.paytm.com/icons/reading_light.svg",
+                    "lbl": "Reading Light",
+                    "nm": "reading_light"
+                },
+                "17": {
+                    "id": 17,
+                    "icn": "https://paytmtravel-images-akamai.paytm.com/icons/vomiting_bag.svg",
+                    "lbl": "Vomiting Bag",
+                    "nm": "vomiting_bag"
+                },
+                "19": {
+                    "id": 19,
+                    "icn": "https://paytmtravel-images-akamai.paytm.com/icons/cctv.svg",
+                    "lbl": "CCTV",
+                    "nm": "cctv"
+                },
+                "20": {
+                    "id": 20,
+                    "icn": "https://paytmtravel-images-akamai.paytm.com/icons/fan.svg",
+                    "lbl": "Fan",
+                    "nm": "fan"
+                },
+                "24": {
+                    "id": 24,
+                    "icn": "https://paytmtravel-images-akamai.paytm.com/icons/emergency_exit.svg",
+                    "lbl": "Emergency Exit",
+                    "nm": "emergency_exit"
+                },
+                "25": {
+                    "id": 25,
+                    "icn": "https://paytmtravel-images-akamai.paytm.com/icons/Fire%20Extinguisher.svg",
+                    "lbl": "Fire Extinguisher",
+                    "nm": "fire_extinguisher"
+                },
+                "26": {
+                    "id": 26,
+                    "icn": "https://paytmtravel-images-akamai.paytm.com/icons/first_aid.svg",
+                    "lbl": "First Aid Box",
+                    "nm": "first_aid_box"
+                },
+                "27": {
+                    "id": 27,
+                    "icn": "https://paytmtravel-images-akamai.paytm.com/icons/hammer.svg",
+                    "lbl": "Hammer (to break glass)",
+                    "nm": "hammer"
+                },
+                "161": {
+                    "id": 161,
+                    "icn": "https://paytmtravel-images-akamai.paytm.com/icons/Bedsheet.svg",
+                    "lbl": "Bed Sheet",
+                    "nm": "bed_sheet"
+                }
+            },
+            "offers": {},
+            "op": {
+                "1475": {
+                    "l": null,
+                    "n": "H K Bus Services",
+                    "osn": "h-k-bus-services",
+                    "ig": false,
+                    "pid": 43,
+                    "c": 2,
+                    "conc": {},
+                    "rr": {
+                        "avg": 2.56,
+                        "cnt": 234,
+                        "color": "#FF9D00",
+                        "gdr": 2.5
+                    },
+                    "gr": {
+                        "avg": 2.77,
+                        "cnt": 8629,
+                        "color": "#FF9D00",
+                        "gdr": 2.74
+                    },
+                    "ms": 6
+                },
+                "3108": {
+                    "l": "https://paytm-travel-mum-akamai.paytm.com/Bus/operatorlogo/raj_ratan_express_cargo.png",
+                    "n": "Raj Ratan Tours & Travels",
+                    "osn": "raj-ratan-tours-&-travels",
+                    "ig": false,
+                    "pid": 43,
+                    "c": 2,
+                    "conc": {},
+                    "rr": {
+                        "avg": 3.22,
+                        "cnt": 122,
+                        "color": "#27ae5f",
+                        "gdr": 3.27
+                    },
+                    "gr": {
+                        "avg": 3.75,
+                        "cnt": 37698,
+                        "color": "#27ae5f",
+                        "gdr": 3.77
+                    },
+                    "ms": 6
+                },
+                "3178": {
+                    "l": "https://paytm-travel-mum-akamai.paytm.com/Bus/operatorlogo/verma_travels.png",
+                    "n": "Verma Travels",
+                    "osn": "verma-travels",
+                    "ig": false,
+                    "pid": 39,
+                    "c": 3,
+                    "conc": {},
+                    "rr": {
+                        "avg": 2.62,
+                        "cnt": 1326,
+                        "color": "#FF9D00",
+                        "gdr": 2.39
+                    },
+                    "gr": {
+                        "avg": 2.68,
+                        "cnt": 44919,
+                        "color": "#FF9D00",
+                        "gdr": 2.57
+                    },
+                    "ms": 5
+                },
+                "4350": {
+                    "l": null,
+                    "n": "M R Travels",
+                    "osn": "m-r-travels",
+                    "ig": false,
+                    "pid": 43,
+                    "c": 1,
+                    "conc": {},
+                    "rr": {
+                        "avg": 3.69,
+                        "cnt": 185,
+                        "color": "#27ae5f",
+                        "gdr": 3.64
+                    },
+                    "gr": {
+                        "avg": 3.23,
+                        "cnt": 31951,
+                        "color": "#27ae5f",
+                        "gdr": 3.28
+                    },
+                    "ms": 6
+                },
+                "4604": {
+                    "l": null,
+                    "n": "B R Travels",
+                    "osn": "b-r-travels",
+                    "ig": false,
+                    "pid": 42,
+                    "c": 2,
+                    "conc": {},
+                    "rr": {
+                        "avg": 4.28,
+                        "cnt": 116,
+                        "color": "#27ae5f",
+                        "gdr": 4.22
+                    },
+                    "gr": {
+                        "avg": 3.75,
+                        "cnt": 7272,
+                        "color": "#27ae5f",
+                        "gdr": 3.87
+                    },
+                    "ms": 6
+                },
+                "4661": {
+                    "l": "https://paytm-travel-mum-akamai.paytm.com/Bus/operatorlogo/hans_travels_private_limited.png",
+                    "n": "Hans Travels (I) Private Limited",
+                    "osn": "hans-travels-(i)-private-limited",
+                    "ig": false,
+                    "pid": 42,
+                    "c": 2,
+                    "conc": {},
+                    "rr": {
+                        "avg": 2.42,
+                        "cnt": 33,
+                        "color": "#FF9D00",
+                        "gdr": 2.07
+                    },
+                    "gr": {
+                        "avg": 2.9,
+                        "cnt": 47507,
+                        "color": "#FF9D00",
+                        "gdr": 2.95
+                    },
+                    "ms": 6
+                },
+                "4731": {
+                    "l": null,
+                    "n": "Deep Travels",
+                    "osn": "deep-travels",
+                    "ig": false,
+                    "pid": 43,
+                    "c": 1,
+                    "conc": {},
+                    "rr": {
+                        "avg": 2.47,
+                        "cnt": 186,
+                        "color": "#FF9D00",
+                        "gdr": 2.29
+                    },
+                    "gr": {
+                        "avg": 2.52,
+                        "cnt": 4419,
+                        "color": "#FF9D00",
+                        "gdr": 2.27
+                    },
+                    "ms": 6
+                },
+                "5639": {
+                    "l": null,
+                    "n": "National Travels",
+                    "osn": "national-travels",
+                    "ig": false,
+                    "pid": 39,
+                    "c": 2,
+                    "conc": {},
+                    "rr": {
+                        "avg": 3.42,
+                        "cnt": 266,
+                        "color": "#27ae5f",
+                        "gdr": 3.46
+                    },
+                    "gr": {
+                        "avg": 3.27,
+                        "cnt": 1286,
+                        "color": "#27ae5f",
+                        "gdr": 3.29
+                    },
+                    "ms": 5
+                },
+                "5691": {
+                    "l": null,
+                    "n": "Veer Travels",
+                    "osn": "veer-travels",
+                    "ig": false,
+                    "pid": 39,
+                    "c": 1,
+                    "conc": {},
+                    "rr": {
+                        "avg": 3.82,
+                        "cnt": 38,
+                        "color": "#27ae5f",
+                        "gdr": 3.74
+                    },
+                    "gr": {
+                        "avg": 3.34,
+                        "cnt": 1780,
+                        "color": "#27ae5f",
+                        "gdr": 3.34
+                    },
+                    "ms": 5
+                },
+                "5925": {
+                    "l": null,
+                    "n": "M R Travels",
+                    "osn": "m-r-travels",
+                    "ig": false,
+                    "pid": 43,
+                    "c": 1,
+                    "conc": {},
+                    "rr": {
+                        "avg": 4.28,
+                        "cnt": 18,
+                        "color": "#27ae5f",
+                        "gdr": 4.28
+                    },
+                    "gr": {
+                        "avg": 3.84,
+                        "cnt": 11053,
+                        "color": "#27ae5f",
+                        "gdr": 3.66
+                    },
+                    "ms": 6
+                },
+                "7495": {
+                    "l": null,
+                    "n": "Starline Bus®",
+                    "osn": "starline-bus®",
+                    "ig": false,
+                    "pid": 39,
+                    "c": 3,
+                    "conc": {},
+                    "rr": {
+                        "avg": 3.58,
+                        "cnt": 12,
+                        "color": "#27ae5f",
+                        "gdr": 3.58
+                    },
+                    "gr": {
+                        "avg": 3.63,
+                        "cnt": 551,
+                        "color": "#27ae5f",
+                        "gdr": 3.65
+                    },
+                    "ms": 5
+                },
+                "11190": {
+                    "l": null,
+                    "n": "BILLES TRAVELS",
+                    "osn": "billes-travels",
+                    "ig": false,
+                    "pid": 9,
+                    "c": 1,
+                    "conc": {},
+                    "rr": {
+                        "avg": 3.4,
+                        "cnt": 5,
+                        "color": "#27ae5f",
+                        "gdr": 3.4
+                    },
+                    "gr": {
+                        "avg": 4.17,
+                        "cnt": 82,
+                        "color": "#27ae5f",
+                        "gdr": 4.17
+                    },
+                    "ms": 5
+                },
+                "11413": {
+                    "l": null,
+                    "n": "Anshu Travels",
+                    "osn": "anshu-travels",
+                    "ig": false,
+                    "pid": 9,
+                    "c": 1,
+                    "conc": {},
+                    "gr": {
+                        "avg": 1.8,
+                        "cnt": 5,
+                        "color": "#EB5757",
+                        "gdr": 1.8
+                    },
+                    "ms": 5
+                },
+                "12599": {
+                    "l": null,
+                    "n": "Shree Kevaya Travels",
+                    "osn": "shree-kevaya-travels",
+                    "ig": false,
+                    "pid": 10,
+                    "c": 1,
+                    "conc": {},
+                    "ms": 5
+                }
+            },
+            "rtc_o": [],
+            "rtc_b_type": {},
+            "op_tags": {
+                "536": {
+                    "tid": 536,
+                    "lbl": "Most booked by women",
+                    "desc": "Most Booked By Female",
+                    "ttp": "FILTER",
+                    "icn": "https://paytmtravel-images-akamai.paytm.com/icons/femalePopularity.svg",
+                    "id": 4349,
+                    "sid": null
+                },
+                "658": {
+                    "tid": 658,
+                    "lbl": "Extra 10% off - BUSHKT",
+                    "desc": "Book your bus tickets using code BUSHKT and get flat 10% off on a minimum booking of Rs 500.",
+                    "ttp": "OFFER",
+                    "icn": null,
+                    "id": 23935,
+                    "sid": null
+                },
+                "762": {
+                    "tid": 762,
+                    "lbl": "Extra 10% off: HANSBUS",
+                    "desc": "Book your bus tickets using code HANSBUS and get flat 10% off on a minimum booking of Rs 500.",
+                    "ttp": "OFFER",
+                    "icn": null,
+                    "id": 29491,
+                    "sid": null
+                }
+            },
+            "gold": null,
+            "op_bc": {
+                "1475": 13,
+                "3178": 5,
+                "4350": 14,
+                "4604": 10,
+                "5639": 7
+            }
+        },
+        "b": [],
+        "b3": [
+            {
+                "n": "IntrCity SmartBus_4483",
+                "img": "https://paytmtravel-images-akamai.paytm.com/icons/Intrcity%20Smart%20Bus.png",
+                "fltr": {
+                    "pid": [
+                        "4483"
+                    ],
+                    "bsrt": null,
+                    "d": [],
+                    "amen": [],
+                    "s_gps_b": false,
+                    "pa": false,
+                    "bt": [],
+                    "rt": [],
+                    "t": []
+                },
+                "mc": null,
+                "sc": null
+            },
+            {
+                "n": "Fresh Bus_7331",
+                "img": "https://paytmtravel-images-akamai.paytm.com/icons/Fresh%20Bus.png",
+                "fltr": {
+                    "pid": [
+                        "7331"
+                    ],
+                    "bsrt": null,
+                    "d": [],
+                    "amen": [],
+                    "s_gps_b": false,
+                    "pa": false,
+                    "bt": [],
+                    "rt": [],
+                    "t": []
+                },
+                "mc": null,
+                "sc": null
+            },
+            {
+                "n": "International Tourist Centre_413",
+                "img": "https://paytmtravel-images-akamai.paytm.com/icons/International%20Tourist%20Centre_413.png",
+                "fltr": {
+                    "pid": [
+                        "413"
+                    ],
+                    "bsrt": null,
+                    "d": [],
+                    "amen": [],
+                    "s_gps_b": false,
+                    "pa": false,
+                    "bt": [],
+                    "rt": [],
+                    "t": []
+                },
+                "mc": null,
+                "sc": null
+            },
+            {
+                "n": "Shree Khurana Travels_1239",
+                "img": "https://paytmtravel-images-akamai.paytm.com/icons/Shree%20Khurana%20Travels_1239.png",
+                "fltr": {
+                    "pid": [
+                        "1239",
+                        "9087"
+                    ],
+                    "bsrt": null,
+                    "d": [],
+                    "amen": [],
+                    "s_gps_b": false,
+                    "pa": false,
+                    "bt": [],
+                    "rt": [],
+                    "t": []
+                },
+                "mc": null,
+                "sc": null
+            },
+            {
+                "n": "Vignesh TAT_1550",
+                "img": "https://paytmtravel-images-akamai.paytm.com/icons/Vignesh%20TAT_1550.png",
+                "fltr": {
+                    "pid": [
+                        "1550",
+                        "12561"
+                    ],
+                    "bsrt": null,
+                    "d": [],
+                    "amen": [],
+                    "s_gps_b": false,
+                    "pa": false,
+                    "bt": [],
+                    "rt": [],
+                    "t": []
+                },
+                "mc": null,
+                "sc": null
+            },
+            {
+                "n": "Himalaya Travels_10311",
+                "img": "https://paytmtravel-images-akamai.paytm.com/icons/Himalaya%20Travels_10311.png",
+                "fltr": {
+                    "pid": [
+                        "10311"
+                    ],
+                    "bsrt": null,
+                    "d": [],
+                    "amen": [],
+                    "s_gps_b": false,
+                    "pa": false,
+                    "bt": [],
+                    "rt": [],
+                    "t": []
+                },
+                "mc": null,
+                "sc": null
+            },
+            {
+                "n": "Sri Krishna Travels_2013",
+                "img": "https://paytmtravel-images-akamai.paytm.com/icons/Sri%20Krishna%20Travels_2013.png",
+                "fltr": {
+                    "pid": [
+                        "2013"
+                    ],
+                    "bsrt": null,
+                    "d": [],
+                    "amen": [],
+                    "s_gps_b": false,
+                    "pa": false,
+                    "bt": [],
+                    "rt": [],
+                    "t": []
+                },
+                "mc": null,
+                "sc": null
+            },
+            {
+                "n": "Tantia travels and Cargo_4613",
+                "img": "https://paytmtravel-images-akamai.paytm.com/icons/Tantia%20travels%20and%20Cargo_4613.png",
+                "fltr": {
+                    "pid": [
+                        "4613"
+                    ],
+                    "bsrt": null,
+                    "d": [],
+                    "amen": [],
+                    "s_gps_b": false,
+                    "pa": false,
+                    "bt": [],
+                    "rt": [],
+                    "t": []
+                },
+                "mc": null,
+                "sc": null
+            },
+            {
+                "n": "Humsafar Travels_398",
+                "img": "https://paytmtravel-images-akamai.paytm.com/icons/Humsafar%20Travels_398%20%281%29.png",
+                "fltr": {
+                    "pid": [
+                        "398"
+                    ],
+                    "bsrt": null,
+                    "d": [],
+                    "amen": [],
+                    "s_gps_b": false,
+                    "pa": false,
+                    "bt": [],
+                    "rt": [],
+                    "t": []
+                },
+                "mc": null,
+                "sc": null
+            },
+            {
+                "n": "Golden Temple Volvo Express_4798",
+                "img": "https://paytmtravel-images-akamai.paytm.com/icons/Golden%20Temple%20Volvo%20Express_4798.png",
+                "fltr": {
+                    "pid": [
+                        "4798"
+                    ],
+                    "bsrt": null,
+                    "d": [],
+                    "amen": [],
+                    "s_gps_b": false,
+                    "pa": false,
+                    "bt": [],
+                    "rt": [],
+                    "t": []
+                },
+                "mc": null,
+                "sc": null
+            },
+            {
+                "n": "H K Travels_1475",
+                "img": "https://paytmtravel-images-akamai.paytm.com/icons/H%20K%20Travels.png",
+                "fltr": {
+                    "pid": [
+                        "1475"
+                    ],
+                    "bsrt": null,
+                    "d": [],
+                    "amen": [],
+                    "s_gps_b": false,
+                    "pa": false,
+                    "bt": [],
+                    "rt": [],
+                    "t": []
+                },
+                "mc": null,
+                "sc": null
+            },
+            {
+                "n": " Jyoti Bus Services_10783",
+                "img": "https://paytmtravel-images-akamai.paytm.com/icons/Jyoti%20Bus%20Services_10783.png",
+                "fltr": {
+                    "pid": [
+                        "10783"
+                    ],
+                    "bsrt": null,
+                    "d": [],
+                    "amen": [],
+                    "s_gps_b": false,
+                    "pa": false,
+                    "bt": [],
+                    "rt": [],
+                    "t": []
+                },
+                "mc": null,
+                "sc": null
+            },
+            {
+                "n": "New Vrajraj Travels_6635",
+                "img": "https://paytmtravel-images-akamai.paytm.com/icons/New%20Vrajraj%20Travels_6635.png",
+                "fltr": {
+                    "pid": [
+                        "6635"
+                    ],
+                    "bsrt": null,
+                    "d": [],
+                    "amen": [],
+                    "s_gps_b": false,
+                    "pa": false,
+                    "bt": [],
+                    "rt": [],
+                    "t": []
+                },
+                "mc": null,
+                "sc": null
+            },
+            {
+                "n": "Hans Travels_4661",
+                "img": "https://paytmtravel-images-akamai.paytm.com/icons/Hans%20Travels_4661.png",
+                "fltr": {
+                    "pid": [
+                        "4661"
+                    ],
+                    "bsrt": null,
+                    "d": [],
+                    "amen": [],
+                    "s_gps_b": false,
+                    "pa": false,
+                    "bt": [],
+                    "rt": [],
+                    "t": []
+                },
+                "mc": null,
+                "sc": null
+            },
+            {
+                "n": "Goldline Super Deluxe_4394",
+                "img": "https://paytmtravel-images-akamai.paytm.com/icons/Goldline%20Super%20Deluxe.png",
+                "fltr": {
+                    "pid": [
+                        "4394"
+                    ],
+                    "bsrt": null,
+                    "d": [],
+                    "amen": [],
+                    "s_gps_b": false,
+                    "pa": false,
+                    "bt": [],
+                    "rt": [],
+                    "t": []
+                },
+                "mc": null,
+                "sc": null
+            },
+            {
+                "n": "DASHMESH TRAVELS_240",
+                "img": "https://paytmtravel-images-akamai.paytm.com/icons/DASHMESH%20TRAVELS_240.png",
+                "fltr": {
+                    "pid": [
+                        "240"
+                    ],
+                    "bsrt": null,
+                    "d": [],
+                    "amen": [],
+                    "s_gps_b": false,
+                    "pa": false,
+                    "bt": [],
+                    "rt": [],
+                    "t": []
+                },
+                "mc": null,
+                "sc": null
+            },
+            {
+                "n": "Jogeshwari Travels_4891",
+                "img": "https://paytmtravel-images-akamai.paytm.com/icons/Jogeshwari%20Travels_4891.png",
+                "fltr": {
+                    "pid": [
+                        "4891"
+                    ],
+                    "bsrt": null,
+                    "d": [],
+                    "amen": [],
+                    "s_gps_b": false,
+                    "pa": false,
+                    "bt": [],
+                    "rt": [],
+                    "t": []
+                },
+                "mc": null,
+                "sc": null
+            },
+            {
+                "n": "Sadguru Shivam Travels_4922",
+                "img": "https://paytmtravel-images-akamai.paytm.com/icons/Sadguru%20Shivam%20Travels_4922.png",
+                "fltr": {
+                    "pid": [
+                        "4922"
+                    ],
+                    "bsrt": null,
+                    "d": [],
+                    "amen": [],
+                    "s_gps_b": false,
+                    "pa": false,
+                    "bt": [],
+                    "rt": [],
+                    "t": []
+                },
+                "mc": null,
+                "sc": null
+            },
+            {
+                "n": "Shriram Transport Company_10512",
+                "img": "https://paytmtravel-images-akamai.paytm.com/icons/Shriram%20Transport%20Company_10512%20%281%29.png",
+                "fltr": {
+                    "pid": [
+                        "10512"
+                    ],
+                    "bsrt": null,
+                    "d": [],
+                    "amen": [],
+                    "s_gps_b": false,
+                    "pa": false,
+                    "bt": [],
+                    "rt": [],
+                    "t": []
+                },
+                "mc": null,
+                "sc": null
+            },
+            {
+                "n": "Ashok Bus Service_2119",
+                "img": "https://paytmtravel-images-akamai.paytm.com/icons/Ashok%20Bus%20service_2119.png",
+                "fltr": {
+                    "pid": [
+                        "2119"
+                    ],
+                    "bsrt": null,
+                    "d": [],
+                    "amen": [],
+                    "s_gps_b": false,
+                    "pa": false,
+                    "bt": [],
+                    "rt": [],
+                    "t": []
+                },
+                "mc": null,
+                "sc": null
+            }
+        ],
+        "a_ts": {},
+        "u_d": {
+            "i_c_e": false,
+            "i_a_l_e": false,
+            "ls_o_data": null
+        }
+    },
+    "meta": {
+        "rid": "52c0c2c7-063d-4d95-912c-5f44a8ee9a26",
+        "scn": "Ahmedabad",
+        "dcn": "Bhopal",
+        "scid": 3461,
+        "dcid": 2342,
+        "dt": "2026-11-06",
+        "scn_k": "oldexistingsort_itsbizboostmay13_itsbiz113",
+        "mesg": null,
+        "actns": [],
+        "s_filter": {},
+        "kd": {
+            "seater": 0,
+            "semi-sleeper": 1,
+            "sleeper": 2,
+            "type": 3,
+            "gender": 4,
+            "female": 5,
+            "male": 6,
+            "not-reserved": 7,
+            "single_seat": 8,
+            "window_seat": 9
+        },
+        "g_ml_sort": false,
+        "spos_map": {
+            "1": 1,
+            "2": 3,
+            "3": 5
+        },
+        "tr_r": {
+            "nby": {
+                "sugstns": []
+            },
+            "nh": {
+                "sugstns": []
+            },
+            "dict": {}
+        },
+        "sort": "Most Popular"
+    }
+}
