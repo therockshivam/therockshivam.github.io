@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Resume | Shivam Lodhi</title>
+
+  <base href="./" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="components/common/common.css">
+  <link rel="stylesheet" href="css/resume-print.css">
+</head>
+
+<body>
+
+  <div id="navbar"></div>
+
+  <!-- Actions Bar (Hidden on Print) -->
+  <div class="no-print"
+    style="max-width: 820px; margin: 100px auto 15px; display: flex; justify-content: space-between; align-items: center; padding: 0 15px;">
+    <a href="index.html" style="color: var(--text-color); font-weight: 600; text-decoration: none;">
+      ← Back to Portfolio
+    </a>
+
+    <div style="display: flex; gap: 10px;">
+      <button id="print-btn"
+        style="background: var(--btn-bg); color: var(--btn-text); border: 1px solid var(--border-color); padding: 8px 16px; border-radius: 6px; cursor: pointer; font-weight: 600;">
+        🖨️ Print
+      </button>
+      <button id="download-pdf-btn"
+        style="background: #0284c7; color: white; border: none; padding: 8px 18px; border-radius: 6px; cursor: pointer; font-weight: 600;">
+        📄 Download PDF
+      </button>
+    </div>
+  </div>
+
+  <!-- Dynamic ATS Resume Render Target -->
+  <main id="resume-app-container" style="padding: 10px 15px 50px;">
+    <div id="resume-loading" style="text-align: center; padding: 50px; color: var(--text-color);">
+      Loading Resume...
+    </div>
+  </main>
+
+  <div id="footer"></div>
+
+  <!-- Client Script -->
+  <script type="module">
+    import { ResumeService } from "./js/services/resume-service.js";
+    import { ResumeRenderer } from "./js/services/resume-renderer.js";
+    import { getAbsoluteUrl } from "./js/utils.js";
+
+    // Load Header & Footer Partials
+    function loadPartials() {
+      fetch(getAbsoluteUrl('components/common/navbar.html'))
+        .then(res => res.text())
+        .then(data => {
+          const el = document.getElementById('navbar');
+          if (el) {
+            el.innerHTML = data;
+            const dynName = document.getElementById('dynamic-name');
+            if (dynName) dynName.textContent = "Resume";
+          }
+        })
+        .catch(err => console.warn(err));
+
+      fetch(getAbsoluteUrl('components/common/footer.html'))
+        .then(res => res.text())
+        .then(data => {
+          const el = document.getElementById('footer');
+          if (el) el.innerHTML = data;
+        })
+        .catch(err => console.warn(err));
+    }
+
+    async function initPublicResume() {
+      loadPartials();
+      const container = document.getElementById("resume-app-container");
+
+      try {
+        const resume = await ResumeService.getResume(false);
+
+        if (!resume) {
+          container.innerHTML = `
+            <div class="ats-resume-container" style="text-align: center; padding: 60px 20px;">
+              <h2>🔒 Resume Unavailable</h2>
+              <p style="color: #64748b; margin-top: 10px;">The resume is currently in draft mode or update in progress.</p>
+              <a href="index.html" style="display: inline-block; margin-top: 20px; color: #0284c7; font-weight: 600;">Return to Home</a>
+            </div>
+          `;
+          return;
+        }
+
+        container.innerHTML = ResumeRenderer.renderHTML(resume);
+
+        // Update document title dynamically
+        if (resume.personal && resume.personal.name) {
+          document.title = `${resume.personal.name} - Resume`;
+        }
+
+      } catch (err) {
+        console.error("Resume load error:", err);
+        container.innerHTML = `
+          <div class="ats-resume-container" style="text-align: center; padding: 50px;">
+            <p style="color: #ef4444;">Unable to load resume. Please try again later.</p>
+          </div>
+        `;
+      }
+    }
+
+    // Trigger Print & PDF Download
+    function triggerPrint() {
+      window.print();
+    }
+
+    document.getElementById("print-btn")?.addEventListener("click", triggerPrint);
+    document.getElementById("download-pdf-btn")?.addEventListener("click", triggerPrint);
+
+    document.addEventListener("DOMContentLoaded", initPublicResume);
+  </script>
+</body>
+
+</html>

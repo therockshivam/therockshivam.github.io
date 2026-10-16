@@ -3,20 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio Admin</title>
+    <title>Portfolio CMS | Admin Dashboard</title>
 
-    <!-- Fonts -->
+    <base href="../" />
+    <!-- Fonts & Icons -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
-    <!-- Icons -->
-    <link
-        rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
-    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
 
     <!-- Styles -->
-    <link rel="stylesheet" href="../css/admin-dashboard.css">
+    <link rel="stylesheet" href="css/admin-dashboard.css">
 </head>
 
 <body>
@@ -28,51 +24,64 @@
 
         <div class="logo">
             <i class="fa-solid fa-layer-group"></i>
-            <span>Portfolio Admin</span>
+            <span>Portfolio CMS</span>
         </div>
 
         <nav>
 
             <a class="menu active" data-page="dashboard">
                 <i class="fa-solid fa-chart-line"></i>
-                Dashboard
+                <span>Dashboard</span>
             </a>
 
-            <a class="menu" data-page="database">
-                <i class="fa-solid fa-database"></i>
-                Database
+            <a class="menu" data-page="projects">
+                <i class="fa-solid fa-laptop-code"></i>
+                <span>Projects</span>
             </a>
 
-            <a class="menu" data-page="settings">
-                <i class="fa-solid fa-gear"></i>
-                Settings
+            <a class="menu" data-page="tools">
+                <i class="fa-solid fa-screwdriver-wrench"></i>
+                <span>Tools</span>
+            </a>
+
+            <a class="menu" data-page="notes">
+                <i class="fa-solid fa-book-bookmark"></i>
+                <span>Vault Notes</span>
+            </a>
+
+            <a class="menu" data-page="profile">
+                <i class="fa-solid fa-user-gear"></i>
+                <span>Profile</span>
+            </a>
+
+            <a class="menu" data-page="resume">
+                <i class="fa-solid fa-file-invoice"></i>
+                <span>Resume</span>
+            </a>
+
+            <a class="menu" data-page="messages">
+                <i class="fa-solid fa-envelope"></i>
+                <span>Messages</span>
             </a>
 
             <a id="logoutBtn">
                 <i class="fa-solid fa-right-from-bracket"></i>
-                Logout
+                <span>Logout</span>
             </a>
 
         </nav>
 
     </aside>
 
-    <!-- Main -->
+    <!-- Main Content Area -->
     <main class="main">
 
         <!-- Header -->
         <header>
 
             <div>
-
-                <h1 id="pageTitle">
-                    Dashboard
-                </h1>
-
-                <small>
-                    Welcome Administrator
-                </small>
-
+                <h1 id="pageTitle">Dashboard</h1>
+                <small id="userEmailBadge">Welcome Administrator</small>
             </div>
 
             <div class="header-right">
@@ -83,50 +92,41 @@
                 </button>
 
                 <img
-                        src="https://ui-avatars.com/api/?name=Admin"
-                        class="avatar"
-                        alt="Admin">
+                    src="https://ui-avatars.com/api/?name=Admin"
+                    class="avatar"
+                    id="adminAvatar"
+                    alt="Admin Avatar">
 
             </div>
 
         </header>
 
-        <!-- Dynamic Content -->
+        <!-- Dynamic View Content Container -->
         <section id="content">
 
-            <!-- Dashboard Page -->
+            <!-- Dashboard Overview Page -->
             <div id="dashboardPage">
 
                 <div class="cards">
 
                     <div class="card">
-
-                        <h4>Total Tables</h4>
-
-                        <h2 id="tableCount">
-                            0
-                        </h2>
-
+                        <h4>Total Projects</h4>
+                        <h2 id="projectCount">0</h2>
                     </div>
 
                     <div class="card">
-
-                        <h4>Total Records</h4>
-
-                        <h2 id="recordCount">
-                            0
-                        </h2>
-
+                        <h4>Total Tools</h4>
+                        <h2 id="toolCount">0</h2>
                     </div>
 
                     <div class="card">
+                        <h4>Vault Notes</h4>
+                        <h2 id="noteCount">0</h2>
+                    </div>
 
-                        <h4>Last Updated</h4>
-
-                        <h2 id="lastUpdated">
-                            --
-                        </h2>
-
+                    <div class="card">
+                        <h4>Contact Messages</h4>
+                        <h2 id="messageCount">0</h2>
                     </div>
 
                 </div>
@@ -134,23 +134,11 @@
                 <div class="section">
 
                     <div class="section-header">
-
-                        <h2>Database Tables</h2>
-
-                        <button id="createTableBtn">
-
-                            <i class="fa-solid fa-plus"></i>
-
-                            Create Table
-
-                        </button>
-
+                        <h2>Collections Overview</h2>
                     </div>
 
                     <div id="tableList">
-
-                        <!-- Dynamic -->
-
+                        <!-- Dynamic Collection Cards -->
                     </div>
 
                 </div>
@@ -163,19 +151,14 @@
 
 </div>
 
-<!-- Global Modal -->
-
+<!-- Global Modal Container -->
 <div id="modalContainer"></div>
 
-<!-- Toast -->
-
+<!-- Toast Notifications -->
 <div id="toastContainer"></div>
 
-<script src="../js/admin/auth.js"></script>
-<script src="../js/admin/database.js"></script>
-<script src="../js/admin/ui.js"></script>
-<script src="../js/admin/router.js"></script>
-<script src="../js/admin/app.js"></script>
+<!-- Modular Admin Script Entry -->
+<script type="module" src="js/admin/app.js"></script>
 
 </body>
 </html>

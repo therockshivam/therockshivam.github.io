@@ -5,9 +5,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>Shivam's Vault</title>
-  <link rel="stylesheet" href="/css/style.css" />
-  <link rel="stylesheet" href="/components/common/common.css">
+  <title>Shivam Lodhi</title>
+  <base href="./" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="components/common/common.css">
   <!-- AOS CSS -->
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
@@ -19,15 +20,20 @@
 
   <!-- Hero Section -->
   <header class="hero" id="hero" data-aos="fade-up">
-    <h1>🚀 Shivam's Vault</h1>
+    <h1 id="hero-title">🚀 Shivam Lodhi</h1>
     <p id="typewriter"></p>
-    <a href="#projects" class="cta">Explore My Work</a>
+    <div style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap; margin-top: 15px;">
+      <a href="#projects" class="cta">Explore My Work</a>
+      <a href="resume.html" class="cta"
+        style="background: transparent; border: 2px solid var(--accent-color, #3b82f6); color: var(--text-color, #ffffff);">📄
+        View Resume</a>
+    </div>
   </header>
 
   <!-- About Section -->
   <section id="about" data-aos="fade-right">
     <h2>👋 About Me</h2>
-    <p>
+    <p id="about-bio">
       I'm Shivam – a creative software engineer, developer of ideas, and a lifelong learner.
       Whether it’s building apps like <strong>SmartBill</strong> or crafting beautiful UI experiences,
       I mix logic with art. I love helping others learn through my notes, apps, and unique YouTube content.
@@ -47,102 +53,47 @@
     <h2>🛠️ Projects</h2>
     <div id="projects-container"></div>
   </section>
-  <script>
-    // Example projects data as JSON
-    const projects = [
-      {
-        img: "#",
-        alt: "SmartBill App",
-        title: "SmartBill",
-        description: "A Java desktop billing app built using Swing & Spring Boot."
-      },
-      {
-        img: "#",
-        alt: "ChatterBox App",
-        title: "ChatterBox",
-        description: "An Angular-based chat app made for smooth real-time conversations."
-      },
-      {
-        img: "#",
-        alt: "MindFlow App",
-        title: "MindFlow",
-        description: "An AI-powered thought organizer – part memory, part mentor."
-      },
-      {
-        img: "#",
-        alt: "PostHub App",
-        title: "PostHub",
-        description: "A web app for sharing and discovering posts, built with Angular and Spring boot."
-      },
-
-    ];
-
-    // Render projects dynamically
-    const projectsContainer = document.getElementById('projects-container');
-    projects.forEach((project, idx) => {
-      const div = document.createElement('div');
-      div.className = 'project-card';
-      div.setAttribute('data-aos', 'zoom-in');
-      if (idx > 0) div.setAttribute('data-aos-delay', idx * 100);
-      div.innerHTML = `
-        <img src="${project.img}" alt="${project.alt}" />
-        <h3>${project.title}</h3>
-        <p>${project.description}</p>
-      `;
-      projectsContainer.appendChild(div);
-    });
-  </script>
 
   <!-- Vault / Notes -->
   <section id="vault" data-aos="fade-right">
     <h2>📚 Shivam's Vault</h2>
     <div id="vault-notes-container"></div>
   </section>
-  <script>
-    // Example notes data as JSON
-    const vaultNotes = [
-      {
-        title: "Docker Commands",
-        description: "A list of essential Docker commands to manage containers and images efficiently.",
-        link: "./notes/docker.html"
-      },
-      {
-        title: "NGINX Commands",
-        description: "A list of essential NGINX commands to configure and manage web servers efficiently.",
-        link: "./notes/nginx.html"
-      },
-      {
-        title: "Understanding the WHERE Clause in SQL",
-        description: "Learn how to filter your database queries using SQL WHERE. Easy syntax with real examples...",
-        link: "#"
-      },
-      {
-        title: "Fixing Java Heap Space Errors",
-        description: "A quick guide on diagnosing and fixing memory overflow issues in Java apps.",
-        link: "#"
-      }
-    ];
-
-    // Render notes dynamically
-    const vaultContainer = document.getElementById('vault-notes-container');
-    vaultNotes.forEach(note => {
-      const div = document.createElement('div');
-      div.className = 'note-snippet';
-      div.setAttribute('data-aos', 'fade-left');
-      div.innerHTML = `
-        <h3>${note.title}</h3>
-        <p>${note.description}</p>
-        <a href="${note.link}">Read More →</a>
-      `;
-      vaultContainer.appendChild(div);
-    });
-  </script>
 
   <!-- Contact -->
   <section id="contact" data-aos="zoom-in-up">
     <h2>📬 Contact</h2>
     <p>Have an idea? Let’s build it together.</p>
-    <p>Email: <a href="mailto:shivam@example.com">shivam@example.com</a></p>
+    <p id="contact-email-text">Email: <a id="contact-email-link" href="mailto:shivam@example.com">shivam@example.com</a>
+    </p>
+
+    <!-- Contact Form -->
+    <div style="max-width: 550px; margin: 25px auto 0; text-align: left;">
+      <form id="contact-form">
+        <div style="margin-bottom: 15px;">
+          <label style="display:block; margin-bottom: 5px; font-weight:600;">Your Name</label>
+          <input type="text" id="contact-name" required placeholder="John Doe"
+            style="width:100%; padding:10px; border-radius:6px; border:1px solid #ccc;">
+        </div>
+
+        <div style="margin-bottom: 15px;">
+          <label style="display:block; margin-bottom: 5px; font-weight:600;">Your Email</label>
+          <input type="email" id="contact-email" required placeholder="john@example.com"
+            style="width:100%; padding:10px; border-radius:6px; border:1px solid #ccc;">
+        </div>
+
+        <div style="margin-bottom: 15px;">
+          <label style="display:block; margin-bottom: 5px; font-weight:600;">Message</label>
+          <textarea id="contact-message" required rows="4" placeholder="How can I help you?"
+            style="width:100%; padding:10px; border-radius:6px; border:1px solid #ccc;"></textarea>
+        </div>
+
+        <button type="submit" id="contact-submit-btn" class="cta" style="border:none; cursor:pointer; width:100%;">
+          Send Message
+        </button>
+        <div id="contact-form-status" style="margin-top:12px; display:none; font-weight:600; text-align:center;"></div>
+      </form>
+    </div>
   </section>
 
   <!-- Footer -->
@@ -155,8 +106,8 @@
   <div id="chatbot-container" style="display:none; position: fixed; top:50%">
   </div>
 
-  <script type="module" src="/js/script.js"></script>
-  <script src="/tools/chatbot/script.js"></script>
+  <script type="module" src="js/script.js"></script>
+  <script src="tools/chatbot/script.js"></script>
   <!-- AOS JS -->
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script src="js/common-components.js"></script>
@@ -166,7 +117,6 @@
       once: false
     });
   </script>
-  </div>
 </body>
 
 </html>
